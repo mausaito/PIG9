@@ -1,0 +1,153 @@
+* {
+    box-sizing: border-box;
+  }
+html{
+    font-size: 6.25%;
+}
+ 
+@font-face {
+    font-family:"pidhg9";
+    src: url("fonts/BaiJamjuree-Light.ttf");
+}    
+
+body{
+    display:flex;
+    flex-direction:column;
+    min-height:100vh;
+    font-size:26rem;
+    font-family:"pidhg9";
+    margin-top: 0;
+    margin-left: 0;
+}
+header{
+    height: 120rem;
+    background:#94d4c1;
+    width:100vw;
+    display:flex;
+    justify-content:space-between;
+}
+.logo{
+    width:30%;
+    margin:14rem;
+    display: flex;
+    justify-self: center;
+
+}
+header div a{
+    display: flex;
+    justify-self: center;  
+}
+#logo-img{
+    display: flex;
+    justify-self: center;
+}  
+#usuario{
+    border:transparent;
+    background:#94d4c1;
+    display:flex;
+    font-weight:bold;
+    justify-content:center;
+    flex-direction:column;
+}
+button{
+    background:#94d4c1;
+    border:transparent;
+    color:white;
+ }
+
+main{
+    display:flex;
+    flex-grow:1;
+    flex-direction:row;
+} 
+.menuesq{
+    width:20%;
+    flex-grow:1;
+    display:flex;
+    border-right:1px solid gray;
+    flex-direction:column;
+}
+.menuesq li{
+    list-style:none;
+    color:darkgray;
+}
+
+#botaoNovo{
+    font-size:20rem;
+    border-radius:5rem;
+    border:solid 5rem darkgray;
+    align-self:center;
+    width:200rem;
+    height:40rem;
+    text-align:center;
+    padding-top:10rem;
+}
+
+.paineldireita{
+    width:80%;
+    flex-grow:1;
+    display:flex;
+    flex-direction:column;
+}
+.paineldir1{
+    font-size:20rem;
+}
+.paineldir2{
+    display:flex;
+    flex-direction:row;
+    margin-bottom:10rem;
+}
+.Saldoatual, .Totaldespesas, .Totalreceitas{
+    margin-top:10rem;
+    margin-right:20rem;
+    font-size:20rem;
+}
+
+.paineldir3{
+    border:1px solid gray;
+    height:500rem;
+}
+
+.paineldir4{
+    border:1px solid gray;
+    height:500rem;
+}
+
+
+footer{
+    height:110rem;
+    background:rgb(226, 226, 226);
+    width:100vw;
+    display:flex;
+}
+.esqfooter {
+    width:40%;
+    color:darkgray;
+    align-self:flex-end;
+    font-size:22rem;
+}
+.centfooter{
+    width:40%;
+}
+.redesocial{
+    width:20%;
+    align-self:center;
+}
+.redesocial p {
+    color:darkgray;
+    margin-top:15rem;
+    margin-bottom:5rem;
+}
+#facebook{
+    width:15%;
+    margin-top:5rem;
+}
+#instagram{
+    width:14%;
+    margin-top:5rem;
+}
+#twitter{
+    width:14%;
+    margin-top:5rem;
+}
+

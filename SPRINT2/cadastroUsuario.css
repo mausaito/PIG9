@@ -1,0 +1,160 @@
+* {
+    box-sizing: border-box;
+}
+html{
+    font-size: 6.25%;
+}
+ 
+@font-face {
+    font-family:"pidhg9";
+    src: url("fonts/BaiJamjuree-Light.ttf");
+}    
+
+body{
+    display:flex;
+    flex-direction:column;
+    min-height:100vh;
+    font-size:26rem;
+    font-family:"pidhg9";
+    margin-top: 0;
+    margin-left: 0;
+}
+header{
+    height: 120rem;
+    background:#94d4c1;
+    width:100vw;
+    display:flex;
+    justify-content:space-between;
+}
+.logo{
+    width:30%;
+    margin:14rem;
+    display: flex;
+    justify-self: center;
+
+}
+header div a{
+    display: flex;
+    justify-self: center;  
+}
+#logo-img{
+    display: flex;
+    justify-self: center;
+}
+#usuario{
+    border:transparent;
+    background:#94d4c1;
+    display:flex;
+    font-weight:bold;
+    justify-content:center;
+    flex-direction:column;
+}
+button{
+    background:#94d4c1;
+    border:transparent;
+    color:white;
+ }
+
+main{
+    display:flex;
+    flex-grow:1;
+    flex-direction:row;
+} 
+.menuesq{
+    width:20%;
+    flex-grow:1;
+    display:flex;
+}
+.paineldireita{
+    width:80%;
+    flex-grow:1;
+    display:flex;
+    flex-direction:column;
+}
+
+.paineldireita2{
+    width:80%;
+    flex-grow:1;
+    display:flex;
+    flex-direction:row;
+    margin-top:40rem;
+}
+.nome-campo{
+    width: 40%;
+    display:flex;
+    flex-direction:column;
+    margin-left: 50rem;
+    margin-top:30rem;
+  
+}
+.campos{
+    width:60%;
+    display:flex;
+    flex-direction:column;
+    justify-content: flex-start;
+    margin-top:30rem;
+}
+#nomecompleto, #email, #dtaNascimento, #perfilInvestidor, #senha, #confsenha {
+    margin-top:30rem;
+    width:350rem;
+    height:25rem;
+    justify-self:center;
+    border-radius:5rem;
+}
+#form-nomecompleto, #form-email, #form-dtaNascimento, #form-perfilInvestidor, #form-senha, #form-confsenha {
+    border-bottom:1px dashed grey;
+    margin-top:25rem;
+}
+
+.comandos{
+    display:flex;
+    justify-content:center;
+    align-content:flex-start;
+    position:relative;
+    right:15%;
+    margin-bottom:20rem;
+   }
+#botaoCadastrar{
+    font-size:30rem;
+    border-radius:5rem;
+    height: 40rem;
+    width:170rem;
+}
+
+footer{
+    height:110rem;
+    background:rgb(226, 226, 226);
+    width:100vw;
+    display:flex;
+}
+.esqfooter {
+    width:40%;
+    color:darkgray;
+    align-self:flex-end;
+    font-size:22rem;
+}
+.centfooter{
+    width:40%;
+}
+.redesocial{
+    width:20%;
+    align-self:center;
+}
+.redesocial p {
+    color:darkgray;
+    margin-top:15rem;
+    margin-bottom:5rem;
+}
+#facebook{
+    width:15%;
+    margin-top:5rem;
+}
+#instagram{
+    width:14%;
+    margin-top:5rem;
+}
+#twitter{
+    width:14%;
+    margin-top:5rem;
+}
+

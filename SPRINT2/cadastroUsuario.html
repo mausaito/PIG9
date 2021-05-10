@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PI - Cadastro Usuario</title>
+    <link rel="stylesheet" type="text/css" href="cadastroUsuario.css"/>
+</head>
+<body>
+    <header>
+        <div id="logo-img">
+            <a href="home.html"><img class="logo" src="pi-logo.svg"/></a>
+        </div>
+        <form id="usuario">
+            <input id="usuario"type="text" placeholder="Nome Usuario"/> <br/>
+            <!-- quando souber como puxar do banco o nome do usuario trocamos o placeholder -->
+           <button>Sair</button>
+        </form>
+    </header>
+    <main>
+        <div class="menuesq">
+            
+        </div>
+            <div class="paineldireita">
+                <div class="paineldireita2">
+                    <div class="nome-campo">
+                        <label id="form-nomecompleto">Nome Completo</label>
+                        <label id="form-email">E-mail</label>
+                        <label id="form-dtaNascimento">Data de Nascimento</label>
+                        <label id="form-perfilInvestidor">Perfil de Investidor</label>
+                        <label id="form-senha">Senha</label>
+                        <label id="form-confsenha">Confirmação de Senha</label>
+                    </div>
+                    <div class="campos">
+                        <input id="nomecompleto" type="text" required maxlength="150">
+                        <input id="email" type="email" required>
+                        <input id="dtaNascimento" type="date" required>
+                        <select id="perfilInvestidor" required>
+                            <option>Conservador</option>    
+                            <option>Moderado</option>
+                            <option>Agressivo</option>
+                        </select>
+                        <input id="senha" type="password">
+                        <input id="confsenha" type="password">
+                    </div>
+                </div>
+                <div class="comandos">
+                    <button id="botaoCadastrar">Cadastrar</button>
+                </div>
+
+            </div>
+    </main>
+    <footer>
+        <div class="esqfooter">
+            COPYRIGHT
+        </div>
+        <div class="centfooter">
+
+        </div>
+        <div class="redesocial">
+            <p>Redes Sociais</p>
+            <a href="facebook.com"><img id="facebook" alt="facebook" title="facebook" src="facebook.png"/></a>
+            <a href="instagram.com"><img id="instagram" alt="instagram" href="#" title="instagram" src="Instagram.png"/></a>
+            <a href="twitter.com"><img id="twitter" alt="twiter" href="#" title="twiter" src="twitter.png"/></a>
+        </div>
+    </footer>
+    
+</body>
+</html>
