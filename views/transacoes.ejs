@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PI - Transacoes</title>
+    <link rel="stylesheet" type="text/css" href="../public/css/transacoes.css"/>
+    
+</head>
+<body>
+    <header>
+        <div id="logo-img">
+            <a href="home.html"><img class="logo" src="pi-logo.svg"/></a>
+        </div>
+        <form id="usuario">
+            <input id="usuario"type="text" placeholder="Nome Usuario"/> <br/>
+            <!-- quando souber como puxar do banco o nome do usuario trocamos o placeholder -->
+           <button>Sair</button>
+        </form>
+    </header>
+    <main>
+        <%-include("./partials/sidebar.ejs", { title: title })%>
+        <div class="menuesq">
+            <div class="paineldireita">
+                <div class="paineldireita2">
+                    <div class="nome-campo">
+                        <label id="form-tipo">Tipo</label>
+                        <label id="form-categoria">Categoria</label>
+                        <label id="form-nome">Nome</label>
+                        <label id="form-valor">Valor</label>
+                        <label id="form-dtpgto">Data Pagamento</label>
+                    
+                    </div>
+                    <div class="campos">
+                        <select id="tipo" required>
+                            <option>Receita</option>    
+                            <option>Despesa</option>
+                        </select>
+                        <select id="categoria" required>
+                            <option>Salário</option>    
+                            <option>Freelancer</option>
+                            <option>Cursos</option>
+                            <option>Aluguel</option>
+                            <option>IPTU</option>
+                            <option>Condominio</option>
+                            <option>Transporte</option>
+                            <option>Celular</option>
+                            <option>Netflix</option>
+                            <option>Internet</option>
+                            <option>Bar e restaurante</option>
+                            <option>Cinema</option>
+                            <option>Supermercado</option>
+                        </select>
+                        <input id="nome" type="text" required maxlength="150">
+                        <input id="valor" type="number" required>
+                        <input id="data" type="date" required>
+                    </div>    
+                </div>
+                <div class="observacao">
+                    <label id="form-obs">Observação</label>
+                    <textarea id="observacao" maxlength="500"></textarea>
+                </div>
+                <div class="comandos">
+                    <button id="botaoAdicionar">Adicionar</button>
+                </div>
+            </div>
+    </main>
+    <footer>
+        <div class="esqfooter">
+            COPYRIGHT
+        </div>
+        <div class="centfooter">
+
+        </div>
+        <div class="redesocial">
+            <p>Redes Sociais</p>
+            <a href="facebook.com"><img id="facebook" alt="facebook" href="#" title="facebook" src="facebook.png"/></a>
+            <a href="instagram.com"><img id="instagram" alt="instagram" href="#" title="instagram" src="Instagram.png"/></a>
+            <a href="twitter.com"><img id="twitter" alt="twiter" href="#" title="twiter" src="twitter.png"/></a>
+        </div>
+    </footer>
+    
+</body>
+</html>
