@@ -1,0 +1,60 @@
+* {
+    box-sizing: border-box;
+}
+@font-face {
+    font-family:"pidhg9";
+    src: url("/fonts/BaiJamjuree-Light.ttf");
+}
+html{
+    margin: 0;
+    padding: 0;
+}
+header{
+    height: 120rem;
+    background:#94d4c1;
+    width:100vw;
+    display:flex;
+    justify-content:space-between;
+}
+
+header div a{
+    display: flex;
+    justify-self: center; 
+}
+
+#logo-img{
+    display: flex;
+    justify-self: center;
+}
+.logo{
+    width:30%;
+    margin:14rem;
+    display: flex;
+    justify-self: center;
+}
+#usuario{
+    height: 20px;
+    border-radius: 20px;
+    border:rgb(255, 255, 255);
+    background: ghostwhite;
+    display:flex;
+    font-weight:bold;
+    justify-content:center;
+    flex-direction:column;
+}
+button{
+    display: flex;
+    background:#94d4c1;
+    border:transparent;
+    color:white;
+}
+/* <header>
+<div id="logo-img">
+    <a href="home.html"><img class="logo" src="pi-logo.svg"/></a>
+</div>
+<bott id="usuario">
+    <input id="usuario"type="text" placeholder="Nome Usuario"/> <br/>
+    <!-- quando souber como puxar do banco o nome do usuario trocamos o placeholder -->
+   <button>Sair</button>
+</form>
+</header> */

@@ -17,40 +17,10 @@ body{
     margin-top: 0;
     margin-left: 0;
 }
-header{
-    height: 120rem;
-    background:#94d4c1;
-    width:100vw;
-    display:flex;
-    justify-content:space-between;
-}
-.logo{
-    width:30%;
-    margin:14rem;
-    display: flex;
-    justify-self: center;
-}
-header div a{
-    display: flex;
-    justify-self: center;  
-}
-#logo-img{
-    display: flex;
-    justify-self: center;
-}
-#usuario{
-    border:transparent;
-    background:#94d4c1;
-    display:flex;
-    font-weight:bold;
-    justify-content:center;
-    flex-direction:column;
-}
-button{
-    background:#94d4c1;
-    border:transparent;
-    color:white;
-}
+
+
+
+
 main{
     display:flex;
     flex-grow:1;

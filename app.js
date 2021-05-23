@@ -10,12 +10,14 @@ const usersRouter = require('./routes/users');
 const sideRouter = require('./routes/side');
 const transactionsRouter = require('./routes/transactions');
 const plansRouter = require('./routes/plans');
+const { dirname } = require('path');
 
 var app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
+app.set('sidebar', './partials/sidebar')
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -23,7 +25,6 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyparser())
-
 
 app.use('/', indexRouter);
 app.use('/cadastro', usersRouter);
