@@ -14,21 +14,21 @@
     </header>
     <main>
       <form id='novo-usuario' method="POST" action="/cadastro">
-        <label id="form-nomecompleto">Nome Completo</label>
+        <label id="form-nomecompleto" for="nomeUsuario">Nome Completo</label>
         <input id="nomecompleto" type="text" name="nomeUsuario"required maxlength="150">
-        <label id="form-email">E-mail</label>
-        <input id="email" type="email" name="emailUsuario"required>   
-        <label id="form-dtaNascimento">Data de Nascimento</label>
+        <label id="form-email" for="emailUsuario">E-mail</label>
+        <input id="email" type="email" placeholder="seu-email@email.com" name="emailUsuario"required>   
+        <label id="form-dtaNascimento" for="nascimentoUsuario">Data de Nascimento</label>
         <input id="dtaNascimento" type="date" name="nascimentoUsuario"required>
-        <label id="form-perfilInvestidor">Perfil de Investidor</label>
+        <label id="form-perfilInvestidor" for="perfilUsuario">Perfil de Investidor</label>
         <select id="perfilInvestidor" name="perfilUsuario"required>
           <option>Conservador</option>    
           <option>Moderado</option>
           <option>Agressivo</option>
         </select>   
-        <label id="form-senha">Senha</label>
+        <label id="form-senha" for="senhaUsuario">Senha</label>
         <input id="senha" type="password" name="senhaUsuario" required>
-        <label id="form-confsenha">Confirmação de Senha</label>
+        <label id="form-confsenha" for="confsenhaUsuario">Confirmação de Senha</label>
         <input id="confsenha" type="password" name="confsenhaUsuario" required>    
         <div class="comandos">
           <input id="botaoCadastrar" type="submit" value="Cadastrar" />

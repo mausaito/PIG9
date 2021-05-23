@@ -24,13 +24,14 @@ header{
     background:#94d4c1;
     width:100vw;
     display:flex;
-    justify-content:space-around;
+    justify-content:space-between;
 }
 .logo{
     width:50%;
     margin:14rem;
     display: flex;
     justify-self: center;
+
 }
 header div a{
     display: flex;
@@ -39,84 +40,80 @@ header div a{
 #logo-img{
     display: flex;
     justify-self: center;
-}
-.menuhome {
-    width:60%;
-    margin-bottom:20rem;
-}
-.menuhome a {
-    margin-left:90rem;
-
-}
-.banner-img {
-    width: 100vw;
-}
-#formhome, #formBotaoCadastrar{
-    justify-self:flex-start;
-    align-self:center;
-    font-size:14rem;
-    color:gray;
-    width:20%;
-    margin-left:200rem;
-    margin-right: 10px;
-   }
-
-#email, #senha{
-    border-radius:4rem;
-    margin:2rem;
-    border:1px grey;
-    height: 20rem;
-    width:210rem;
-    
-}   
-.logar, .cadastrar{
-    width:106rem;
-    margin-top:4rem;
-    background:#b0b3b2;
-    border-radius:4rem;
-    border:2px black;
-    color: black;
-}
-.menuhome{
-    align-self:flex-end;
-}
-main{
-    flex-grow:1;
+}  
+#usuario{
+    border:transparent;
+    background:#94d4c1;
+    display:flex;
+    font-weight:bold;
     justify-content:center;
-    
+    flex-direction:column;
 }
-.parte2{
+button{
+    background:#94d4c1;
+    border:transparent;
+    color:white;
+ }
+
+main{
+    display:flex;
+    flex-grow:1;
+    flex-direction:row;
+} 
+.menuesq{
+    width:20%;
+    flex-grow:1;
+    display:flex;
+    border-right:1px solid gray;
+    flex-direction:column;
+}
+.menuesq li{
+    list-style:none;
+    color:darkgray;
+}
+
+#botaoNovo{
+    font-size:20rem;
+    border-radius:5rem;
+    border:solid 5rem darkgray;
+    align-self:center;
+    width:200rem;
+    height:40rem;
+    text-align:center;
+    padding-top:10rem;
+}
+
+.paineldireita{
+    width:80%;
+    flex-grow:1;
+    display:flex;
+    flex-direction:column;
+}
+.paineldir1{
+    font-size:20rem;
+}
+.paineldir2{
     display:flex;
     flex-direction:row;
-    justify-content:space-around;
-    flex-wrap:wrap;
-    
+    margin-bottom:10rem;
 }
-.quadrado {
-    margin-top: 30rem;
-    margin-left:10rem;
-    margin-right:6rem;
-    margin-bottom:30rem;
-    }
-.foto{
-    margin-bottom: 5rem;
-    width:400rem;
-    align-self:center;
-    }
-div h2 {
-    margin-bottom: 5rem;
-    font-size:22rem;
-    font-weight:bold;
+.Saldoatual, .Totaldespesas, .Totalreceitas{
+    margin-top:10rem;
+    margin-right:20rem;
+    font-size:20rem;
 }
-p {
-    margin-bottom: 10rem;
-    text-align:justify;
-    width:400rem;
-}   
-a:link, a:visited{
-    text-decoration: none;
-    color: black;
+
+.paineldir3{
+    border:1px solid gray;
+    height:500rem;
 }
+
+.paineldir4{
+    border:1px solid gray;
+    height:500rem;
+}
+
+
 footer{
     height:110rem;
     background:rgb(226, 226, 226);

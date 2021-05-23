@@ -11,6 +11,7 @@ const sideRouter = require('./routes/side');
 const transactionsRouter = require('./routes/transactions');
 const plansRouter = require('./routes/plans');
 const homeRouter = require('./routes/home');
+const dashboardRouter = require('./routes/dashboard');
 
 var app = express();
 
@@ -32,6 +33,7 @@ app.use('/home', homeRouter);
 app.use('/sidebar', sideRouter);
 app.use('/planejamento', plansRouter);
 app.use('/transacoes', transactionsRouter);
+app.use('/dashboard', dashboardRouter);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));

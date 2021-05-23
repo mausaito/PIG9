@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PI - Dashboard</title>
+    <link rel="stylesheet" href='/css/dashboard.css'/>
+</head>
+<body>
+    <header>
+        <div id="logo-img">
+            <a href="../views/home.ejs"><img class="logo" src="/img/pi-logo.svg"/></a>
+        </div>
+        <form id="usuario">
+            <input id="usuario"type="text" placeholder="Nome Usuario"/> <br/>
+            <!-- quando souber como puxar do banco o nome do usuario trocamos o placeholder -->
+           <button><a href='../views/home.ejs'>Sair</a></button>
+           <!-- adicionado um link temporário ao sair para dar um "funcionalidade" ao botão Sair-->
+        </form>
+    </header>
+    <main>
+        <div class="menuesq">
+            <p id="botaoNovo">+ Nova (desp / rec)</p>
+            <ul id="listamenu">
+                <li>Dashboard</li>
+                <li>Transações</li>
+                <li>Planejamento</li>
+                <li>Contas</li>
+
+            </ul>
+        </div>
+        <div class="paineldireita">
+            <div class="paineldir1">
+            <!-- quando souber como puxar do banco trocamos o input -->     
+                <label for="periodo">Periodo</label>           
+                <input class="periodo" type="text" placeholder="Janeiro 2021"/>
+            </div>
+            <div class="paineldir2">
+                <!-- quando souber como puxar do banco trocamos o input -->     
+                    <div class="Saldoatual">
+                        <label>Saldo Atual</label><br/>           
+                        <input type="text" placeholder="R$ 1.000,00"/><br/>
+                    </div>
+                    <div class="Totaldespesas">
+                        <label>Total Despesas</label><br/>           
+                        <input type="text" placeholder="R$ 2.000,00"/><br/>
+                    </div>
+                    <div class="Totalreceitas">
+                        <label>Total Receitas</label><br/>           
+                        <input type="text" placeholder="R$ 3.000,00"/><br/>
+                    </div>
+            </div>
+            <div class="paineldir3">
+                Grafico 1
+            </div>
+            <div class="paineldir4">
+                Grafico 2
+            </div>
+    
+        </div>
+
+    </main>
+    <footer>
+        <div class="esqfooter">
+            COPYRIGHT
+        </div>
+        <div class="centfooter">
+
+        </div>
+        <div class="redesocial">
+            <p>Redes Sociais</p>
+            <a href="facebook.com"><img id="facebook" alt="facebook" href="#" title="facebook" src="/img/facebook.png"/></a>
+            <a href="instagram.com"><img id="instagram" alt="instagram" href="#" title="instagram" src="/img/Instagram.png"/></a>
+            <a href="twitter.com"><img id="twitter" alt="twiter" href="#" title="twiter" src="/img/twitter.png"/></a>
+        </div>
+    </footer>
+    
+</body>
+</html>
