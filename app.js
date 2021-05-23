@@ -10,6 +10,7 @@ const usersRouter = require('./routes/users');
 const sideRouter = require('./routes/side');
 const transactionsRouter = require('./routes/transactions');
 const plansRouter = require('./routes/plans');
+const homeRouter = require('./routes/home');
 
 var app = express();
 
@@ -22,11 +23,12 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(bodyparser())
+
 
 
 app.use('/', indexRouter);
 app.use('/cadastro', usersRouter);
+app.use('/home', homeRouter);
 app.use('/sidebar', sideRouter);
 app.use('/planejamento', plansRouter);
 app.use('/transacoes', transactionsRouter);

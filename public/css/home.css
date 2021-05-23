@@ -1,0 +1,156 @@
+* {
+    box-sizing: border-box;
+  }
+html{
+    font-size: 6.25%;
+}
+ 
+@font-face {
+    font-family:"pidhg9";
+    src: url("fonts/BaiJamjuree-Light.ttf");
+}    
+
+body{
+    display:flex;
+    flex-direction:column;
+    min-height:100vh;
+    font-size:26rem;
+    font-family:"pidhg9";
+    margin-top: 0;
+    margin-left: 0;
+}
+header{
+    height: 120rem;
+    background:#94d4c1;
+    width:100vw;
+    display:flex;
+    justify-content:space-around;
+}
+.logo{
+    width:30%;
+    margin:14rem;
+    display: flex;
+    justify-self: center;
+}
+header div a{
+    display: flex;
+    justify-self: center;  
+}
+#logo-img{
+    display: flex;
+    justify-self: center;
+}
+.menuhome {
+    width:60%;
+    margin-bottom:20rem;
+}
+.menuhome a {
+    margin-left:90rem;
+
+}
+.banner-img {
+    width: 100vw;
+}
+#formhome{
+    justify-self:flex-start;
+    align-self:center;
+    font-size:14rem;
+    color:gray;
+    width:20%;
+    margin-left:200rem;
+    margin-right: 10px;
+   }
+
+#email, #senha{
+    border-radius:4rem;
+    margin:2rem;
+    border:1px grey;
+    height: 20rem;
+    width:210rem;
+    
+}   
+button{
+    width:106rem;
+    margin-top:4rem;
+    background:#b0b3b2;
+    border-radius:4rem;
+    border:2px black;
+    color: black;
+}
+.menuhome{
+    align-self:flex-end;
+}
+main{
+    flex-grow:1;
+    justify-content:center;
+    
+}
+.parte2{
+    display:flex;
+    flex-direction:row;
+    justify-content:space-around;
+    flex-wrap:wrap;
+    
+}
+.quadrado {
+    margin-top: 30rem;
+    margin-left:10rem;
+    margin-right:6rem;
+    margin-bottom:30rem;
+    }
+.foto{
+    margin-bottom: 5rem;
+    width:400rem;
+    align-self:center;
+    }
+div h2 {
+    margin-bottom: 5rem;
+    font-size:22rem;
+    font-weight:bold;
+}
+p {
+    margin-bottom: 10rem;
+    text-align:justify;
+    width:400rem;
+}   
+a:link, a:visited{
+    text-decoration: none;
+    color: black;
+}
+footer{
+    height:110rem;
+    background:rgb(226, 226, 226);
+    width:100vw;
+    display:flex;
+}
+.esqfooter {
+    width:40%;
+    color:darkgray;
+    align-self:flex-end;
+    font-size:22rem;
+}
+.centfooter{
+    width:40%;
+}
+.redesocial{
+    width:20%;
+    align-self:center;
+}
+.redesocial p {
+    color:darkgray;
+    margin-top:15rem;
+    margin-bottom:5rem;
+}
+#facebook{
+    width:15%;
+    margin-top:5rem;
+}
+#instagram{
+    width:14%;
+    margin-top:5rem;
+}
+#twitter{
+    width:14%;
+    margin-top:5rem;
+}
+
