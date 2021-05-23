@@ -1,15 +1,13 @@
 * {
     box-sizing: border-box;
-  }
+}
 html{
     font-size: 6.25%;
 }
- 
 @font-face {
     font-family:"pidhg9";
     src: url("fonts/BaiJamjuree-Light.ttf");
-}    
-
+}
 body{
     display:flex;
     flex-direction:column;
@@ -31,7 +29,6 @@ header{
     margin:14rem;
     display: flex;
     justify-self: center;
-
 }
 header div a{
     display: flex;
@@ -40,7 +37,7 @@ header div a{
 #logo-img{
     display: flex;
     justify-self: center;
-}  
+}
 #usuario{
     border:transparent;
     background:#94d4c1;
@@ -53,8 +50,7 @@ button{
     background:#94d4c1;
     border:transparent;
     color:white;
- }
-
+}
 main{
     display:flex;
     flex-grow:1;
@@ -71,49 +67,31 @@ main{
     list-style:none;
     color:darkgray;
 }
-
 #botaoNovo{
     font-size:20rem;
     border-radius:5rem;
     border:solid 5rem darkgray;
-    align-self:center;
+    align-self:left;
     width:200rem;
     height:40rem;
     text-align:center;
-    padding-top:10rem;
+    padding-top:5rem;
+    padding-bottom:5rem;
 }
-
-.paineldireita{
+.grafico{
     width:80%;
     flex-grow:1;
     display:flex;
     flex-direction:column;
+    align-self:center;
 }
-.paineldir1{
-    font-size:20rem;
-}
-.paineldir2{
+.infos{
+    width:80%;
+    flex-grow:1;
     display:flex;
-    flex-direction:row;
-    margin-bottom:10rem;
+    flex-direction:column;
+    align-self:flex-end;
 }
-.Saldoatual, .Totaldespesas, .Totalreceitas{
-    margin-top:10rem;
-    margin-right:20rem;
-    font-size:20rem;
-}
-
-.paineldir3{
-    border:1px solid gray;
-    height:500rem;
-}
-
-.paineldir4{
-    border:1px solid gray;
-    height:500rem;
-}
-
-
 footer{
     height:110rem;
     background:rgb(226, 226, 226);
@@ -150,4 +128,3 @@ footer{
     width:14%;
     margin-top:5rem;
 }
-

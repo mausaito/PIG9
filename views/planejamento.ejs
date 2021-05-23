@@ -5,7 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PI - Planejamento</title>
-    <link rel="stylesheet" type="text/css" href="planejamento.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/planejamento.css"/>
+  
 </head>
 <body>
     <header>
@@ -19,14 +20,8 @@
         </form>
     </header>
     <main>
+        <%-include("./partials/sidebar.ejs", { title: title })%>
         <div class="menuesq">
-            <p id="botaoNovo">+ Nova (desp / rec)</p>
-            <ul id="listamenu">
-                <li>Dashboard</li>
-                <li>Transações</li>
-                <li>Planejamento</li>
-                <li>Contas</li>
-            </ul>
                 <div class="infos">
                     <p>Com base no histórico o seu saldo é de: <input type="text"</p>
                     <p>Com base nas informações abaixo, os juros e inflação atual</p>

@@ -31,7 +31,6 @@ header{
     margin:14rem;
     display: flex;
     justify-self: center;
-
 }
 header div a{
     display: flex;
@@ -40,7 +39,7 @@ header div a{
 #logo-img{
     display: flex;
     justify-self: center;
-}  
+}
 #usuario{
     border:transparent;
     background:#94d4c1;
@@ -82,37 +81,71 @@ main{
     text-align:center;
     padding-top:10rem;
 }
-
 .paineldireita{
     width:80%;
     flex-grow:1;
     display:flex;
     flex-direction:column;
 }
-.paineldir1{
-    font-size:20rem;
-}
-.paineldir2{
+
+.paineldireita2{
+    width:80%;
+    flex-grow:1;
     display:flex;
     flex-direction:row;
-    margin-bottom:10rem;
+    height:51%
 }
-.Saldoatual, .Totaldespesas, .Totalreceitas{
-    margin-top:10rem;
-    margin-right:20rem;
-    font-size:20rem;
+.nome-campo{
+    width: 40%;
+    display:flex;
+    flex-direction:column;
+    margin-left: 50rem;
+    margin-top:30rem;
+  
 }
-
-.paineldir3{
-    border:1px solid gray;
-    height:500rem;
+.campos{
+    width:60%;
+    display:flex;
+    flex-direction:column;
+    justify-content: flex-start;
+    margin-top:30rem;
 }
-
-.paineldir4{
-    border:1px solid gray;
-    height:500rem;
+#tipo, #categoria, #nome, #valor, #data {
+    margin-top:30rem;
+    width:350rem;
+    height:20rem;
+    justify-self:center;
+    border-radius:5rem;
 }
-
+#form-tipo, #form-categoria, #form-nome, #form-valor, #form-dtpgto {
+    border-bottom:1px dashed grey;
+    margin-top:20rem;
+}
+.observacao{
+    width: 40%;
+    margin-left: 50rem;
+    display:flex;
+    align-content: flex-start;
+    flex-direction:column;
+    height:49%
+}
+#observacao{
+    width:720rem;
+    height:220rem;
+    align-self:flex-start;
+    border-radius:5rem;
+}
+.comandos{
+    display:flex;
+    justify-content:flex-end;
+    position:relative;
+    right:36.5%;
+    margin-bottom:20rem;
+   }
+#botaoAdicionar{
+    font-size:22rem;
+    border-radius:5rem;
+}
 
 footer{
     height:110rem;

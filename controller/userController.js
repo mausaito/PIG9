@@ -43,4 +43,3 @@ function criptografarSenha(senha) {
 function login(senha,hashSenha) {
     return bcrypt.compareSync(senha, hashSenha)
 }
-

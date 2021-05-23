@@ -5,7 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PI - Transacoes</title>
-    <link rel="stylesheet" type="text/css" href="transacoes.css"/>
+    <link rel="stylesheet" type="text/css" href="../public/css/transacoes.css"/>
+    
 </head>
 <body>
     <header>
@@ -19,16 +20,8 @@
         </form>
     </header>
     <main>
+        <%-include("./partials/sidebar.ejs", { title: title })%>
         <div class="menuesq">
-            <p id="botaoNovo">+ Nova (desp / rec)</p>
-            <ul id="listamenu">
-                <li>Dashboard</li>
-                <li>Transações</li>
-                <li>Planejamento</li>
-                <li>Contas</li>
-
-            </ul>
-        </div>
             <div class="paineldireita">
                 <div class="paineldireita2">
                     <div class="nome-campo">
