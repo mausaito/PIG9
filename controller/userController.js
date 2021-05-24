@@ -19,8 +19,9 @@ module.exports.formUsuario = (req, res) => {
 module.exports.loginUsuario = async (req, res) => {
     const login = req.body
     const usuario = buscarUsuario(login.emailUsuario)
+    console.log(usuario)
     if (!usuario) {
-        res.send(404)
+        res.send('erro aqui')
       } else {
         if (await validarSenha(login.senhaUsuario, usuario.senhaUsuario)) {
           res.redirect('dashboard')
@@ -57,13 +58,18 @@ async function validarSenha(senha,hashSenha) {
     return await bcrypt.compareSync(senha, hashSenha)
 }
 
-function lerNoDisco() {
-    const str = fs.readFileSync('../user.json')
-    const obj = JSON.parse(str)
-    return obj
-}    
 
 function buscarUsuario(email) {
     const usuarios = lerNoDisco()
-    return usuarios.find(usuario => usuario.emailUsuario === email)
+    return usuarios.find(function(email){
+        console.log(usuarios.emailUsuario)
+        console.log(email)
+        return email===usuarios.emailUsuario
+    })
 }
+
+function lerNoDisco() {
+    const str = fs.readFileSync(path.join(__dirname, '../user.json'))
+    const obj = JSON.parse(str)
+    return obj
+}    
