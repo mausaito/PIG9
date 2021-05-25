@@ -19,14 +19,13 @@ module.exports.formUsuario = (req, res) => {
 module.exports.loginUsuario = async (req, res) => {
     const login = req.body
     const usuario = buscarUsuario(login.emailUsuario)
-    console.log(usuario)
     if (!usuario) {
         res.send('erro aqui')
       } else {
         if (await validarSenha(login.senhaUsuario, usuario.senhaUsuario)) {
-          res.redirect('dashboard')
+          res.render('dashboard')
         } else {
-          res.send(400)
+          res.send('outro erro')
         }
       }
     }
@@ -55,16 +54,16 @@ async function criptografarSenha(senha) {
 
 /* validando a senha com o hash*/
 async function validarSenha(senha,hashSenha) {
+    console.log(senha)
+    console.log(hashSenha)
     return await bcrypt.compareSync(senha, hashSenha)
 }
 
 
-function buscarUsuario(email) {
+function buscarUsuario(email) { 
     const usuarios = lerNoDisco()
-    return usuarios.find(function(email){
-        console.log(usuarios.emailUsuario)
-        console.log(email)
-        return email===usuarios.emailUsuario
+    return usuarios.find(function(user){
+        return user.emailUsuario===email
     })
 }
 
