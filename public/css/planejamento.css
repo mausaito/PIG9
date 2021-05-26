@@ -2,7 +2,10 @@
     box-sizing: border-box;
 }
 html{
+    padding: 0;
+    margin: 0;
     font-size: 6.25%;
+    font-family:"pidhg9";
 }
 @font-face {
     font-family:"pidhg9";
@@ -13,14 +16,10 @@ body{
     flex-direction:column;
     min-height:100vh;
     font-size:26rem;
-    font-family:"pidhg9";
     margin-top: 0;
     margin-left: 0;
+    position: relative;
 }
-
-
-
-
 main{
     display:flex;
     flex-grow:1;

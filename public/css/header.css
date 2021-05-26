@@ -8,13 +8,16 @@
 html{
     margin: 0;
     padding: 0;
+    font-family: "pidhg9";
 }
 header{
-    height: 120rem;
+    height: 90px;
     background:#94d4c1;
-    width:100vw;
+    width:100%;
     display:flex;
     justify-content:space-between;
+    position: relative;
+
 }
 
 header div a{
@@ -33,20 +36,29 @@ header div a{
     justify-self: center;
 }
 #usuario{
-    height: 20px;
+   font-size: 18px;
+}
+.border{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    width:170px;
+    height: 30px;
     border-radius: 20px;
-    border:rgb(255, 255, 255);
     background: ghostwhite;
-    display:flex;
-    font-weight:bold;
-    justify-content:center;
-    flex-direction:column;
 }
 button{
+    position: relative;
+    top: 50px;
+    right: 10px;
+    height: 20px;
     display: flex;
-    background:#94d4c1;
+    background: #94d4c1;
     border:transparent;
-    color:white;
+    color:#ffffff;
 }
 /* <header>
 <div id="logo-img">

@@ -6,22 +6,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="/css/sidebar.css"/>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="/img/">
     <title>Menu Lateral</title>
 </head>
 <body>
     <input type="checkbox" id="check">
-    <label for="check"></label>
-    <div class="menu">
-        <span class="material-icons">add</span>
-    </div>
+    <label id="icon" for="check">
+        <div class="material-icons size color">
+            <span class="size">menu</span>
+        </div>
+    </label>
     <aside class="side">
-        <ul>
-            <bottom id="botaoNovo">Novo</bottom>
-            <li>Dashboard</li>
-            <li>Transações</li>
-            <li>Planejamento</li>
-            <li>Contas</li>
+        <ul> 
+            <strong>
+                <li class="material-icons size color">
+                    <a class="link" href="">add_circle<div>Desp/Rec</div></a>
+                </li>
+                <li class="link"><a href="">Dashboard</a></li>
+                <li class="link"><a href="/transacoes">Transações</a></li>
+                <li class="link"><a href="/planejamento">Planejamento</a></li>
+                <li class="link"><a href="">Contas</a></li>
+            </strong>
         </ul>
     </aside>
+
 </body>
 </html>

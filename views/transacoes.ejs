@@ -10,14 +10,7 @@
 </head>
 <body>
     <header>
-        <div id="logo-img">
-            <a href="home.html"><img class="logo" src="pi-logo.svg"/></a>
-        </div>
-        <form id="usuario">
-            <input id="usuario"type="text" placeholder="Nome Usuario"/> <br/>
-            <!-- quando souber como puxar do banco o nome do usuario trocamos o placeholder -->
-           <button>Sair</button>
-        </form>
+        <%-include("./partials/header.ejs", { title: title })%>
     </header>
 
        
@@ -71,18 +64,7 @@
             </div>
     </main>
     <footer>
-        <div class="esqfooter">
-            COPYRIGHT
-        </div>
-        <div class="centfooter">
-
-        </div>
-        <div class="redesocial">
-            <p>Redes Sociais</p>
-            <a href="facebook.com"><img id="facebook" alt="facebook" href="#" title="facebook" src="facebook.png"/></a>
-            <a href="instagram.com"><img id="instagram" alt="instagram" href="#" title="instagram" src="Instagram.png"/></a>
-            <a href="twitter.com"><img id="twitter" alt="twiter" href="#" title="twiter" src="twitter.png"/></a>
-        </div>
+        <%-include("./partials/footer.ejs", { title: title })%>
     </footer>
     
 </body>

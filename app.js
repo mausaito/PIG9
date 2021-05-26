@@ -8,6 +8,7 @@ const bodyparser = require('body-parser')
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const sideRouter = require('./routes/side');
+const footerRouter = require('./routes/footer');
 const transactionsRouter = require('./routes/transactions');
 const plansRouter = require('./routes/plans');
 const { dirname } = require('path');
@@ -28,6 +29,7 @@ app.use(bodyparser())
 
 app.use('/', indexRouter);
 app.use('/cadastro', usersRouter);
+app.use('/sidebar', sideRouter);
 app.use('/sidebar', sideRouter);
 app.use('/planejamento', plansRouter);
 app.use('/transacoes', transactionsRouter);
