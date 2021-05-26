@@ -2,7 +2,10 @@
     box-sizing: border-box;
 }
 html{
+    padding: 0;
+    margin: 0;
     font-size: 6.25%;
+    font-family:"pidhg9";
 }
 @font-face {
     font-family:"pidhg9";
@@ -13,43 +16,9 @@ body{
     flex-direction:column;
     min-height:100vh;
     font-size:26rem;
-    font-family:"pidhg9";
     margin-top: 0;
     margin-left: 0;
-}
-header{
-    height: 120rem;
-    background:#94d4c1;
-    width:100vw;
-    display:flex;
-    justify-content:space-between;
-}
-.logo{
-    width:30%;
-    margin:14rem;
-    display: flex;
-    justify-self: center;
-}
-header div a{
-    display: flex;
-    justify-self: center;  
-}
-#logo-img{
-    display: flex;
-    justify-self: center;
-}
-#usuario{
-    border:transparent;
-    background:#94d4c1;
-    display:flex;
-    font-weight:bold;
-    justify-content:center;
-    flex-direction:column;
-}
-button{
-    background:#94d4c1;
-    border:transparent;
-    color:white;
+    position: relative;
 }
 main{
     display:flex;
