@@ -17,9 +17,7 @@ header{
     display:flex;
     justify-content:space-between;
     position: relative;
-
 }
-
 header div a{
     display: flex;
     justify-self: center; 

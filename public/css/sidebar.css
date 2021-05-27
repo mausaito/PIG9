@@ -11,6 +11,10 @@ html{
     font-size: 6.25%;
     font-family: "pidhg9";
 }
+.fixa{
+    position:fixed;
+}
+
 #check{
     display: none;
 }

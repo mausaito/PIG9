@@ -7,8 +7,6 @@ const bodyparser = require('body-parser')
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
-const sideRouter = require('./routes/side');
-const footerRouter = require('./routes/footer');
 const transactionsRouter = require('./routes/transactions');
 const plansRouter = require('./routes/plans');
 const homeRouter = require('./routes/home');
@@ -32,8 +30,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/cadastro', usersRouter);
 app.use('/home', homeRouter);
-app.use('/sidebar', sideRouter);
-app.use('/footer', footerRouter);
 app.use('/planejamento', plansRouter);
 app.use('/transacoes', transactionsRouter);
 app.use('/dashboard', dashboardRouter);

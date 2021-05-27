@@ -9,27 +9,10 @@
 </head>
 <body>
     <header>
-        <div id="logo-img">
-            <a href="../views/home.ejs"><img class="logo" src="/img/pi-logo.svg"/></a>
-        </div>
-        <form id="usuario">
-            <input id="usuario"type="text" placeholder="Nome Usuario"/> <br/>
-            <!-- quando souber como puxar do banco o nome do usuario trocamos o placeholder -->
-           <button><a href='../views/home.ejs'>Sair</a></button>
-           <!-- adicionado um link temporário ao sair para dar um "funcionalidade" ao botão Sair-->
-        </form>
+        <%-include("./partials/header.ejs")%>
     </header>
     <main>
-        <div class="menuesq">
-            <p id="botaoNovo">+ Nova (desp / rec)</p>
-            <ul id="listamenu">
-                <li>Dashboard</li>
-                <li>Transações</li>
-                <li>Planejamento</li>
-                <li>Contas</li>
-
-            </ul>
-        </div>
+        <%-include("./partials/sidebar.ejs")%>
         <div class="paineldireita">
             <div class="paineldir1">
             <!-- quando souber como puxar do banco trocamos o input -->     
@@ -62,19 +45,7 @@
 
     </main>
     <footer>
-        <div class="esqfooter">
-            COPYRIGHT
-        </div>
-        <div class="centfooter">
-
-        </div>
-        <div class="redesocial">
-            <p>Redes Sociais</p>
-            <a href="facebook.com"><img id="facebook" alt="facebook" href="#" title="facebook" src="/img/facebook.png"/></a>
-            <a href="instagram.com"><img id="instagram" alt="instagram" href="#" title="instagram" src="/img/Instagram.png"/></a>
-            <a href="twitter.com"><img id="twitter" alt="twiter" href="#" title="twiter" src="/img/twitter.png"/></a>
-        </div>
-    </footer>
-    
+        <%-include("./partials/footer.ejs")%>
+    </footer> 
 </body>
 </html>

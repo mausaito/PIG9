@@ -10,7 +10,7 @@
 </head>
 <body>
     <header>
-      ESPAÇO PARA O HEADER
+      <%-include("./partials/header.ejs", { title: title })%>
     </header>
     <main>
       <form id='novo-usuario' method="POST" action="/cadastro">
@@ -35,5 +35,8 @@
         </div>
       </form>                
     </main>
+    <footer>
+      <%-include("./partials/footer.ejs", { title: title })%>
+  </footer>
 </body>
     

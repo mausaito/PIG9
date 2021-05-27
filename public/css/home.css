@@ -2,6 +2,8 @@
     box-sizing: border-box;
   }
 html{
+    padding: 0;
+    margin: 0;
     font-size: 6.25%;
 }
  
@@ -117,40 +119,3 @@ a:link, a:visited{
     text-decoration: none;
     color: black;
 }
-footer{
-    height:110rem;
-    background:rgb(226, 226, 226);
-    width:100vw;
-    display:flex;
-}
-.esqfooter {
-    width:40%;
-    color:darkgray;
-    align-self:flex-end;
-    font-size:22rem;
-}
-.centfooter{
-    width:40%;
-}
-.redesocial{
-    width:20%;
-    align-self:center;
-}
-.redesocial p {
-    color:darkgray;
-    margin-top:15rem;
-    margin-bottom:5rem;
-}
-#facebook{
-    width:15%;
-    margin-top:5rem;
-}
-#instagram{
-    width:14%;
-    margin-top:5rem;
-}
-#twitter{
-    width:14%;
-    margin-top:5rem;
-}
-
