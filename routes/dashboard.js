@@ -1,9 +1,10 @@
 const express = require('express');
 const router = express.Router();
+const dashboardController = require ('../controller/dashboardController')
+const checkSession = require('../middlewares/checkSession');
 
+/* GET dashboard  */
 
-/* GET dashboard cadastro */
-router.get('/', (req, res) =>{
-    res.render('dashboard')
-})
+router.get('/', checkSession, dashboardController.paginaInicial)
+
 module.exports = router;

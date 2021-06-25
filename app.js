@@ -3,7 +3,8 @@ const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
-const bodyparser = require('body-parser')
+const bodyparser = require('body-parser');
+const session = require('express-session');
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
@@ -19,6 +20,12 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 app.set('sidebar', './partials/sidebar')
+
+app.use(
+  session({
+    secret: 'PIG9',
+  })
+);
 
 app.use(logger('dev'));
 app.use(express.json());

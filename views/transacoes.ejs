@@ -5,65 +5,60 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PI - Transacoes</title>
-    <link rel="stylesheet" type="text/css" href="/css/transacoes.css"/>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
     
 </head>
 <body>
     <header>
-        <%-include("./partials/header.ejs", { title: title })%>
-    </header>   
+        
+    </header>    
     <main>
         <div>
-            <%-include("./partials/sidebar.ejs", { title: title })%>
-        </div>
-        <div class="menuesq">
-            <div class="paineldireita">
-                <div class="paineldireita2">
-                    <div class="nome-campo">
-                        <label id="form-tipo">Tipo</label>
-                        <label id="form-categoria">Categoria</label>
-                        <label id="form-nome">Nome</label>
-                        <label id="form-valor">Valor</label>
-                        <label id="form-dtpgto">Data Pagamento</label>
-                    
+           
+        </div>    
+            <div class="menuesq">
+                <div class="paineldireita">
+                    <div class="paineldireita2">
+                        <form class="box" method="POST" action="/transacoes">
+                            <label class="label" for="tipoTransacao">Receita ou Despesa</label>
+                            <select class="input"  required name="tipoTransacao">
+                                <option>Receita</option>    
+                                <option>Despesa</option>
+                            </select>
+                            <label class="label" for="categoria">Categoria</label>
+                            <select class="input"  required name="categoria">
+                                <option>Salário</option>    
+                                <option>Supermercado</option>
+                                <option>Educação</option>
+                                <option>Aluguel</option>
+                                <option>Diversão</option>
+                                <option>Transporte</option>
+                                <option>Investimento</option>                            
+                            </select>
+                            <label class="label" for="form-descricao">Descrição</label>
+                            <input class="input"  type="text" placeholder="Descricao Reumida" name="descricao" maxlength="50" required/>   
+                            <label class="label">Valor</label>
+                            <input class="input"  type="number" required name="valor">
+                            <label class="label">Data Pagamento</label>
+                            <input class="input"  type="date" required name='dataPagamento'>
+                            <label class="label">Moeda</label>
+                            <select class="input"  required name="moeda">
+                                <option>Real</option>    
+                                <option>Dolar</option>
+                            </select>
+                            <label class="label">Banco</label>
+                            <input class="input"  type="text" required maxlength="50" name="banco">
+                            <label class="label">Observação</label>
+                            <textarea class="input"  maxlength="500" name="observacao"></textarea>
+                            <button class="button is-primary" type="submit">Cadastrar</button>
+                        </form>        
                     </div>
-                    <div class="campos">
-                        <select id="tipo" required>
-                            <option>Receita</option>    
-                            <option>Despesa</option>
-                        </select>
-                        <select id="categoria" required>
-                            <option>Salário</option>    
-                            <option>Freelancer</option>
-                            <option>Cursos</option>
-                            <option>Aluguel</option>
-                            <option>IPTU</option>
-                            <option>Condominio</option>
-                            <option>Transporte</option>
-                            <option>Celular</option>
-                            <option>Netflix</option>
-                            <option>Internet</option>
-                            <option>Bar e restaurante</option>
-                            <option>Cinema</option>
-                            <option>Supermercado</option>
-                        </select>
-                        <input id="nome" type="text" required maxlength="150">
-                        <input id="valor" type="number" required>
-                        <input id="data" type="date" required>
-                    </div>    
                 </div>
-                <div class="observacao">
-                    <label id="form-obs">Observação</label>
-                    <textarea id="observacao" maxlength="500"></textarea>
-                </div>
-                <div class="comandos">
-                    <button id="botaoAdicionar">Adicionar</button>
-                </div>
-            </div>
+            </div>    
     </main>
     <footer>
         <%-include("./partials/footer.ejs", { title: title })%>
     </footer>
-    
 </body>
 </html>

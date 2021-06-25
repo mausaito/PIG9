@@ -1,1 +1,128 @@
-[{"nomeUsuario":"MAURICIO YASUO SAITO","emailUsuario":"mausaito@gmail.com","nascimentoUsuario":"2010-01-01","perfilUsuario":"Conservador","senhaUsuario":"$2b$05$4CJhNCRrwbrGXeQmporLseujMlFz.hccW9vzIJ5KR8ZnmgugLIIsS"},{"nomeUsuario":"MAURICIO YASUO SAITO","emailUsuario":"MAU_SAITO@HOTMAIL.COM","nascimentoUsuario":"2010-01-01","perfilUsuario":"Conservador","senhaUsuario":"$2b$05$77ClVaqGZIveDsQJRzIEgO./W6XvACzy7x.NRZ4lVXOMKp3/MBY0q"},{"nomeUsuario":"Barba","emailUsuario":"bb@gmail.com","nascimentoUsuario":"2010-01-01","perfilUsuario":"Conservador","senhaUsuario":"$2b$05$yYWg5VkUDC2Q0sHKKjHZI.cF4akULxbVrrEPgmRLpJCkt8xik60uS"},{"nomeUsuario":"bb2@bb2.com.br","emailUsuario":"bb2@bb2.com.br","nascimentoUsuario":"2021-01-10","perfilUsuario":"Conservador","senhaUsuario":"$2b$05$cQ.7bgJvTs36AKj39KhzyOqDSGuncjIIxCyFBervlYAthuNlZybOy"}]
+[
+    {
+        "nomeUsuario": "MAURICIO YASUO SAITO",
+        "emailUsuario": "mausaito@gmail.com",
+        "nascimentoUsuario": "2010-01-01",
+        "perfilUsuario": "Conservador",
+        "senhaUsuario": "$2b$05$4CJhNCRrwbrGXeQmporLseujMlFz.hccW9vzIJ5KR8ZnmgugLIIsS"
+    },
+    {
+        "nomeUsuario": "MAURICIO YASUO SAITO",
+        "emailUsuario": "MAU_SAITO@HOTMAIL.COM",
+        "nascimentoUsuario": "2010-01-01",
+        "perfilUsuario": "Conservador",
+        "senhaUsuario": "$2b$05$77ClVaqGZIveDsQJRzIEgO./W6XvACzy7x.NRZ4lVXOMKp3/MBY0q"
+    },
+    {
+        "nomeUsuario": "Barba",
+        "emailUsuario": "bb@gmail.com",
+        "nascimentoUsuario": "2010-01-01",
+        "perfilUsuario": "Conservador",
+        "senhaUsuario": "$2b$05$yYWg5VkUDC2Q0sHKKjHZI.cF4akULxbVrrEPgmRLpJCkt8xik60uS"
+    },
+    {
+        "nomeUsuario": "bb2@bb2.com.br",
+        "emailUsuario": "bb2@bb2.com.br",
+        "nascimentoUsuario": "2021-01-10",
+        "perfilUsuario": "Conservador",
+        "senhaUsuario": "$2b$05$cQ.7bgJvTs36AKj39KhzyOqDSGuncjIIxCyFBervlYAthuNlZybOy"
+    },
+    {
+        "nomeUsuario": "Bruno Teste",
+        "emailUsuario": "bruno@game.com",
+        "nascimentoUsuario": "2019-09-09",
+        "perfilUsuario": "Conservador",
+        "senhaUsuario": "$2b$05$QAZJw1XC3vA6rA3FTvmNveqEmJyInriLcA0UJBWpo.3jbXzsrwk6m"
+    },
+    {
+        "nomeUsuario": "Bruno X",
+        "emailUsuario": "bru@game.com",
+        "nascimentoUsuario": "2011-09-09",
+        "perfilUsuario": "Conservador",
+        "senhaUsuario": "$2b$05$7EVE9X4Bs/GHhrDpLvoSDOLAJyGKp0av2B3wKXc2Sc8ylJJQr0gKC"
+    },
+    {
+        "nomeUsuario": "Mauricio Teste",
+        "emailUsuario": "mauricio.teste@gmail.com.br",
+        "nascimentoUsuario": "2010-01-01",
+        "perfilUsuario": "Conservador",
+        "senhaUsuario": "$2b$05$D4EbNtQU8dlkJQJZV8ZlB.ztBlju0dezbTLzXsIY1yKEGP/bp1ZYW"
+    },
+    {
+        "nomeUsuario": "bruno xx",
+        "emailUsuario": "bru@game.com",
+        "nascimentoUsuario": "2021-12-21",
+        "perfilUsuario": "Conservador",
+        "senhaUsuario": "$2b$05$BVqYdE/.azrm0b5VMHUCUumQp9y0iQXcd8pWx34IVhRrkmoCCtHcu"
+    },
+    {
+        "nomeUsuario": "bruno game123",
+        "emailUsuario": "game@game.net.br",
+        "nascimentoUsuario": "2021-01-01",
+        "perfilUsuario": "Conservador",
+        "senhaUsuario": "$2b$05$rTHUhOez7ESdn5VSYQZOueQ5VNDwlu7..dx3g1vfDfshWdldXOXu."
+    },
+    {
+        "nomeUsuario": "Teste Teste",
+        "emailUsuario": "teste@teste.com",
+        "nascimentoUsuario": "2010-01-01",
+        "perfilUsuario": "Conservador",
+        "senhaUsuario": "$2b$05$oFb6nfw.3xSit8xwJpBaneIEF0Av6LzoRrn8wciIhy8yVlXBCx6Hm"
+    },
+    {
+        "nomeUsuario": "mauricio teste",
+        "emailUsuario": "mau@teste.com",
+        "nascimentoUsuario": "2000-01-01",
+        "perfilUsuario": "Conservador",
+        "senhaUsuario": "$2b$05$aKjEXyT4nRHqfs7mOcZTtun1CsjfCe20fB2lekXDiLow/4ALaoRqu"
+    },
+    {
+        "nomeUsuario": "mauricio teste",
+        "emailUsuario": "mau@teste.com",
+        "nascimentoUsuario": "2000-01-01",
+        "perfilUsuario": "Conservador",
+        "senhaUsuario": "$2b$05$x8AuY45mwEcBzYRMLKz9R.GHLmrkl8gjlTorRpt6D0NZ9BCHazCF6"
+    },
+    {
+        "nomeUsuario": "mauricio teste",
+        "emailUsuario": "mau@teste.com",
+        "nascimentoUsuario": "2000-01-01",
+        "perfilUsuario": "Conservador",
+        "senhaUsuario": "$2b$05$SpBnul.SO43X/NglBMgR2u1vbcCEC8QDuRyvQkxBJnGL9gAUeDiqG"
+    },
+    {
+        "nomeUsuario": "mau mau",
+        "emailUsuario": "mau@teste.com",
+        "nascimentoUsuario": "2020-01-01",
+        "perfilUsuario": "Conservador",
+        "senhaUsuario": "$2b$05$n9jqC1HYE75gMFFztahZF.NnObSTuX5XMeEe0ozo3XCHsM0M7/JLG"
+    },
+    {
+        "nomeUsuario": "mau mau",
+        "emailUsuario": "mau@teste.com.net",
+        "nascimentoUsuario": "2000-01-01",
+        "perfilUsuario": "Conservador",
+        "senhaUsuario": "$2b$05$PORcLiw9pVKtDFzDDBTVLOPv5u2Qv/u.CoSdBBEBJZZGteGdFU2Gy"
+    },
+    {
+        "nomeUsuario": "mau muuu",
+        "emailUsuario": "mau@mauri.com",
+        "nascimentoUsuario": "2020-01-01",
+        "perfilUsuario": "Conservador",
+        "senhaUsuario": "$2b$05$C5qbqCPj2edf809apv3fu.s2m0pSpEEEzc2UzpiFDJtvacpDVcbl6"
+    },
+    {
+        "nomeUsuario": "mau muuu",
+        "emailUsuario": "mau@teste.com",
+        "nascimentoUsuario": "2020-01-01",
+        "perfilUsuario": "Conservador",
+        "senhaUsuario": "$2b$05$GtZkgHfnO5mZXSw.PXjt.uJOQ.gG6gpkCFU83S6oHSKGyk5AXwS/u"
+    },
+    {
+        "nomeUsuario": "mauricio.ssss",
+        "emailUsuario": "mau@mauricio.com.br",
+        "nascimentoUsuario": "2021-01-01",
+        "perfilUsuario": "Conservador",
+        "senhaUsuario": "$2b$05$9EkhxyxZ6s63DuEuGn/NlOaKNx8DYxJF1WEYEpKQem4X03rzA.XiO"
+    }
+]

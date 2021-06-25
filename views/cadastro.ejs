@@ -15,9 +15,25 @@
     <main>
       <form id='novo-usuario' method="POST" action="/cadastro">
         <label id="form-nomecompleto" for="nomeUsuario">Nome Completo</label>
-        <input id="nomecompleto" type="text" name="nomeUsuario"required maxlength="150">
+        <input 
+          id="nomecompleto" 
+          type="text" 
+          name="nomeUsuario"
+          required 
+          maxlength="150"
+          placeholder="Digite seu nome"
+          value="<%= content.nomeUsuario ? content.nomeUsuario : '' %>"
+          />
         <label id="form-email" for="emailUsuario">E-mail</label>
-        <input id="email" type="email" placeholder="seu-email@email.com" name="emailUsuario"required>   
+        <input 
+          id="email" 
+          type="email" 
+          placeholder="seu-email@email.com" 
+          name="emailUsuario"
+          required
+          value="<%= content.emailUsuario ? content.emailUsuario : '' %>"
+          />   
+          <span><%= error.emailUsuario ? error.emailUsuario : ''%></span>
         <label id="form-dtaNascimento" for="nascimentoUsuario">Data de Nascimento</label>
         <input id="dtaNascimento" type="date" name="nascimentoUsuario"required>
         <label id="form-perfilInvestidor" for="perfilUsuario">Perfil de Investidor</label>
@@ -27,7 +43,14 @@
           <option>Agressivo</option>
         </select>   
         <label id="form-senha" for="senhaUsuario">Senha</label>
-        <input id="senha" type="password" name="senhaUsuario" required>
+        <input 
+          id="senha" 
+          type="password" 
+          name="senhaUsuario" 
+          placeholder="Digite sua senha"
+          required
+          />
+        <%= error.senhaUsuario ? error.senhaUsuario : '' %>
         <label id="form-confsenha" for="confsenhaUsuario">Confirmação de Senha</label>
         <input id="confsenha" type="password" name="confsenhaUsuario" required>    
         <div class="comandos">

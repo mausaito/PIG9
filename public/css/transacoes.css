@@ -84,17 +84,19 @@ main{
     padding-top:10rem;
 }
 .paineldireita{
-    width:80%;
+    width:35%;
     flex-grow:1;
     display:flex;
     flex-direction:column;
+    align-items: center;
+    margin-left: 20rem;
 }
 
 .paineldireita2{
-    width:80%;
+    width:60%;
     flex-grow:1;
     display:flex;
-    flex-direction:row;
+    flex-direction:column;
     height:51%
 }
 .nome-campo{
@@ -112,14 +114,14 @@ main{
     justify-content: flex-start;
     margin-top:30rem;
 }
-#tipo, #categoria, #nome, #valor, #data {
+#tipo, #categoria, #nome, #valor, #data, #moeda, #banco{
     margin-top:30rem;
     width:350rem;
     height:20rem;
     justify-self:center;
     border-radius:5rem;
 }
-#form-tipo, #form-categoria, #form-nome, #form-valor, #form-dtpgto {
+#form-tipo, #form-categoria, #form-nome, #form-valor, #form-dtpgto, #form-moeda, #form-banco {
     border-bottom:1px dashed grey;
     margin-top:20rem;
 }

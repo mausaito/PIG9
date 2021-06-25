@@ -3,13 +3,40 @@ const fs = require('fs')
 const bcrypt = require('bcrypt')
 const path = require('path')
 
+module.exports.showCadastro = function (req, res) {
+    res.render('cadastro', {title: 'Cadastro usuário',
+      error: {},
+      content: {},
+    });
+  };
 
 module.exports.criarUsuario = async (req, res) => {
     const userForm = req.body
+
+    const usuario = await buscarUsuario(userForm.emailUsuario)
+    
+    if (usuario) {
+        res.render('cadastro', {title: 'Cadastro usuário',
+            error: {
+                emailUsuario: 'Email já cadastrado'},
+                content: req.body,
+        
+      });
+    } 
+
+    if (userForm.senhaUsuario !== userForm.confsenhaUsuario) {
+        res.render('cadastro', {title: 'Cadastro usuário',
+          error: {
+            senhaUsuario: 'Senhas incompativeis'},
+            content: req.body,
+        
+        });
+      }
+    
     req.body.senhaUsuario = await criptografarSenha(req.body.senhaUsuario)
     delete req.body.confsenhaUsuario
     salvarUser(userForm)
-    res.redirect('dashboard')
+    res.render('dashboard')
 }
 
 module.exports.formUsuario = (req, res) => {
@@ -25,7 +52,11 @@ module.exports.loginUsuario = async (req, res) => {
         if (await validarSenha(login.senhaUsuario, usuario.senhaUsuario)) {
           res.render('dashboard')
         } else {
-          res.send('outro erro')
+          res.render('home',{
+            error: {
+              email: 'Email ou senha incorreta',
+            },
+          })
         }
       }
     }

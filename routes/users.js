@@ -3,8 +3,11 @@ const router = express.Router();
 
 const userController = require ('../controller/userController')
 
+
 /* GET users cadastro. */
-router.get('/', userController.formUsuario)
+/* router.get('/', userController.formUsuario)*/
+
+router.get('/', userController.showCadastro)
 
 router.post('/', userController.criarUsuario)
 

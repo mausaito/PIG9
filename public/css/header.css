@@ -26,6 +26,7 @@ header div a{
 #logo-img{
     display: flex;
     justify-self: center;
+    
 }
 .logo{
     width:30%;
