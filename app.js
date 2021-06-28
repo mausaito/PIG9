@@ -37,6 +37,16 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/cadastro', usersRouter);
 app.use('/home', homeRouter);
+
+// rotas abaixo precisam estar autenticadas
+app.use((req, res, next) => {
+  if(!req.session.estaAutenticado) {
+      res.redirect('/home');
+      return
+  }
+  next()
+})
+
 app.use('/planejamento', plansRouter);
 app.use('/transacoes', transactionsRouter);
 app.use('/dashboard', dashboardRouter);

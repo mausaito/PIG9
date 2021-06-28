@@ -124,5 +124,54 @@
         "nascimentoUsuario": "2021-01-01",
         "perfilUsuario": "Conservador",
         "senhaUsuario": "$2b$05$9EkhxyxZ6s63DuEuGn/NlOaKNx8DYxJF1WEYEpKQem4X03rzA.XiO"
+    },
+    {
+        "nomeUsuario": "MAUSS",
+        "emailUsuario": "MAUSS@MAUSS.COM",
+        "nascimentoUsuario": "2021-01-01",
+        "perfilUsuario": "Conservador",
+        "senhaUsuario": "$2b$05$..9RyqLk.ufnu7RkvE3obujzeSI/9EMFMob6aUOX7jFyUp34eYCP."
+    },
+    {
+        "nomeUsuario": "MAUS",
+        "emailUsuario": "MAUSS@MAUSS.COM",
+        "nascimentoUsuario": "2021-01-01",
+        "perfilUsuario": "Conservador",
+        "senhaUsuario": "$2b$05$xtYvpQP8QyrE1M/hxyNp0eQ1FLIgUgAAoPprWQOheEdeC0F3A459y"
+    },
+    {
+        "nomeUsuario": "MAUS",
+        "emailUsuario": "MAUS@MAUS.COM",
+        "nascimentoUsuario": "2021-01-01",
+        "perfilUsuario": "Conservador",
+        "senhaUsuario": "$2b$05$C3GMmoWlrV2Vwdo/t3IT6OUEoE0lYbo.NFJZND9U0jz.j5MmsiznC"
+    },
+    {
+        "nomeUsuario": "MAUS",
+        "emailUsuario": "MAUS@MAUS.COM",
+        "nascimentoUsuario": "2021-01-01",
+        "perfilUsuario": "Conservador",
+        "senhaUsuario": "$2b$05$6RPKXw5wq/ZBltZPiYX7.u68gpIyDUnSyeOKfmsc33dmx1Q8QJJt."
+    },
+    {
+        "nomeUsuario": "MAUS",
+        "emailUsuario": "MAUS2@MAUS2.COM",
+        "nascimentoUsuario": "2021-01-01",
+        "perfilUsuario": "Conservador",
+        "senhaUsuario": "$2b$05$PXLMGaFns/KNHl1LOLFPXeacWE0aLJZOTK5vbCtG86vWl4WjSY2Ze"
+    },
+    {
+        "nomeUsuario": "MAUS",
+        "emailUsuario": "MAUS3@MAUS2.COM",
+        "nascimentoUsuario": "2021-01-01",
+        "perfilUsuario": "Conservador",
+        "senhaUsuario": "$2b$05$ukkNaPGzHC9PfOYTgZrnEOwvSljLHsld2TogaFp4Y5.ssm47rEe0i"
+    },
+    {
+        "nomeUsuario": "mauricio",
+        "emailUsuario": "mau3@mau.com.br",
+        "nascimentoUsuario": "2021-01-01",
+        "perfilUsuario": "Conservador",
+        "senhaUsuario": "$2b$05$L5G3sAE36Sflk3uBVyeeludP8IMTWtua5H5MUHCmI4SaiVM.XwhGa"
     }
 ]

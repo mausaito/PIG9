@@ -30,14 +30,19 @@ module.exports.criarUsuario = async (req, res) => {
             senhaUsuario: 'Senhas incompativeis'},
             content: req.body,
         
-        });
-      }
+      });
+    } else {
     
-    req.body.senhaUsuario = await criptografarSenha(req.body.senhaUsuario)
-    delete req.body.confsenhaUsuario
-    salvarUser(userForm)
-    res.render('dashboard')
-}
+        req.body.senhaUsuario = await criptografarSenha(req.body.senhaUsuario)
+        delete req.body.confsenhaUsuario
+        salvarUser(userForm)
+        req.session.nomeUsuario = userForm.nomeUsuario
+        req.session.estaAutenticado = true  
+        res.render('dashboard', {
+          user: req.session.nomeUsuario
+        });
+    }    
+};
 
 module.exports.formUsuario = (req, res) => {
     res.render('cadastro',{title: 'Cadastro usuário'});
@@ -50,7 +55,12 @@ module.exports.loginUsuario = async (req, res) => {
         res.send('erro aqui')
       } else {
         if (await validarSenha(login.senhaUsuario, usuario.senhaUsuario)) {
-          res.render('dashboard')
+          req.session.nomeUsuario = usuario.nomeUsuario
+          console.log(usuario.nomeUsuario)
+          req.session.estaAutenticado = true  
+          res.render('dashboard', {
+            user: req.session.nomeUsuario,
+          })
         } else {
           res.render('home',{
             error: {
@@ -85,8 +95,6 @@ async function criptografarSenha(senha) {
 
 /* validando a senha com o hash*/
 async function validarSenha(senha,hashSenha) {
-    console.log(senha)
-    console.log(hashSenha)
     return await bcrypt.compareSync(senha, hashSenha)
 }
 
