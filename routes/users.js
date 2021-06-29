@@ -12,7 +12,7 @@ router.get('/', userController.showCadastro)
 
 router.post('/', userController.criarUsuario)
 
-router.get('/logout',userController.logout)
+// router.get('/logout',userController.logout)
 
 router.put('/:id', userController.atualizaUsuario)
 
