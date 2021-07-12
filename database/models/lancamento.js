@@ -4,13 +4,22 @@ const {
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class Lancamento extends Model {
-    /**
-     * Helper method for defining associations.
-     * This method is not a part of Sequelize lifecycle.
-     * The `models/index` file will call this method automatically.
-     */
     static associate(models) {
-      // define association here
+      this.belongsTo(models.Usuario, {
+        foreignKey: 'idUsuarios_fk',
+        id: 'id',
+        as: 'Usuario'
+      })
+      this.belongsTo(models.Moeda, {
+        foreignKey: 'idMoedas_fk',
+        id: 'id',
+        as: 'Moeda'
+      })
+      this.belongsTo(models.Categoria, {
+        foreignKey: 'idCategorias_fk',
+        id: 'id',
+        as: 'Categoria'
+      })
     }
   };
   Lancamento.init({
@@ -21,7 +30,7 @@ module.exports = (sequelize, DataTypes) => {
       allownull: false
     },
     descricao: DataTypes.STRING(50),
-    valor: DataTypes.NUMBER(10,2),
+    valor: DataTypes.DECIMAL(10,2),
     dataPagto: DataTypes.DATE,
     observacao: DataTypes.STRING(200),
     tipoLancamento: DataTypes.ENUM('Receita', 'Despesa'),
@@ -40,17 +49,13 @@ module.exports = (sequelize, DataTypes) => {
         key: "id"
       }
     },
-    idCategorias: { type:
+    idCategorias_fk: { type:
       DataTypes.INTEGER,
       references: {
         model: "Categorias",
         key: "id"
       }
-    },
-    createdAt: DataTypes.DATE,
-    updatedAt: DataTypes.DATE,
-    createdBy: DataTypes.STRING(150),
-    updatedBy: DataTypes.STRING(150)
+    }
   }, {
     sequelize,
     modelName: 'Lancamento',

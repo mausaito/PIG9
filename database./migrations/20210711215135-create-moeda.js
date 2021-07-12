@@ -1,7 +1,7 @@
 'use strict';
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('Lancamentos', {
+    await queryInterface.createTable('Moedas', {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -11,32 +11,11 @@ module.exports = {
       id: {
         type: Sequelize.NUMBER
       },
-      descricao: {
+      nome: {
         type: Sequelize.STRING
       },
-      valor: {
-        type: Sequelize.NUMBER
-      },
-      dataPagto: {
-        type: Sequelize.DATE
-      },
-      observacao: {
+      cifra: {
         type: Sequelize.STRING
-      },
-      tipoLancamento: {
-        type: Sequelize.ENUM('Receita', 'Despesa')
-      },
-      banco: {
-        type: Sequelize.STRING
-      },
-      idUsuarios_fk: {
-        type: Sequelize.NUMBER
-      },
-      idMoedas_fk: {
-        type: Sequelize.NUMBER
-      },
-      idCategorias: {
-        type: Sequelize.NUMBER
       },
       createdAt: {
         type: Sequelize.DATE
@@ -61,6 +40,6 @@ module.exports = {
     });
   },
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable('Lancamentos');
+    await queryInterface.dropTable('Moedas');
   }
 };

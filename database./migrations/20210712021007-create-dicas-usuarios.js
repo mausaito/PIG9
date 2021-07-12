@@ -20,7 +20,7 @@ module.exports = {
       idUsuarios_fk: {
         type: Sequelize.INTEGER
       },
-      idDicasGerais: {
+      idDicasGerais_fk: {
         type: Sequelize.INTEGER
       },
       createdAt: {

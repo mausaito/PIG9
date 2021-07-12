@@ -20,6 +20,10 @@ USE `pig9` ;
 CREATE TABLE IF NOT EXISTS `pig9`.`categorias` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `nome` VARCHAR(150) NOT NULL,
+  `createdAt` DATE NOT NULL,
+  `updatedAt` DATE NOT NULL,
+  `createdBy` VARCHAR(150) NOT NULL,
+  `updatedBy` VARCHAR(150) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE INDEX `nome_UNIQUE` (`nome` ASC) VISIBLE)
 ENGINE = InnoDB
@@ -115,6 +119,10 @@ CREATE TABLE IF NOT EXISTS `pig9`.`moedas` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `nome` VARCHAR(150) NOT NULL,
   `cifra` VARCHAR(3) NOT NULL,
+  `createdAt` DATE NOT NULL,
+  `updatedAt` DATE NOT NULL,
+  `createdBy` VARCHAR(150) NOT NULL,
+  `updatedBy` VARCHAR(150) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE INDEX `nome_UNIQUE` (`nome` ASC) VISIBLE,
   UNIQUE INDEX `cifra_UNIQUE` (`cifra` ASC) VISIBLE)
@@ -136,8 +144,8 @@ CREATE TABLE IF NOT EXISTS `pig9`.`lancamentos` (
   `idUsuarios_fk` BIGINT NOT NULL DEFAULT '0',
   `idMoedas_fk` INT NOT NULL,
   `idCategorias_fk` INT NOT NULL,
-  `updatedAt` DATE NOT NULL,
   `createdAt` DATE NOT NULL,
+  `updatedAt` DATE NOT NULL,
   `updatedBy` VARCHAR(150) NOT NULL,
   `createdBy` VARCHAR(150) NOT NULL,
   PRIMARY KEY (`id`),

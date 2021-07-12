@@ -11,7 +11,7 @@ module.exports = {
       idUsuarios_fk: {
         type: Sequelize.NUMBER
       },
-      idDicasGerais: {
+      idDicasGerais_fk: {
         type: Sequelize.NUMBER
       },
       createdAt: {
