@@ -2,6 +2,7 @@ const { json } = require('body-parser')
 const fs = require('fs')
 const bcrypt = require('bcrypt')
 const path = require('path')
+const models = require('../database/models')
 
 module.exports.showCadastro = function (req, res) {
     res.render('cadastro', {title: 'Cadastro usuário',
@@ -13,18 +14,18 @@ module.exports.showCadastro = function (req, res) {
 module.exports.criarUsuario = async (req, res) => {
     const userForm = req.body
 
-    const usuario = await buscarUsuario(userForm.emailUsuario)
+    const usuario = await buscarUsuario(userForm.email)
     
     if (usuario) {
         res.render('cadastro', {title: 'Cadastro usuário',
             error: {
-                emailUsuario: 'Email já cadastrado'},
+                email: 'Email já cadastrado'},
                 content: req.body,
         
       });
     } 
 
-    if (userForm.senhaUsuario !== userForm.confsenhaUsuario) {
+    if (userForm.senha !== userForm.confSenha) {
         res.render('cadastro', {title: 'Cadastro usuário',
           error: {
             senhaUsuario: 'Senhas incompativeis'},
@@ -36,10 +37,13 @@ module.exports.criarUsuario = async (req, res) => {
         req.body.senhaUsuario = await criptografarSenha(req.body.senhaUsuario)
         delete req.body.confsenhaUsuario
         salvarUser(userForm)
-        req.session.nomeUsuario = userForm.nomeUsuario
+        //
+        // await models.Usuario.create(userForm)
+        //
+        req.session.nomeCompleto = userForm.nomeCompleto
         req.session.estaAutenticado = true  
         res.render('dashboard', {
-          user: req.session.nomeUsuario
+          user: req.session.nomeCompleto
         });
     }    
 };
@@ -50,16 +54,16 @@ module.exports.formUsuario = (req, res) => {
 
 module.exports.loginUsuario = async (req, res) => {
     const login = req.body
-    const usuario = buscarUsuario(login.emailUsuario)
+    const usuario = buscarUsuario(login.email)
     if (!usuario) {
         res.send('erro aqui')
       } else {
-        if (await validarSenha(login.senhaUsuario, usuario.senhaUsuario)) {
-          req.session.nomeUsuario = usuario.nomeUsuario
-          console.log(usuario.nomeUsuario)
+        if (await validarSenha(login.senha, usuario.senha)) {
+          req.session.nomeCompleto = usuario.nomeCompleto
+          console.log(usuario.nomeCompleto)
           req.session.estaAutenticado = true  
           res.render('dashboard', {
-            user: req.session.nomeUsuario,
+            user: req.session.nomeCompleto,
           })
         } else {
           res.render('home',{
@@ -102,7 +106,7 @@ async function validarSenha(senha,hashSenha) {
 function buscarUsuario(email) { 
     const usuarios = lerNoDisco()
     return usuarios.find(function(user){
-        return user.emailUsuario===email
+        return user.email===email
     })
 }
 

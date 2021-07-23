@@ -8,12 +8,12 @@ module.exports = (sequelize, DataTypes) => {
       this.belongsTo(models.Usuario, {
         foreignKey: 'idUsuarios_fk',
         id: 'id',
-        as: 'Usuario'
+        as: 'usuario'
       })
       this.belongsTo(models.DicasGerais, {
         foreignKey: 'idDicasGerais_fk',
         id: 'id',
-        as: 'DicasGerais'
+        as: 'dicasGerais'
       })
     }
   };
@@ -27,7 +27,7 @@ module.exports = (sequelize, DataTypes) => {
     saldo: DataTypes.NUMBER(10,0),
     dica: DataTypes.STRING(150),
     idUsuarios_fk: { type:
-      DataTypes.INTEGER,
+      DataTypes.BIGINT,
       references: {
         model: "Usuario",
         key: "id"
@@ -40,6 +40,10 @@ module.exports = (sequelize, DataTypes) => {
         key: "id"
       }
     },
+    createdAt: DataTypes.DATE,
+    updatedAt: DataTypes.DATE,
+    createdBy: DataTypes.STRING(150),
+    updatedBy: DataTypes.STRING(150)
   }, {
     sequelize,
     modelName: 'DicasUsuarios',

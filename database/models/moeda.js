@@ -8,7 +8,7 @@ module.exports = (sequelize, DataTypes) => {
       this.hasOne(models.Lancamento, {
         foreignKey: 'idMoedas_fk',
         targetKey: 'id',
-        as: 'Lancamento'
+        as: 'lancamento'
       })
     }
   };
@@ -20,7 +20,11 @@ module.exports = (sequelize, DataTypes) => {
       allownull: false
     },
     nome: DataTypes.STRING(150),
-    cifra: DataTypes.STRING(3)
+    cifra: DataTypes.STRING(3),
+    createdAt: DataTypes.DATE,
+    updatedAt: DataTypes.DATE,
+    createdBy: DataTypes.STRING(150),
+    updatedBy: DataTypes.STRING(150)
   }, {
     sequelize,
     modelName: 'Moeda',
