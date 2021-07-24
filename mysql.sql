@@ -20,10 +20,11 @@ USE `pig9` ;
 CREATE TABLE IF NOT EXISTS `pig9`.`categorias` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `nome` VARCHAR(150) NOT NULL,
-  `createdAt` DATE NOT NULL,
-  `updatedAt` DATE NOT NULL,
-  `createdBy` VARCHAR(150) NOT NULL,
-  `updatedBy` VARCHAR(150) NOT NULL,
+  `createdAt` DATE NULL DEFAULT NULL,
+  `updatedAt` DATE NULL DEFAULT NULL,
+  `createdBy` VARCHAR(150) NULL DEFAULT NULL,
+  `updatedBy` VARCHAR(150) NULL DEFAULT NULL,
+  `categoriascol` VARCHAR(45) NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE INDEX `nome_UNIQUE` (`nome` ASC) VISIBLE)
 ENGINE = InnoDB
@@ -37,10 +38,10 @@ CREATE TABLE IF NOT EXISTS `pig9`.`dicasgerais` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `dicaPerfil` VARCHAR(150) NOT NULL,
   `dicaUsuario` VARCHAR(150) NOT NULL,
-  `createdAt` DATE NOT NULL,
-  `updatedAt` DATE NOT NULL,
-  `createdBy` VARCHAR(150) NOT NULL,
-  `updatedBy` VARCHAR(150) NOT NULL,
+  `createdAt` DATE NULL DEFAULT NULL,
+  `updatedAt` DATE NULL DEFAULT NULL,
+  `createdBy` VARCHAR(150) NULL DEFAULT NULL,
+  `updatedBy` VARCHAR(150) NULL DEFAULT NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb3;
@@ -56,15 +57,16 @@ CREATE TABLE IF NOT EXISTS `pig9`.`usuarios` (
   `dataNasc` DATE NOT NULL,
   `tipoPerfil` ENUM('CONSERVADOR', 'MODERADO', 'ARROJADO') NOT NULL,
   `hashSenha` VARCHAR(60) NOT NULL,
-  `createdAt` DATE NOT NULL,
-  `updatedAt` DATE NOT NULL,
-  `createdBy` VARCHAR(150) NOT NULL,
-  `updatedBy` VARCHAR(150) NOT NULL,
+  `createdAt` DATE NULL DEFAULT NULL,
+  `updatedAt` DATE NULL DEFAULT NULL,
+  `createdBy` VARCHAR(150) NULL DEFAULT NULL,
+  `updatedBy` VARCHAR(150) NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE INDEX `email_UNIQUE` (`email` ASC) VISIBLE,
   UNIQUE INDEX `hash_senha_UNIQUE` (`hashSenha` ASC) VISIBLE,
   UNIQUE INDEX `perfil_UNIQUE` (`tipoPerfil` ASC) VISIBLE)
 ENGINE = InnoDB
+AUTO_INCREMENT = 4
 DEFAULT CHARACTER SET = utf8mb3;
 
 
@@ -144,10 +146,10 @@ CREATE TABLE IF NOT EXISTS `pig9`.`lancamentos` (
   `idUsuarios_fk` BIGINT NOT NULL DEFAULT '0',
   `idMoedas_fk` INT NOT NULL,
   `idCategorias_fk` INT NOT NULL,
-  `createdAt` DATE NOT NULL,
-  `updatedAt` DATE NOT NULL,
-  `updatedBy` VARCHAR(150) NOT NULL,
-  `createdBy` VARCHAR(150) NOT NULL,
+  `createdAt` DATE NULL DEFAULT NULL,
+  `updatedAt` DATE NULL DEFAULT NULL,
+  `updatedBy` VARCHAR(150) NULL DEFAULT NULL,
+  `createdBy` VARCHAR(150) NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   INDEX `fk_lancamentos_usuarios_idx` (`idUsuarios_fk` ASC) VISIBLE,
   INDEX `fk_lancamentos_moedas2_idx` (`idMoedas_fk` ASC) VISIBLE,

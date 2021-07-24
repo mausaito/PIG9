@@ -1,121 +1,227 @@
 * {
     box-sizing: border-box;
-  }
-html{
+}
+
+html {
     padding: 0;
     margin: 0;
     font-size: 6.25%;
 }
- 
-@font-face {
-    font-family:"pidhg9";
-    src: url("/fonts/BaiJamjuree-Light.ttf");
-}    
 
-body{
-    display:flex;
-    flex-direction:column;
-    min-height:100vh;
-    font-size:26rem;
-    font-family:"pidhg9";
+@font-face {
+    font-family: "pidhg9";
+    src: url("/fonts/BaiJamjuree-Light.ttf");
+} 
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-size: 26rem;
+    font-family: "pidhg9";
     margin-top: 0;
     margin-left: 0;
 }
-header{
-    height: 120rem;
-    background:#94d4c1;
-    width:100vw;
-    display:flex;
-    justify-content:space-around;
-}
+
 .logo{
-    width:50%;
-    margin:14rem;
+    padding: 0;
+    width: 100%;
+    margin: -1rem;
     display: flex;
+    flex-direction: column;
     justify-self: center;
+    align-items: center;
 }
-header div a{
-    display: flex;
-    justify-self: center;  
-}
+
 #logo-img{
     display: flex;
+    flex-direction: column;
     justify-self: center;
+    align-items: center;
 }
-.menuhome {
-    width:60%;
-    margin-bottom:20rem;
-}
-.menuhome a {
-    margin-left:90rem;
 
+nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #94d4c1;
 }
+nav > a {
+    text-decoration: none;
+    color: #FFFFFF;
+    font-weight: 800;
+    font-size: 32px;
+}
+
+nav ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    width: 100%;
+}
+
+nav ul li {
+    text-align: center;
+    width: 100%;
+}
+
+nav ul li a {
+    display: inline-block;
+    padding: 10px 0;
+    width: 100%;
+    text-decoration: none;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    text-align: center;
+    padding: 20px;
+}
+
 .banner-img {
     width: 100vw;
 }
-#formhome, #formBotaoCadastrar{
-    justify-self:flex-start;
-    align-self:center;
-    font-size:14rem;
-    color:gray;
-    width:20%;
-    margin-left:200rem;
-    margin-right: 10px;
-   }
 
-#email, #senha{
-    border-radius:4rem;
-    margin:2rem;
-    border:1px grey;
-    height: 20rem;
-    width:210rem;
-    
-}   
-.logar, .cadastrar{
-    width:106rem;
-    margin-top:4rem;
-    background:#b0b3b2;
-    border-radius:4rem;
-    border:2px black;
-    color: black;
+.quemsomos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 80px;
+    margin-bottom: 30px;
 }
-.menuhome{
-    align-self:flex-end;
+
+.comofunciona {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 80px;
+    margin-bottom: 30px;
 }
+
 main{
-    flex-grow:1;
-    justify-content:center;
-    
+    flex-grow: 01;
+    justify-content: center;    
 }
-.parte2{
-    display:flex;
-    flex-direction:row;
-    justify-content:space-around;
-    flex-wrap:wrap;
-    
+
+#quadrado {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 80px;
 }
-.quadrado {
-    margin-top: 30rem;
-    margin-left:10rem;
-    margin-right:6rem;
-    margin-bottom:30rem;
-    }
-.foto{
+
+#quadrado h2 {
     margin-bottom: 5rem;
-    width:400rem;
-    align-self:center;
-    }
-div h2 {
-    margin-bottom: 5rem;
-    font-size:22rem;
+    font-size:30rem;
     font-weight:bold;
+    margin-top: 50px;
 }
-p {
+
+#quadrado h2 div p {
     margin-bottom: 10rem;
     text-align:justify;
     width:400rem;
-}   
-a:link, a:visited{
+}
+
+a:link, a:visited {
     text-decoration: none;
     color: black;
+}
+
+#contato {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    color: #000000;
+}
+
+#contato p {
+    text-align: center;
+}
+footer {
+    text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+    nav {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    
+    nav ul {
+        flex-direction: row;
+        width: 70%;
+    }
+    
+    header {
+        height: 600px;
+        height: 60vh;
+        justify-content: center;
+    }
+
+    .quemsomos {
+        height: 250px;
+        height: 30vh;
+        justify-content: center;
+        min-height: 250px;
+    }
+
+    .comofunciona {
+        height: 250px;
+        height: 30vh;
+        justify-content: center;
+        min-height: 250px;
+    }
+
+    #quadrado {
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+
+    #quadrado h2 {
+        text-align: center;
+        width: 100%;
+    }
+
+    #quadrado h2 div {
+        flex-grow: 1;
+        flex-basis: 150px;
+        padding: 0 10px;
+    }
+    
+      .quadrado h2 div img {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        max-width: 500px;
+        margin: 0 auto;
+        width: 33.3333333%;
+    }
+    
+    #contato {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+    
+    #contato h2, #contato p {
+        width: 100%;
+    }
 }

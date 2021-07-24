@@ -8,7 +8,7 @@ module.exports = (sequelize, DataTypes) => {
       this.hasOne(models.Lancamento, {
         foreignKey: 'idCategorias_fk',
         targetKey: 'id',
-        as: 'Lancamento'
+        as: 'lancamento'
       })
     }
   };
@@ -19,7 +19,11 @@ module.exports = (sequelize, DataTypes) => {
       autoIncrement: true,
       allownull: false
     },
-    nome: DataTypes.STRING(150)
+    nome: DataTypes.STRING(150),
+    createdAt: DataTypes.DATE,
+    updatedAt: DataTypes.DATE,
+    createdBy: DataTypes.STRING(150),
+    updatedBy: DataTypes.STRING(150)
   }, {
     sequelize,
     modelName: 'Categoria',

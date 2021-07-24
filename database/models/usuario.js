@@ -2,29 +2,31 @@
 const {
   Model
 } = require('sequelize');
+const dataTypes = require('sequelize/lib/data-types');
+const { update } = require('sequelize/lib/model');
 module.exports = (sequelize, DataTypes) => {
   class Usuario extends Model {
     static associate(models) {
       this.hasMany(models.Lancamento, {
         foreignKey: 'idUsuarios_fk',
         targetKey: 'id',
-        as: 'Lancamento'
+        as: 'lancamento'
       })
       this.hasMany(models.DicasUsuarios, {
         foreignKey: 'idUsuarios_fk',
         targetKey: 'id',
-        as: 'DicasUsuario'
+        as: 'dicasUsuario'
       })
       this.hasMany(models.DicasPerfil, {
         foreignKey: 'idUsuarios_fk',
         targetKey: 'id',
-        as: 'DicasPerfil'
+        as: 'dicasPerfil'
       })
     }
   };
   Usuario.init({
     id: { type:
-      DataTypes.INTEGER,
+      DataTypes.BIGINT,
       primaryKey: true,
       autoIncrement: true,
       allownull: false
@@ -34,6 +36,10 @@ module.exports = (sequelize, DataTypes) => {
     dataNasc: DataTypes.DATE,
     tipoPerfil: DataTypes.ENUM('Conservador', 'Moderado', 'Arrojado'),
     hashSenha: DataTypes.STRING(60),
+    createdAt: DataTypes.DATE,
+    updatedAt: DataTypes.DATE,
+    createdBy: DataTypes.STRING(150),
+    updatedBy: DataTypes.STRING(150)
   }, {
     sequelize,
     modelName: 'Usuario',

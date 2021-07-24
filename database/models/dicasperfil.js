@@ -13,25 +13,25 @@ module.exports = (sequelize, DataTypes) => {
       this.belongsTo(models.Usuario, {
         foreignKey: 'idUsuarios_fk',
         id: 'id',
-        as: 'Usuario'
+        as: 'usuario'
       })
       this.belongsTo(models.DicasGerais, {
         foreignKey: 'idDicasGerais_fk',
         id: 'id',
-        as: 'DicasGerais'
+        as: 'dicasGerais'
       })
     }
   };
   DicasPerfil.init({
     idUsuarios_fk: { type:
-      DataTypes.NUMBER,
+      DataTypes.BIGINT,
       references: {
         model: "Usuario",
         key: "id"
       }
     },
     idDicasGerais_fk: { type:
-      DataTypes.NUMBER,
+      DataTypes.INTEGER,
       references: {
         model: "DicasGerais",
         key: "id"
