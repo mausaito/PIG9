@@ -20,4 +20,6 @@ router.delete('/:id', userController.deletaUsuario)
 
 router.post('/login',  userController.loginUsuario)
 
+router.get('/login',  userController.paginaLogin)
+
 module.exports = router;

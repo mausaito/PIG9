@@ -45,7 +45,7 @@ module.exports.criarUsuario = async (req, res) => {
         //
         req.session.nomeCompleto = userForm.nomeCompleto
         req.session.estaAutenticado = true  
-        res.render('dashboard', {
+        res.render('login', {
           user: req.session.nomeCompleto
         });
         return
@@ -57,11 +57,21 @@ module.exports.formUsuario = (req, res) => {
     return
 }
 
+module.exports.paginaLogin = async (req, res) => {
+    res.render('login',{title: 'login usuário'});
+    return
+}
+
+
 module.exports.loginUsuario = async (req, res) => {
     const login = req.body
     const usuario = buscarUsuario(login.email)
     if (!usuario) {
-        res.send('erro aqui')
+        res.render('cadastro/login', {title: 'Cadastro usuário',
+        error: {
+            email: 'Email ou senha incorretos'},
+            content: req.body,
+        })  
         return
       } else {
         if (await validarSenha(login.hashSenha, usuario.hashSenha)) {

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+</head>
+<body>
+    <form id="formhome" action="/cadastro/login" method="POST">
+        <label for="emailUsuario">Login</label><br/>
+        <input id="email" type="email" placeholder="Digite seu email" name="email" required maxlength="150"/><br/>
+        <label for="senhaUsuario">Senha</label><br/>    
+        <input id="senha" type="password" name="hashSenha" required/> <br/>
+        <input class="logar" type="submit" value="Entrar" />
+    </form>
+    <form id="formBotaoCadastrar" action="/cadastro" method="GET">
+        <input class="cadastrar" type="submit" value="Cadastre-se" />
+    </form>
+</body>
+</html>
