@@ -1,49 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PI - Cadastro Usuario</title>
-  <link rel="stylesheet" href='/css/cadastro.css' />
-
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PI - Cadastro Usuario</title>
+    <link rel="stylesheet" href='/css/cadastro.css'/>
+    
 </head>
-
 <body>
-  <header>
-    <%-include("./partials/header.ejs", { title: title })%>
-  </header>
-  <main>
-    <form id='novoUsuario' method="POST" action="/cadastro">
-      <label id="formNomeCompleto" for="nomeCompleto">Nome Completo</label>
-      <input id="nomeUsuario" type="text" name="nomeCompleto" required maxlength="150" placeholder="Digite seu nome"
-        value="<%= content.nomeCompleto ? content.nomeCompleto : '' %>" />
-      <label id="formEmail" for="email">E-mail</label>
-      <input id="emailUsuario" type="email"  name="email" placeholder="seu-email@email.com" required
-        value="<%= content.email ? content.email : '' %>" />
-      <span>
-        <%= error.email ? error.email : '' %>
-      </span>
-      <label id="formDtaNascimento" for="dataNasc">Data de Nascimento</label>
-      <input id="nascUsuario" type="date" name="dataNasc" required>
-      <label id="form-perfilInvestidor" for="perfilUsuario">Perfil de Investidor</label>
-      <select id="perfilInvestidor" name="perfilUsuario" required>
-        <option>Conservador</option>
-        <option>Moderado</option>
-        <option>Agressivo</option>
-      </select>
-      <label id="form-senha" for="senha">Senha</label>
-      <input id="senhaUsuario" type="password" name="senha" placeholder="Digite sua senha" required />
-      <%= error.senha ? error.senha : '' %>
+    <header>
+      <%-include("./partials/header.ejs", { title: title })%>
+    </header>
+    <main>
+      <form id='novoUsuario' method="POST" action="/cadastro">
+        <label id="formNomeCompleto" for="nomeCompleto">Nome Completo</label>
+        <input 
+          id="nomeUsuario" 
+          type="text" 
+          name="nomeCompleto"
+          required 
+          maxlength="150"
+          placeholder="Digite seu nome"
+          value="<%= content.nomeCompleto ? content.nomeCompleto : '' %>"
+          />
+        <label id="formEmail" for="email">E-mail</label>
+        <input 
+          id="emailUsuario" 
+          type="email" 
+          placeholder="seu-email@email.com" 
+          name="email"
+          required
+          value="<%= content.email ? content.email : '' %>"
+          />   
+          <span><%= error.email ? error.email : ''%></span>
+        <label id="form-dtaNascimento" for="dataNasc">Data de Nascimento</label>
+        <input id="nascUsuario" type="date" name="dataNasc"required>
+        <label id="form-perfilInvestidor" for="tipoPerfil">Perfil de Investidor</label>
+        <select id="perfilUsuario" name="tipoPerfil"required>
+          <option>Conservador</option>    
+          <option>Moderado</option>
+          <option>Agressivo</option>
+        </select>   
+        <label id="formSenha" for="hashSenha">Senha</label>
+        <input 
+          id="senhaUsuario" 
+          type="password" 
+          name="hashSenha" 
+          placeholder="Digite sua senha"
+          required
+          />
+        <%= error.hashSenha ? error.hashSenha : '' %>
         <label id="formConfsenha" for="confSenha">Confirmação de Senha</label>
-        <input id="confSenhaUsuario" type="password" name="confSenha" required>
+        <input id="senhaUsuario" type="password" name="confSenha" required>    
         <div class="comandos">
           <input id="botaoCadastrar" type="submit" value="Cadastrar" />
         </div>
-    </form>
-  </main>
-  <footer>
-    <%-include("./partials/footer.ejs", { title: title })%>
+      </form>                
+    </main>
+    <footer>
+      <%-include("./partials/footer.ejs", { title: title })%>
   </footer>
 </body>
+    

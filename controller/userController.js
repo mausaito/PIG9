@@ -9,6 +9,7 @@ module.exports.showCadastro = function (req, res) {
       error: {},
       content: {},
     });
+    return
   };
 
 module.exports.criarUsuario = async (req, res) => {
@@ -23,19 +24,21 @@ module.exports.criarUsuario = async (req, res) => {
                 content: req.body,
         
       });
+      return
     } 
 
-    if (userForm.senha !== userForm.confSenha) {
+    if (userForm.hashSenha !== userForm.confSenha) {
         res.render('cadastro', {title: 'Cadastro usuário',
           error: {
-            senhaUsuario: 'Senhas incompativeis'},
+            hashSenha: 'Senhas incompativeis'},
             content: req.body,
         
       });
+      return
     } else {
     
-        req.body.senhaUsuario = await criptografarSenha(req.body.senhaUsuario)
-        delete req.body.confsenhaUsuario
+        req.body.hashSenha = await criptografarSenha(req.body.hashSenha)
+        delete req.body.confSenha
         salvarUser(userForm)
         //
         // await models.Usuario.create(userForm)
@@ -45,11 +48,13 @@ module.exports.criarUsuario = async (req, res) => {
         res.render('dashboard', {
           user: req.session.nomeCompleto
         });
+        return
     }    
 };
 
 module.exports.formUsuario = (req, res) => {
     res.render('cadastro',{title: 'Cadastro usuário'});
+    return
 }
 
 module.exports.loginUsuario = async (req, res) => {
@@ -57,30 +62,36 @@ module.exports.loginUsuario = async (req, res) => {
     const usuario = buscarUsuario(login.email)
     if (!usuario) {
         res.send('erro aqui')
+        return
       } else {
-        if (await validarSenha(login.senha, usuario.senha)) {
+        if (await validarSenha(login.hashSenha, usuario.hashSenha)) {
           req.session.nomeCompleto = usuario.nomeCompleto
           console.log(usuario.nomeCompleto)
           req.session.estaAutenticado = true  
           res.render('dashboard', {
             user: req.session.nomeCompleto,
           })
+          return
         } else {
           res.render('home',{
             error: {
               email: 'Email ou senha incorreta',
             },
+            
           })
+          return
         }
       }
     }
 
 module.exports.atualizaUsuario = (req, res) => {
     res.send('USUARIO ATUALIZADO')
+    return
 }
 
 module.exports.deletaUsuario = (req, res) => {
     res.send('USUARIO DELETADO')
+    return
 }
 
 /* Salva Usuarios no arquivo user.json*/
