@@ -22,7 +22,7 @@ module.exports.criarUsuario = async (req, res) => {
             error: {
                 email: 'Email já cadastrado'},
                 content: req.body,
-        
+     
       });
       return
     } 
@@ -67,11 +67,11 @@ module.exports.loginUsuario = async (req, res) => {
     const login = req.body
     const usuario = buscarUsuario(login.email)
     if (!usuario) {
-        res.render('cadastro/login', {title: 'Cadastro usuário',
+        res.render('login', {title: 'Login usuário',
         error: {
             email: 'Email ou senha incorretos'},
             content: req.body,
-        })  
+        });  
         return
       } else {
         if (await validarSenha(login.hashSenha, usuario.hashSenha)) {
