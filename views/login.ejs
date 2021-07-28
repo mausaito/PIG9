@@ -12,7 +12,6 @@
         <input id="email" type="email" placeholder="Digite seu email" name="email" required maxlength="150"/><br/>
         <label for="senhaUsuario">Senha</label><br/>    
         <input id="senha" type="password" name="hashSenha" required/> <br/>
-        <%= error.email ? error.email : '' %>
         <input class="logar" type="submit" value="Entrar" />
     </form>
     <form id="formBotaoCadastrar" action="/cadastro" method="GET">

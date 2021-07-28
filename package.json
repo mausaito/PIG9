@@ -20,5 +20,17 @@
     "morgan": "~1.9.1",
     "mysql2": "^2.2.5",
     "sequelize": "^6.6.5"
-  }
+  },
+  "description": "Projeto Integrador Digital House - Grupo 9",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mausaito/PIG9.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mausaito/PIG9/issues"
+  },
+  "homepage": "https://github.com/mausaito/PIG9#readme"
 }

@@ -5,6 +5,6 @@ const checkSession = require('../middlewares/checkSession');
 
 /* GET dashboard  */
 
-router.get('/', checkSession, dashboardController.paginaInicial)
+router.get('/', dashboardController.paginaInicial)
 
 module.exports = router;
