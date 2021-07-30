@@ -19,14 +19,12 @@ USE `pig9` ;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `pig9`.`categorias` (
   `id` INT NOT NULL AUTO_INCREMENT,
-  `nome` VARCHAR(150) NOT NULL,
-  `createdAt` DATE NULL DEFAULT NULL,
-  `updatedAt` DATE NULL DEFAULT NULL,
+  `nome` VARCHAR(150) NULL DEFAULT NULL,
+  `createdAt` DATETIME NULL DEFAULT NULL,
+  `updatedAt` DATETIME NULL DEFAULT NULL,
   `createdBy` VARCHAR(150) NULL DEFAULT NULL,
   `updatedBy` VARCHAR(150) NULL DEFAULT NULL,
-  `categoriascol` VARCHAR(45) NULL DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE INDEX `nome_UNIQUE` (`nome` ASC) VISIBLE)
+  PRIMARY KEY (`id`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb3;
 
@@ -38,8 +36,8 @@ CREATE TABLE IF NOT EXISTS `pig9`.`dicasgerais` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `dicaPerfil` VARCHAR(150) NOT NULL,
   `dicaUsuario` VARCHAR(150) NOT NULL,
-  `createdAt` DATE NULL DEFAULT NULL,
-  `updatedAt` DATE NULL DEFAULT NULL,
+  `createdAt` DATETIME NULL DEFAULT NULL,
+  `updatedAt` DATETIME NULL DEFAULT NULL,
   `createdBy` VARCHAR(150) NULL DEFAULT NULL,
   `updatedBy` VARCHAR(150) NULL DEFAULT NULL,
   PRIMARY KEY (`id`))
@@ -57,8 +55,8 @@ CREATE TABLE IF NOT EXISTS `pig9`.`usuarios` (
   `dataNasc` DATE NOT NULL,
   `tipoPerfil` ENUM('CONSERVADOR', 'MODERADO', 'ARROJADO') NOT NULL,
   `hashSenha` VARCHAR(60) NOT NULL,
-  `createdAt` DATE NULL DEFAULT NULL,
-  `updatedAt` DATE NULL DEFAULT NULL,
+  `createdAt` DATETIME NULL DEFAULT NULL,
+  `updatedAt` DATETIME NULL DEFAULT NULL,
   `createdBy` VARCHAR(150) NULL DEFAULT NULL,
   `updatedBy` VARCHAR(150) NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
@@ -97,10 +95,10 @@ CREATE TABLE IF NOT EXISTS `pig9`.`dicasusuario` (
   `dica` VARCHAR(300) NOT NULL,
   `idUsuarios_fk` BIGINT NOT NULL,
   `idDicasGerais_fk` INT NOT NULL,
-  `createdAt` DATE NOT NULL,
-  `updatedAt` DATE NOT NULL,
-  `createdBy` VARCHAR(150) NOT NULL,
-  `updatedBy` VARCHAR(150) NOT NULL,
+  `createdAt` DATETIME NULL DEFAULT NULL,
+  `updatedAt` DATETIME NULL DEFAULT NULL,
+  `createdBy` VARCHAR(150) NULL DEFAULT NULL,
+  `updatedBy` VARCHAR(150) NULL DEFAULT NULL,
   PRIMARY KEY (`id`, `idDicasGerais_fk`),
   INDEX `fk_dicas_usuario_usuarios1_idx` (`idUsuarios_fk` ASC) VISIBLE,
   INDEX `fk_dicas_usuario_dicas_gerais1_idx` (`idDicasGerais_fk` ASC) VISIBLE,
@@ -121,13 +119,11 @@ CREATE TABLE IF NOT EXISTS `pig9`.`moedas` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `nome` VARCHAR(150) NOT NULL,
   `cifra` VARCHAR(3) NOT NULL,
-  `createdAt` DATE NOT NULL,
-  `updatedAt` DATE NOT NULL,
-  `createdBy` VARCHAR(150) NOT NULL,
-  `updatedBy` VARCHAR(150) NOT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE INDEX `nome_UNIQUE` (`nome` ASC) VISIBLE,
-  UNIQUE INDEX `cifra_UNIQUE` (`cifra` ASC) VISIBLE)
+  `createdAt` DATETIME NULL DEFAULT NULL,
+  `updatedAt` DATETIME NULL DEFAULT NULL,
+  `createdBy` VARCHAR(150) NULL DEFAULT NULL,
+  `updatedBy` VARCHAR(150) NULL DEFAULT NULL,
+  PRIMARY KEY (`id`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb3;
 
@@ -146,8 +142,8 @@ CREATE TABLE IF NOT EXISTS `pig9`.`lancamentos` (
   `idUsuarios_fk` BIGINT NOT NULL DEFAULT '0',
   `idMoedas_fk` INT NOT NULL,
   `idCategorias_fk` INT NOT NULL,
-  `createdAt` DATE NULL DEFAULT NULL,
-  `updatedAt` DATE NULL DEFAULT NULL,
+  `createdAt` DATETIME NULL DEFAULT NULL,
+  `updatedAt` DATETIME NULL DEFAULT NULL,
   `updatedBy` VARCHAR(150) NULL DEFAULT NULL,
   `createdBy` VARCHAR(150) NULL DEFAULT NULL,
   PRIMARY KEY (`id`),

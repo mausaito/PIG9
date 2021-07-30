@@ -1,51 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PI - Dashboard</title>
-    <link rel="stylesheet" href='/css/dashboard.css'/>
+    <link rel="stylesheet" href='/css/dashboard.css' />
 </head>
+
 <body>
     <header>
         <%-include("./partials/header.ejs")%>
     </header>
     <main>
         <%-include("./partials/sidebar.ejs")%>
-        <div class="paineldireita">
-            <div class="paineldir1">
-            <!-- quando souber como puxar do banco trocamos o input -->   
-                <label for="periodo">Periodo</label>           
-                <input class="periodo" type="text" placeholder="Janeiro 2021"/>
-            </div>
-            <div class="paineldir2">
-                <!-- quando souber como puxar do banco trocamos o input -->     
+            <div class="paineldireita">
+                <div class="paineldir1">
+                    <!-- quando souber como puxar do banco trocamos o input -->
+                    <label for="periodo">Periodo</label>
+                    <input class="periodo" type="text" placeholder="Janeiro 2021" />
+                </div>
+                <div class="paineldir2">
+                    <!-- quando souber como puxar do banco trocamos o input -->
                     <div class="Saldoatual">
-                        <label>Saldo Atual</label><br/>           
-                        <input type="text" placeholder="R$ 1.000,00"/><br/>
+                        <label>Saldo Atual</label><br />
+                        <input type="text" placeholder="R$ 1.000,00" /><br />
                     </div>
                     <div class="Totaldespesas">
-                        <label>Total Despesas</label><br/>           
-                        <input type="text" placeholder="R$ 2.000,00"/><br/>
+                        <label>Total Despesas</label><br />
+                        <input type="text" placeholder="R$ 2.000,00" /><br />
                     </div>
                     <div class="Totalreceitas">
-                        <label>Total Receitas</label><br/>           
-                        <input type="text" placeholder="R$ 3.000,00"/><br/>
+                        <label>Total Receitas</label><br />
+                        <input type="text" placeholder="R$ 3.000,00" /><br />
                     </div>
+                </div>
+                <div class="paineldir3">
+                    Grafico 1
+                </div>
+                <div class="paineldir4">
+                    Grafico 2
+                </div>
+
             </div>
-            <div class="paineldir3">
-                Grafico 1
-            </div>
-            <div class="paineldir4">
-                Grafico 2
-            </div>
-    
-        </div>
 
     </main>
     <footer>
         <%-include("./partials/footer.ejs")%>
-    </footer> 
+    </footer>
 </body>
+
 </html>

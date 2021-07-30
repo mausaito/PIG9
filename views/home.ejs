@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PI - Home</title>
     <link rel="stylesheet" type="text/css" href="/css/normalize.css">
-    <link rel="stylesheet" href='/css/home.css'/>
+    <link rel="stylesheet" href='/css/home.css' />
 </head>
+
 <body>
     <nav>
-        <a href="home.html"><img class="logo" src="../img/pi-logo.svg"/></a>
+        <a href="home.html"><img class="logo" src="../img/pi-logo.svg" /></a>
         <ul>
             <li><a href="#quemsomos">Quem somos</a></li>
             <li><a href="#comofunciona">Como funciona</a></li>
@@ -21,7 +23,7 @@
                 </form>
             </li>
         </ul>
-            
+
         <!--<form id="formhome" action="/cadastro/login" method="POST">
                 <label for="emailUsuario">Login</label><br/>
                 <input id="email" type="email" placeholder="Digite seu email" name="emailUsuario" required maxlength="150"/><br/>
@@ -33,40 +35,53 @@
                 <input class="cadastrar" type="submit" value="Cadastre-se" />
         </form>-->
     </nav>
-        <div class="banner">
-            <img class="banner-img" src="../img/banner3.jpg"/>
-        </div>
+    <div class="banner">
+        <img class="banner-img" src="../img/banner3.jpg" />
+    </div>
     </header>
     <section id='quemsomos' class="quemsomos">
         <h2>Quem Somos</h2>
-        <p>- Somos um time de estudantes que enxerga uma oportunidade de auxiliar inúmeras pessoas, dada tantas dificuldades, em melhorar sua realidade financeira, com gestão de gastos e análise de suas práticas. O projeto tem intuito de não apenas trazer um controle de despesas, mas explicar as melhores formas e aculturamento de gestão financeira, organização e disciplina para o futuro, transformando seus usuários em pessoas com visão de futuro, não apenas em relação financeira, mas também na qualidade de vida.</p>
+        <p>- Somos um time de estudantes que enxerga uma oportunidade de auxiliar inúmeras pessoas, dada tantas
+            dificuldades, em melhorar sua realidade financeira, com gestão de gastos e análise de suas práticas. O
+            projeto tem intuito de não apenas trazer um controle de despesas, mas explicar as melhores formas e
+            aculturamento de gestão financeira, organização e disciplina para o futuro, transformando seus usuários em
+            pessoas com visão de futuro, não apenas em relação financeira, mas também na qualidade de vida.</p>
     </section>
     <section id='comofunciona' class="comofunciona">
         <h2>Como Funciona</h2>
-        <p>- O uso do aplicativo ajuda a dar visão de gastos e receitas em períodos menores e maiores, de forma micro (gerando dados diários e semanais) e macro (gerando informações mensais e anuais). Em poucos passos você pode melhorar a sua saúde financeira e ter mais conquistas. O aplicativo é um centralizador de informação trazendo possibilidades de melhorar sua gestão de gastos como também trazer informações relevantes do mercado financeiro para te auxiliar com suas decisões de investimento. Serão 3 passos que são simples, mas fazem muita diferença nos resultados, que são:</p>
+        <p>- O uso do aplicativo ajuda a dar visão de gastos e receitas em períodos menores e maiores, de forma micro
+            (gerando dados diários e semanais) e macro (gerando informações mensais e anuais). Em poucos passos você
+            pode melhorar a sua saúde financeira e ter mais conquistas. O aplicativo é um centralizador de informação
+            trazendo possibilidades de melhorar sua gestão de gastos como também trazer informações relevantes do
+            mercado financeiro para te auxiliar com suas decisões de investimento. Serão 3 passos que são simples, mas
+            fazem muita diferença nos resultados, que são:</p>
     </section>
     <main>
         <section id="quadrado">
             <h2>Passo 1 - Controlar os gastos</h2>
             <div>
-            <img class="controle despesas" alt="controle despesas" title="Controle despesas" src="../img/controle.png">
-                    <p>O primeiro passo para administrar melhor seu dinheiro é controlá-lo! E isso é muito fácil através do PI. Basta lançar as receitas e despesas!</p>
+                <img class="controle despesas" alt="controle despesas" title="Controle despesas"
+                    src="../img/controle.png">
+                <p>O primeiro passo para administrar melhor seu dinheiro é controlá-lo! E isso é muito fácil através do
+                    PI. Basta lançar as receitas e despesas!</p>
             </div>
         </section>
 
         <section id="quadrado">
             <h2>Passo 2 - Saia do vermelho</h2>
             <div>
-            <img class="saia do vermelho" alt="saia do vermelho " title="Saia do vermelho" src="../img/wallet.png">
-                    <p>Caso você esteja gastando mais do que recebendo nós daremos dicas para sair do vermelho e fazer o seu dinheiro ficar na carteira!</p>
+                <img class="saia do vermelho" alt="saia do vermelho " title="Saia do vermelho" src="../img/wallet.png">
+                <p>Caso você esteja gastando mais do que recebendo nós daremos dicas para sair do vermelho e fazer o seu
+                    dinheiro ficar na carteira!</p>
             </div>
         </section>
-            
+
         <section id="quadrado">
             <h2>Passo 3 - Invista melhor</h2>
             <div>
-            <img class="invista" alt="invista" title="Invista" src="../img/investing.png">
-                    <p>Após conseguir equilibrar as suas receitas e despesas (ou caso já esteja equilibrado) nós passaremos dicas de como investir melhor o seu dinheiro e faze-lo trabalhar para você!</p>
+                <img class="invista" alt="invista" title="Invista" src="../img/investing.png">
+                <p>Após conseguir equilibrar as suas receitas e despesas (ou caso já esteja equilibrado) nós passaremos
+                    dicas de como investir melhor o seu dinheiro e faze-lo trabalhar para você!</p>
             </div>
         </section>
 
@@ -81,11 +96,12 @@
                 <img src="../img/mail.png" alt="Email">
                 <p><a href="mailto:pig9@pignine.com">pig9@pignine.com </a></p>
             </div>
-    </section>
+        </section>
     </main>
     <footer>
         <a href="home">Topo</a>
-        <%-include("./partials/footer.ejs")%>
+        <%-include(". /partials/footer.ejs")%>
     </footer>
 </body>
+
 </html>

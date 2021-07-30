@@ -1,42 +1,49 @@
 const { json } = require('body-parser')
 const fs = require('fs')
 const path = require('path')
+const models = require('../database/models');
 
-
-module.exports.transacoes = function (req, res) {
+module.exports.transacoes = async function (req, res) {
+  const moedas = await models.Moeda.findAll()
+  const categorias = await models.Moeda.findAll()
     res.render('transacoes', {title: 'Cadastro usuário',
       error: {},
       content: {},
+      moedas: moedas,
+      categorias: categorias
     });
+    return
   };
 
-module.exports.criarTransacao = (req, res) => {
+module.exports.criarTransacao = async (req, res) => {
     const transacaoForm = req.body
     
-    salvarTransacao(transacaoForm)
-    res.redirect('transacoes/lista')
+    await models.Lancamento.create(transacaoForm);
+    res.redirect('/lista')
+    return
 }
 
-module.exports.listarTransacao = (req, res) => {
-    const listaTransacao = lerTransacaoNoDisco()
+module.exports.listarTransacao = async (req, res) => {
+  const moedas = await models.Transacoes.findAll()
 
     res.render('lista', {listaTransacao})
+    return
 }
 
 
 
 
-/* Salva Transacao no arquivo transacao.json*/
-function salvarTransacao(objeto) {
-    const transacoesCriadas = require('../transacao.json')
-    transacoesCriadas.push(objeto)
-    const str = JSON.stringify(transacoesCriadas)
-    fs.writeFileSync('transacao.json', str)
-}
+// /* Salva Transacao no arquivo transacao.json*/
+// function salvarTransacao(objeto) {
+//     const transacoesCriadas = require('../transacao.json')
+//     transacoesCriadas.push(objeto)
+//     const str = JSON.stringify(transacoesCriadas)
+//     fs.writeFileSync('transacao.json', str)
+// }
 
-/* Ler no disco as transações*/
-function lerTransacaoNoDisco() {
-  const str = fs.readFileSync(path.join(__dirname, '../transacao.json'))
-  const obj = JSON.parse(str)
-  return obj
-}    
+// /* Ler no disco as transações*/
+// function lerTransacaoNoDisco() {
+//   const str = fs.readFileSync(path.join(__dirname, '../transacao.json'))
+//   const obj = JSON.parse(str)
+//   return obj
+// }    

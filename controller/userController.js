@@ -57,7 +57,7 @@ module.exports.formUsuario = (req, res) => {
     return
 }
 
-module.exports.paginaLogin = async (req, res) => {
+module.exports.paginaLogin = (req, res) => {
     res.render('login',{title: 'login usuário'});
     return
 }

@@ -1,57 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PI - Planejamento</title>
-    <link rel="stylesheet" type="text/css" href="/css/planejamento.css"/>
-  
+    <link rel="stylesheet" type="text/css" href="/css/planejamento.css" />
+
 </head>
+
 <body>
     <header>
         <%-include("./partials/header.ejs", { title: title })%>
     </header>
     <main>
         <%-include("./partials/sidebar.ejs", { title: title })%>
-        <div class="menuesq">
+            <div class="menuesq">
                 <div class="infos">
                     <p>Com base no histórico o seu saldo é de: <input type="text"></p>
                     <p>Com base nas informações abaixo, os juros e inflação atual</p>
                     <p>Prazo: <input type="text"></p>
                     <p>Valor investido mensal: <input type="text"></p>
                     <p>Você consiguirá alcançar 1 milhão em <input type="text"></p>
-                    <p>Considerando as informações abaixo a sua previsão de aposentadoria é:</p>                
-                </div>          
-        <div class="grafico"></div>
-        <div id="chart"></div>        
-        <script src="https://www.gstatic.com/charts/loader.js"></script>
-        <script>
-            google.charts.load('current', {packages: ['corechart']});
-            google.charts.setOnLoadCallback(drawChart)
-            function drawChart(){
-                const container = document.querySelector('#chart')
-                const data = new google.visualization.arrayToDataTable([
-                    [ 'Tempo', 'Valor' ],
-                    [ '2 anos', 50000 ],
-                    [ '4 anos', 150000 ],
-                    [ '6 anos', 300000 ],
-                    [ '8 anos', 600000 ],
-                    [ '10 anos', 1000000 ]
-                ])
-                const options = {
-                    title: 'TEMPO X VALOR',
-                    height: 500,
-                    width: 1500,
-                }
-                const chart = new google.visualization.LineChart(container)
-                chart.draw(data, options)
-        }
-        </script>                
-        </div>
+                    <p>Considerando as informações abaixo a sua previsão de aposentadoria é:</p>
+                </div>
+                <div class="grafico"></div>
+                <div id="chart"></div>
+                <script src="https://www.gstatic.com/charts/loader.js"></script>
+                <script>
+                    google.charts.load('current', { packages: ['corechart'] });
+                    google.charts.setOnLoadCallback(drawChart)
+                    function drawChart() {
+                        const container = document.querySelector('#chart')
+                        const data = new google.visualization.arrayToDataTable([
+                            ['Tempo', 'Valor'],
+                            ['2 anos', 50000],
+                            ['4 anos', 150000],
+                            ['6 anos', 300000],
+                            ['8 anos', 600000],
+                            ['10 anos', 1000000]
+                        ])
+                        const options = {
+                            title: 'TEMPO X VALOR',
+                            height: 500,
+                            width: 1500,
+                        }
+                        const chart = new google.visualization.LineChart(container)
+                        chart.draw(data, options)
+                    }
+                </script>
+            </div>
     </main>
     <footer>
         <%-include("./partials/footer.ejs", { title: title })%>
     </footer>
-    </body>
+</body>
+
 </html>

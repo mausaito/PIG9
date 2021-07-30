@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,35 +15,49 @@
     </header>
     <table class="table is-bordered is-striped is-narrow is-hoverable">
         <thead>
-        <tr>
-            <th>Tipo</th>
-            <th>Categoria</th>
-            <th>Descrição</th>
-            <th>Valor</th>
-            <th>Data de Pagamento</th>
-            <th>Moeda</th>
-            <th>Banco</th>
-            <th>Ações</th>
-        </tr>
+            <tr>
+                <th>Tipo</th>
+                <th>Categoria</th>
+                <th>Descrição</th>
+                <th>Valor</th>
+                <th>Data de Pagamento</th>
+                <th>Moeda</th>
+                <th>Banco</th>
+                <th>Ações</th>
+            </tr>
         </thead>
         <tbody>
             <% for (const transacao of listaTransacao) { %>
-            <tr>
-                <td><%= transacao.tipoTransacao %></td>
-                <td><%= transacao.categoria %></td>
-                <td><%= transacao.descricao %></td>
-                <td><%= transacao.valor %></td>
-                <td><%= transacao.dataPagamento %></td>
-                <td><%= transacao.moeda %></td>
-                <td><%= transacao.banco %></td>
-                <td>
-                    <button class="button is-info"><a href="">Atualizar</a></button>
-                    <button class="button is-danger"><a href="">Deletar</a></button>
-                </td>
-                <% } %>            
-            </tr>
-        </tbody> 
-    </table>       
-<button class="button is-primary"><a href="/transacoes">+ Despesa / Receita</a></button>
+                <tr>
+                    <td>
+                        <%= transacao.tipoTransacao %>
+                    </td>
+                    <td>
+                        <%= transacao.categoria %>
+                    </td>
+                    <td>
+                        <%= transacao.descricao %>
+                    </td>
+                    <td>
+                        <%= transacao.valor %>
+                    </td>
+                    <td>
+                        <%= transacao.dataPagamento %>
+                    </td>
+                    <td>
+                        <%= transacao.moeda %>
+                    </td>
+                    <td>
+                        <%= transacao.banco %>
+                    </td>
+                    <td>
+                        <button class="button is-info"><a href="">Atualizar</a></button>
+                        <button class="button is-danger"><a href="">Deletar</a></button>
+                    </td>
+                    <% } %>
+                </tr>
+        </tbody>
+    </table>
+    <button class="button is-primary"><a href="/transacoes">+ Despesa / Receita</a></button>
 
 </body>
