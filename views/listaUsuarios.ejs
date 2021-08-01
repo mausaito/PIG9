@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,21 +13,21 @@
     <header>
         <%-include("./partials/header.ejs")%>
     </header>
-        <div>
-            <form action="/cadastro/procura" method="GET">
-                <input type="text"class="box" placeholder="Pesquise um usuario" name="key">
-                <button type="submit" class="button">Buscar</button>
-            </form>
-        </div>
-       
-<br>
-<br>
-<br>
-<br>
+    <div>
+        <form action="/cadastro/procura" method="GET">
+            <input type="text" class="box" placeholder="Pesquise um usuario" name="key">
+            <button type="submit" class="button">Buscar</button>
+        </form>
+    </div>
 
-        <div>
-            <table class="table is-bordered is-striped is-narrow is-hoverable">
-                <thead>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <div>
+        <table class="table is-bordered is-striped is-narrow is-hoverable">
+            <thead>
                 <tr>
                     <th>Id</th>
                     <th>Nome Completo</th>
@@ -34,25 +35,35 @@
                     <th>Data Nascimento</th>
                     <th>Perfil Investimento</th>
                 </tr>
-                </thead>
-                <tbody>
-                    <% for (const lista of listaUsuario) { %>
-                    <% console.log(lista) %>    
-                    <tr>
-                        <td><%= lista.id %></td>
-                        <td><%= lista.nomeCompleto %></td>
-                        <td><%= lista.email %></td>
-                        <td><%= lista.dataNasc %></td>
-                        <td><%= lista.tipoPerfil %></td>
-                        <td>
-                            <button class="button is-info"><a href="">Atualizar Usuario</a></button>
-                            <button class="button is-danger"><a href="">Deletar Usuario</a></button>
-                        </td>
-                        <% } %>            
-                    </tr>
-                </tbody> 
-            </table> 
-        </div>  
+            </thead>
+            <tbody>
+                <% for (const lista of listaUsuario) { %>
+                    <% console.log(lista) %>
+                        <tr>
+                            <td>
+                                <%= lista.id %>
+                            </td>
+                            <td>
+                                <%= lista.nomeCompleto %>
+                            </td>
+                            <td>
+                                <%= lista.email %>
+                            </td>
+                            <td>
+                                <%= lista.dataNasc %>
+                            </td>
+                            <td>
+                                <%= lista.tipoPerfil %>
+                            </td>
+                            <td>
+                                <button class="button is-info"><a href="">Atualizar Usuario</a></button>
+                                <button class="button is-danger"><a href="">Deletar Usuario</a></button>
+                            </td>
+                            <% } %>
+                        </tr>
+            </tbody>
+        </table>
+    </div>
     <button class="button is-primary"><a href="/dashboard">Voltar</a></button>
-    
+
 </body>
