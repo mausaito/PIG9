@@ -174,7 +174,6 @@ function buscarUsuario(email) {
     })
 }
 */
-/* Busca um usuário no banco de dados */
 async function buscarUsuario(email) {
     let user = await Usuario.findOne({
       where:{
