@@ -10,7 +10,8 @@ module.exports.transacoes = async function (req, res) {
       error: {},
       content: {},
       moedas: moedas,
-      categorias: categorias
+      categorias: categorias,
+      user: req.session.usuario
     });
     return
   };
@@ -26,7 +27,8 @@ module.exports.criarTransacao = async (req, res) => {
 module.exports.listarTransacao = async (req, res) => {
   const moedas = await models.Transacoes.findAll()
 
-    res.render('lista', {listaTransacao})
+    res.render('lista', {listaTransacao,
+      user: req.session.usuario})
     return
 }
 
