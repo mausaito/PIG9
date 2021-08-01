@@ -13,7 +13,7 @@
             <a href="dashboard"><img class="logo" src="/img/pi-logo.svg"/></a>
         </div>
         <!-- quando souber como puxar do banco o nome do usuario trocamos a nome de usuário -->
-        <div id="usuario" class="border"> %=user%></div>
+        <div id="usuario" class="border"> <%=user && user.nomeCompleto ? user.nomeCompleto : ''%></div>
         <button><a href="home">Sair</a></button>
     </header>
 </body>

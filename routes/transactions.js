@@ -1,13 +1,13 @@
 const express = require('express');
 const router = express.Router();
-
-const transacoesController = require ('../controller/transacoesController')
+const transacoesController = require ('../controller/transacoesController');
+const checkSession = require('../middlewares/checkSession');
 
 
 /* GET users cadastro. */
-router.get('/', transacoesController.transacoes)
+router.get('/', checkSession, transacoesController.transacoes)
 
-router.get('/lista', transacoesController.listarTransacao)
+router.get('/lista', checkSession, transacoesController.listarTransacao)
 
 router.post('/', transacoesController.criarTransacao)
 

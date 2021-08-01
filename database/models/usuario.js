@@ -34,7 +34,7 @@ module.exports = (sequelize, DataTypes) => {
     nomeCompleto: DataTypes.STRING(150),
     email: DataTypes.STRING(150),
     dataNasc: DataTypes.DATE,
-    tipoPerfil: DataTypes.ENUM('Conservador', 'Moderado', 'Arrojado'),
+    tipoPerfil: DataTypes.ENUM('CONSERVADOR', 'MODERADO', 'ARROJADO'),
     hashSenha: DataTypes.STRING(60),
     createdAt: DataTypes.DATE,
     updatedAt: DataTypes.DATE,

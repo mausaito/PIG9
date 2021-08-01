@@ -7,6 +7,7 @@ module.exports.transacoes = function (req, res) {
     res.render('transacoes', {title: 'Cadastro usuário',
       error: {},
       content: {},
+      user: req.session.usuario,
     });
   };
 
@@ -19,8 +20,9 @@ module.exports.criarTransacao = (req, res) => {
 
 module.exports.listarTransacao = (req, res) => {
     const listaTransacao = lerTransacaoNoDisco()
-
-    res.render('lista', {listaTransacao})
+    res.render('lista', {listaTransacao,
+    user: req.session.usuario,
+    })
 }
 
 
