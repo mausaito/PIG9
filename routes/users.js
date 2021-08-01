@@ -27,11 +27,8 @@ router.put('/:id', userController.atualizaUsuario)
 
 router.delete('/:id', userController.deletaUsuario)
 
-<<<<<<< Updated upstream
-=======
 router.post('/login',  userController.loginUsuario)
 
 router.get('/login',  checkLogin, userController.paginaLogin)
 
->>>>>>> Stashed changes
 module.exports = router;
