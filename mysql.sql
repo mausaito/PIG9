@@ -26,6 +26,7 @@ CREATE TABLE IF NOT EXISTS `pig9`.`categorias` (
   `updatedBy` VARCHAR(150) NULL DEFAULT NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB
+AUTO_INCREMENT = 7
 DEFAULT CHARACTER SET = utf8mb3;
 
 
@@ -125,6 +126,7 @@ CREATE TABLE IF NOT EXISTS `pig9`.`moedas` (
   `updatedBy` VARCHAR(150) NULL DEFAULT NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB
+AUTO_INCREMENT = 4
 DEFAULT CHARACTER SET = utf8mb3;
 
 
@@ -139,7 +141,7 @@ CREATE TABLE IF NOT EXISTS `pig9`.`lancamentos` (
   `observacao` VARCHAR(200) NULL DEFAULT NULL,
   `tipoLancamento` ENUM('RECEITA', 'DESPESA') NOT NULL,
   `banco` VARCHAR(45) NULL DEFAULT NULL,
-  `idUsuarios_fk` BIGINT NOT NULL DEFAULT '0',
+  `idUsuarios_fk` BIGINT NOT NULL,
   `idMoedas_fk` INT NOT NULL,
   `idCategorias_fk` INT NOT NULL,
   `createdAt` DATETIME NULL DEFAULT NULL,
@@ -160,6 +162,7 @@ CREATE TABLE IF NOT EXISTS `pig9`.`lancamentos` (
     FOREIGN KEY (`idUsuarios_fk`)
     REFERENCES `pig9`.`usuarios` (`id`))
 ENGINE = InnoDB
+AUTO_INCREMENT = 5
 DEFAULT CHARACTER SET = utf8mb3;
 
 

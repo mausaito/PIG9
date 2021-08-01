@@ -23,15 +23,17 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   DicasPerfil.init({
-    idUsuarios_fk: { type:
-      DataTypes.BIGINT,
+    idUsuarios_fk: {
+      type:
+        DataTypes.BIGINT,
       references: {
         model: "Usuario",
         key: "id"
       }
     },
-    idDicasGerais_fk: { type:
-      DataTypes.INTEGER,
+    idDicasGerais_fk: {
+      type:
+        DataTypes.INTEGER,
       references: {
         model: "DicasGerais",
         key: "id"

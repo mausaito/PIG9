@@ -25,8 +25,9 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   Usuario.init({
-    id: { type:
-      DataTypes.BIGINT,
+    id: {
+      type:
+        DataTypes.BIGINT,
       primaryKey: true,
       autoIncrement: true,
       allownull: false

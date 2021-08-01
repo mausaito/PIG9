@@ -13,8 +13,9 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   Categoria.init({
-    id: { type:
-      DataTypes.INTEGER,
+    id: {
+      type:
+        DataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true,
       allownull: false
@@ -27,6 +28,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     modelName: 'Categoria',
+    tableName: 'categorias'
   });
   return Categoria;
 };

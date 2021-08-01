@@ -27,7 +27,11 @@
                         </select>
                         <label class="label" for="categoria">Categoria</label>
                         <select class="input" required name="idCategorias_fk">
-                            s
+                            <% for( let index=0; index < categorias.length; index++ ) { %>
+                                <option value="<%= categorias[index].id %>">
+                                    <%= categorias[index].nome %>
+                                </option>
+                                <% } %>
                         </select>
                         <label class="label" for="form-descricao">Descrição</label>
                         <input class="input" type="text" placeholder="Descricao Resumida" name="descricao"

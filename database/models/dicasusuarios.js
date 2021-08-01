@@ -18,23 +18,26 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   DicasUsuarios.init({
-    id: { type:
-      DataTypes.INTEGER,
+    id: {
+      type:
+        DataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true,
       allownull: false
     },
-    saldo: DataTypes.NUMBER(10,0),
+    saldo: DataTypes.NUMBER(10, 0),
     dica: DataTypes.STRING(150),
-    idUsuarios_fk: { type:
-      DataTypes.BIGINT,
+    idUsuarios_fk: {
+      type:
+        DataTypes.BIGINT,
       references: {
         model: "Usuario",
         key: "id"
       }
     },
-    idDicasGerais_fk: { type:
-      DataTypes.INTEGER,
+    idDicasGerais_fk: {
+      type:
+        DataTypes.INTEGER,
       references: {
         model: "DicasGerais",
         key: "id"

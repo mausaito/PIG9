@@ -23,36 +23,40 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   Lancamento.init({
-    id: { type:
-      DataTypes.BIGINT,
+    id: {
+      type:
+        DataTypes.BIGINT,
       primaryKey: true,
       autoIncrement: true,
       allownull: false
     },
     descricao: DataTypes.STRING(50),
-    valor: DataTypes.DECIMAL(10,2),
+    valor: DataTypes.DECIMAL(10, 2),
     dataPagto: DataTypes.DATE,
     observacao: DataTypes.STRING(200),
     tipoLancamento: DataTypes.ENUM('Receita', 'Despesa'),
     banco: DataTypes.STRING(45),
-    idUsuarios_fk: { type:
-      DataTypes.BIGINT,
+    idUsuarios_fk: {
+      type:
+        DataTypes.BIGINT,
       references: {
         model: "Usuario",
         key: "id"
       }
     },
-    idMoedas_fk: { type:
-      DataTypes.INTEGER,
+    idMoedas_fk: {
+      type:
+        DataTypes.INTEGER,
       references: {
-        model: "Moedas",
+        model: "Moeda",
         key: "id"
       }
     },
-    idCategorias_fk: { type:
-      DataTypes.INTEGER,
+    idCategorias_fk: {
+      type:
+        DataTypes.INTEGER,
       references: {
-        model: "Categorias",
+        model: "Categoria",
         key: "id"
       }
     },

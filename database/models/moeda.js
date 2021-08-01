@@ -13,8 +13,9 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   Moeda.init({
-    id: { type:
-      DataTypes.INTEGER,
+    id: {
+      type:
+        DataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true,
       allownull: false

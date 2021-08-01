@@ -23,8 +23,9 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   DicasGerais.init({
-    id: { type:
-      DataTypes.INTEGER,
+    id: {
+      type:
+        DataTypes.INTEGER,
       primaryKey: true,
       autoIcrement: true,
       allownull: false

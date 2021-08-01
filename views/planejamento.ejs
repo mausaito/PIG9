@@ -16,41 +16,61 @@
     </header>
     <main>
         <%-include("./partials/sidebar.ejs", { title: title })%>
-            <div class="menuesq">
-                <div class="infos">
-                    <p>Com base no histórico o seu saldo é de: <input type="text"></p>
-                    <p>Com base nas informações abaixo, os juros e inflação atual</p>
-                    <p>Prazo: <input type="text"></p>
-                    <p>Valor investido mensal: <input type="text"></p>
-                    <p>Você consiguirá alcançar 1 milhão em <input type="text"></p>
-                    <p>Considerando as informações abaixo a sua previsão de aposentadoria é:</p>
-                </div>
-                <div class="grafico"></div>
-                <div id="chart"></div>
-                <script src="https://www.gstatic.com/charts/loader.js"></script>
-                <script>
-                    google.charts.load('current', { packages: ['corechart'] });
-                    google.charts.setOnLoadCallback(drawChart)
-                    function drawChart() {
-                        const container = document.querySelector('#chart')
-                        const data = new google.visualization.arrayToDataTable([
-                            ['Tempo', 'Valor'],
-                            ['2 anos', 50000],
-                            ['4 anos', 150000],
-                            ['6 anos', 300000],
-                            ['8 anos', 600000],
-                            ['10 anos', 1000000]
-                        ])
-                        const options = {
-                            title: 'TEMPO X VALOR',
-                            height: 500,
-                            width: 1500,
-                        }
-                        const chart = new google.visualization.LineChart(container)
-                        chart.draw(data, options)
-                    }
-                </script>
+       <!-- CODIGO ROSÂNGELA -->
+        <!-- <h1>Planejamento</h1>
+        <form id="frm1" action="/action_page.html">
+            <h3>Com base no histórico o seu saldo é de: </h3>
+            <button id="btn1" name="subject" type="submit" value="fav_saldo">SALDO Click Aqui</button>
+
+            <h3>Com base nas informações abaixo, os juros e inflação atual</h3>
+            <button id="btn2" name="subject" type="submit" value="fav_Prazo">CONFIRA AQUI</button>
+
+            <h3>Valor investido mensal:</h3>
+            <button id="btn3" name="subject" type="submit" value="fav_Mensal">MENSAL</button>
+
+            <h3>Você consiguirá alcançar 1 milhão em</h3>
+            <button id="btn4" name="subject" type="submit" value="fav_Prazo">PRAZO</button>
+
+            <h3>Considerando as informações abaixo a sua previsão de aposentadoria é:</h3>
+            <button id="btn5" name="subject" type="submit" value="fav_Aposentadoria">PREVISÂO APOSENTADORIA</button>
+        </form>
+
+        <p id="demo"></p> -->
+        <div class="menuesq">
+            <div class="infos">
+                <p>Com base no histórico o seu saldo é de: <input type="text"></p>
+                <p>Com base nas informações abaixo, os juros e inflação atual</p>
+                <p>Prazo: <input type="text"></p>
+                <p>Valor investido mensal: <input type="text"></p>
+                <p>Você consiguirá alcançar 1 milhão em <input type="text"></p>
+                <p>Considerando as informações abaixo a sua previsão de aposentadoria é:</p>
             </div>
+            <div class="grafico"></div>
+            <div id="chart"></div>
+            <script src="https://www.gstatic.com/charts/loader.js"></script>
+            <script>
+                google.charts.load('current', { packages: ['corechart'] });
+                google.charts.setOnLoadCallback(drawChart)
+                function drawChart() {
+                    const container = document.querySelector('#chart')
+                    const data = new google.visualization.arrayToDataTable([
+                        ['Tempo', 'Valor'],
+                        ['2 anos', 50000],
+                        ['4 anos', 150000],
+                        ['6 anos', 300000],
+                        ['8 anos', 600000],
+                        ['10 anos', 1000000]
+                    ])
+                    const options = {
+                        title: 'TEMPO X VALOR',
+                        height: 500,
+                        width: 1500,
+                    }
+                    const chart = new google.visualization.LineChart(container)
+                    chart.draw(data, options)
+                }
+            </script>
+        </div>
     </main>
     <footer>
         <%-include("./partials/footer.ejs", { title: title })%>

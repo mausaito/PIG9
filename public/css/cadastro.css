@@ -1,3 +1,24 @@
+/* CÓDIGO DA ROSÂGELA */
+/* @charset "utf-8"
+@import "./planejamento.ejs"09:55 01/08/2021
+
+h1{
+    background:#5599DD;
+    color:#DDDDDD
+    padding-top:5px;
+    padding-left:10px;
+}
+
+.button.id:btn1{
+    background-color: aqua;
+
+}
+.button:hover{
+	color: #330000;
+	background-color: #FFFFFF;
+	border-radius: 10px 0px 10px 0px;
+} */
+
 * {
     box-sizing: border-box;
 }

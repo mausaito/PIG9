@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const userController = require ('../controller/userController');
+const userController = require('../controller/userController');
 const checkSession = require('../middlewares/checkSession');
 const checkLogin = require('../middlewares/checkLogin');
 
@@ -9,7 +9,7 @@ const checkLogin = require('../middlewares/checkLogin');
 /* GET users cadastro. */
 /* router.get('/', userController.formUsuario)*/
 
-router.get('/', checkSession, userController.showCadastro);
+router.get('/',  userController.showCadastro);
 
 router.get('/listaUsuarios', checkSession, userController.listarUsuario);
 
@@ -27,7 +27,7 @@ router.put('/:id', userController.atualizaUsuario)
 
 router.delete('/:id', userController.deletaUsuario)
 
-router.post('/login',  userController.loginUsuario)
+router.post('/login', userController.loginUsuario)
 
 router.get('/login',  checkLogin, userController.paginaLogin)
 
