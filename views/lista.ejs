@@ -30,10 +30,10 @@
             <% for (const transacao of listaTransacao) { %>
                 <tr>
                     <td>
-                        <%= transacao.tipoTransacao %>
+                        <%= transacao.tipoLancamento %>
                     </td>
                     <td>
-                        <%= transacao.categoria %>
+                        <%= transacao.idCategorias_fk %>
                     </td>
                     <td>
                         <%= transacao.descricao %>
@@ -42,10 +42,10 @@
                         <%= transacao.valor %>
                     </td>
                     <td>
-                        <%= transacao.dataPagamento %>
+                        <%= transacao.dataPagto %>
                     </td>
                     <td>
-                        <%= transacao.moeda %>
+                        <%= transacao.idMoedas_fk %>
                     </td>
                     <td>
                         <%= transacao.banco %>
