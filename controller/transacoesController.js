@@ -20,6 +20,8 @@ module.exports.transacoes = async function (req, res) {
 
 module.exports.criarTransacao = async (req, res) => {
   const transacaoForm = req.body
+  transacaoForm.idUsuarios_fk = req.session.usuario.id
+  
   
   await models.Lancamento.create(transacaoForm)
   res.redirect('transacoes/lista')
