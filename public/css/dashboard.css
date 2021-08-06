@@ -33,6 +33,17 @@ main{
 .paineldir1{
     font-size:20rem;
 }
+canvas {
+    border: 1px solid gray;
+  }
+  
+.chart-container {
+    position: relative;
+    margin: auto;
+    height: 400rem;
+    width: 400rem;
+  }
+  
 .paineldir2{
     display:flex;
     flex-direction:row;
