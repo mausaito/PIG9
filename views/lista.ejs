@@ -33,19 +33,19 @@
                         <%= transacao.tipoLancamento %>
                     </td>
                     <td>
-                        <%= transacao.idCategorias_fk %>
+                        <%= transacao.categoria.nome %>
                     </td>
                     <td>
                         <%= transacao.descricao %>
                     </td>
                     <td>
-                        <%= transacao.valor %>
+                        <%= transacao.moeda.cifra %> <%= transacao.valor %>
                     </td>
                     <td>
                         <%= transacao.dataPagto %>
                     </td>
                     <td>
-                        <%= transacao.idMoedas_fk %>
+                        <%= transacao.moeda.nome %>
                     </td>
                     <td>
                         <%= transacao.banco %>
