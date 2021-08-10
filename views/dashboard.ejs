@@ -38,53 +38,63 @@
                     </div>
                 </div>
                 <div class="paineldir3">
-                    Grafico 1
+                    <a1>Graficos de Despesas</a1>
+                    <div class="chart-container">
+                        <canvas id="myChart"></canvas>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="myChart2"></canvas>
+                    </div>
+                    <script>
+                        let myChart = document.getElementById('myChart').getContext('2d');
+        
+                        let chart = new Chart(myChart, {
+                            type:'pie',
+                            data:{
+                                labels: JSON.parse('<%- stringCategorias %>'),
+                                datasets:[{
+                                    label: 'Despesas por Categoria',
+                                    data: JSON.parse('<%- stringValor %>'),
+                                    backgroundColor:[
+                                      'rgba(155, 9, 2, 0.6)',
+                                      'rgba(44, 162, 235, 0.6)',
+                                      'rgba(5, 2, 192, 0.6)',
+                                      'rgba(153, 102, 255, 0.6)',
+                                      'rgba(5, 159, 64, 0.6)',
+                                      ]
+                                }]
+                            }
+                        })
+                    </script>
+                    <script>
+                        let myChart2 = document.getElementById('myChart2').getContext('2d');
+        
+                        let chart2 = new Chart(myChart2, {
+                            type:'bar',
+                            data:{
+                                labels: JSON.parse('<%- stringCategorias %>'),
+                                datasets:[{
+                                    label: 'Despesas por Categoria',
+                                    data: JSON.parse('<%- stringValor %>'),
+                                    backgroundColor:[
+                                      'rgba(155, 9, 2, 0.6)',
+                                      'rgba(44, 162, 235, 0.6)',
+                                      'rgba(5, 2, 192, 0.6)',
+                                      'rgba(153, 102, 255, 0.6)',
+                                      'rgba(5, 159, 64, 0.6)',
+                                      ]
+                                }]
+                            }
+                        })
+                    </script>
+
                 </div>
                 <div class="paineldir4">
                     Grafico 2
                 </div>
 
             </div>
-            <div class="chart-container">
-                <canvas id="myChart"></canvas>
-            </div>
-            <script>
-                let myChart = document.getElementById('myChart').getContext('2d');
 
-                let chart = new Chart(myChart, {
-                    type:'pie',
-                    data:{
-                        labels:['label1','label2','label3','label4','label5','label6'],
-                        datasets:[{
-                            label: 'Despesas por Categoria',
-                            data:[
-                                5555,
-                                66,
-                                15687,
-                                652,
-                                6599,
-                                6699
-                            ],
-                            backgroundColor:[
-                              'rgba(155, 9, 2, 0.6)',
-                              'rgba(44, 162, 235, 0.6)',
-                              'rgba(5, 2, 192, 0.6)',
-                              'rgba(153, 102, 255, 0.6)',
-                              'rgba(5, 159, 64, 0.6)',
-                              'rgba(000, 99, 182, 0.6)',
-                            ]
-                        }]
-                    }
-                })
-
-
-            </script>
-
-
-            <div class="paineldir4">
-                Grafico 2
-            </div>
-    
         </div>
 
     </main>
