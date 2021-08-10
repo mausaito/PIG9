@@ -29,7 +29,11 @@ module.exports.criarTransacao = async (req, res) => {
 }
 
 module.exports.listarTransacao = async (req, res) => {
-  const listaTransacao = await models.Lancamento.findAll()
+  const listaTransacao = await models.Lancamento.findAll({
+    include: [{
+      model: models.Moeda, as: "moeda"
+    }, {model: models.Categoria, as: "categoria"}],
+  })
 
     res.render('lista', {listaTransacao,
       user: req.session.usuario})
