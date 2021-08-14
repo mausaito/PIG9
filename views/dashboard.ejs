@@ -17,36 +17,33 @@
     <main>
         <%-include("./partials/sidebar.ejs")%>
             <div class="paineldireita">
-                <div class="paineldir1">
-                    <!-- quando souber como puxar do banco trocamos o input -->
-                    <label for="periodo">Periodo</label>
-                    <input class="periodo" type="text" placeholder="Janeiro 2021" />
-                </div>
                 <div class="paineldir2">
                     <!-- quando souber como puxar do banco trocamos o input -->
                     <div class="Saldoatual">
                         <label>Saldo Atual</label><br />
-                        <input type="text" placeholder="R$ 1.000,00" /><br />
+                        <a1><%= valorSaldo%> </a1> <br />
                     </div>
                     <div class="Totaldespesas">
                         <label>Total Despesas</label><br />
-                        <input type="text" placeholder="R$ 2.000,00" /><br />
+                        <a1><%= valorDespesa%> </a1> <br />
                     </div>
                     <div class="Totalreceitas">
                         <label>Total Receitas</label><br />
-                        <input type="text" placeholder="R$ 3.000,00" /><br />
+                        <a1><%= valorReceita%> </a1> <br />
                     </div>
                 </div>
                 <div class="paineldir3">
                     <a1>Graficos de Despesas</a1>
                     <div class="chart-container">
-                        <canvas id="myChart"></canvas>
+                        <canvas id="myChart2"></canvas>
                     </div>
                     <div class="chart-container">
-                        <canvas id="myChart2"></canvas>
+                        <canvas id="myChart"></canvas>
                     </div>
                     <script>
                         let myChart = document.getElementById('myChart').getContext('2d');
+
+                        Chart.defaults.plugins.legend.position = 'right'
         
                         let chart = new Chart(myChart, {
                             type:'pie',
@@ -60,10 +57,16 @@
                                       'rgba(44, 162, 235, 0.6)',
                                       'rgba(5, 2, 192, 0.6)',
                                       'rgba(153, 102, 255, 0.6)',
-                                      'rgba(5, 159, 64, 0.6)',
-                                      ]
+                                      'rgba(55, 159, 204, 0.6)',
+                                      'rgba(35, 159, 64, 0.6)',
+                                      'rgba(5, 059, 164, 0.6)',
+                                      'rgba(25, 229, 64, 0.6)',
+                                      'rgba(225, 129, 164, 0.6)',
+                                      ],
+                                      hoverBorderWidth: 1,
+                                      hoverBorderColor: '#000',
                                 }]
-                            }
+                            },
                         })
                     </script>
                     <script>
@@ -74,7 +77,7 @@
                             data:{
                                 labels: JSON.parse('<%- stringCategorias %>'),
                                 datasets:[{
-                                    label: 'Despesas por Categoria',
+                                    label: 'Receita x Despesa',
                                     data: JSON.parse('<%- stringValor %>'),
                                     backgroundColor:[
                                       'rgba(155, 9, 2, 0.6)',
@@ -89,9 +92,7 @@
                     </script>
 
                 </div>
-                <div class="paineldir4">
-                    Grafico 2
-                </div>
+                
 
             </div>
 
