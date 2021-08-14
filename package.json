@@ -33,5 +33,6 @@
   "bugs": {
     "url": "https://github.com/mausaito/PIG9/issues"
   },
-  "homepage": "https://github.com/mausaito/PIG9#readme"
+  "homepage": "https://github.com/mausaito/PIG9#readme",
+  "devDependencies": {}
 }
