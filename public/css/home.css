@@ -52,6 +52,7 @@ nav > a {
     color: #FFFFFF;
     font-weight: 800;
     font-size: 32px;
+    cursor: pointer;
 }
 
 nav ul {
@@ -73,6 +74,13 @@ nav ul li a {
     padding: 10px 0;
     width: 100%;
     text-decoration: none;
+    
+}
+
+.btn{
+    border: none;
+    background: none;
+    cursor: pointer;
 }
 
 header {
