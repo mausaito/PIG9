@@ -5,10 +5,17 @@ const checkSession = require('../middlewares/checkSession');
 
 
 /* GET users cadastro. */
-router.get('/', checkSession, transacoesController.transacoes)
+router.get('/', transacoesController.transacoes)
 
 router.get('/lista', checkSession, transacoesController.listarTransacao)
 
 router.post('/', transacoesController.criarTransacao)
+
+router.get('/:id/attTransacoes', checkSession, transacoesController.attTransacao)
+
+router.put('/atualizar/:id', transacoesController.atualizarTransacao)
+
+// router.delete('/deletar/:id', transacoesController.deletarTransacao)
+
 
 module.exports = router;

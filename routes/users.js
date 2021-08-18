@@ -9,7 +9,7 @@ const checkLogin = require('../middlewares/checkLogin');
 /* GET users cadastro. */
 /* router.get('/', userController.formUsuario)*/
 
-router.get('/',  userController.showCadastro);
+router.get('/',  checkLogin, userController.showCadastro);
 
 router.get('/listaUsuarios', checkSession, userController.listarUsuario);
 

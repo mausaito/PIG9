@@ -1,107 +1,87 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PI - Dashboard</title>
-    <link rel="stylesheet" href='/css/dashboard.css'/>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-</head>
-
-<body>
-    <header>
-        <%-include("./partials/header.ejs")%>
-    </header>
+<%-include("./partials/header")%>
     <main>
-        <%-include("./partials/sidebar.ejs")%>
-            <div class="paineldireita">
-                <div class="paineldir2">
-                    <!-- quando souber como puxar do banco trocamos o input -->
-                    <div class="Saldoatual">
-                        <label>Saldo Atual</label><br />
-                        <a1><%= valorSaldo%> </a1> <br />
-                    </div>
-                    <div class="Totaldespesas">
-                        <label>Total Despesas</label><br />
-                        <a1><%= valorDespesa%> </a1> <br />
-                    </div>
-                    <div class="Totalreceitas">
-                        <label>Total Receitas</label><br />
-                        <a1><%= valorReceita%> </a1> <br />
-                    </div>
+        <%-include("./partials/sidebar")%>
+        <div class="paineldireita">
+            <div class="paineldir2">
+                <!-- quando souber como puxar do banco trocamos o input -->
+                <div class="Saldoatual">
+                    <label>Saldo Atual</label><br />
+                    <a1>
+                        <%= valorSaldo%>
+                    </a1> <br />
                 </div>
-                <div class="paineldir3">
-                    <a1>Graficos de Despesas</a1>
-                    <div class="chart-container">
-                        <canvas id="myChart2"></canvas>
-                    </div>
-                    <div class="chart-container">
-                        <canvas id="myChart"></canvas>
-                    </div>
-                    <script>
-                        let myChart = document.getElementById('myChart').getContext('2d');
-
-                        Chart.defaults.plugins.legend.position = 'right'
-        
-                        let chart = new Chart(myChart, {
-                            type:'pie',
-                            data:{
-                                labels: JSON.parse('<%- stringCategorias %>'),
-                                datasets:[{
-                                    label: 'Despesas por Categoria',
-                                    data: JSON.parse('<%- stringValor %>'),
-                                    backgroundColor:[
-                                      'rgba(155, 9, 2, 0.6)',
-                                      'rgba(44, 162, 235, 0.6)',
-                                      'rgba(5, 2, 192, 0.6)',
-                                      'rgba(153, 102, 255, 0.6)',
-                                      'rgba(55, 159, 204, 0.6)',
-                                      'rgba(35, 159, 64, 0.6)',
-                                      'rgba(5, 059, 164, 0.6)',
-                                      'rgba(25, 229, 64, 0.6)',
-                                      'rgba(225, 129, 164, 0.6)',
-                                      ],
-                                      hoverBorderWidth: 1,
-                                      hoverBorderColor: '#000',
-                                }]
-                            },
-                        })
-                    </script>
-                    <script>
-                        let myChart2 = document.getElementById('myChart2').getContext('2d');
-        
-                        let chart2 = new Chart(myChart2, {
-                            type:'bar',
-                            data:{
-                                labels: JSON.parse('<%- stringCategorias %>'),
-                                datasets:[{
-                                    label: 'Receita x Despesa',
-                                    data: JSON.parse('<%- stringValor %>'),
-                                    backgroundColor:[
-                                      'rgba(155, 9, 2, 0.6)',
-                                      'rgba(44, 162, 235, 0.6)',
-                                      'rgba(5, 2, 192, 0.6)',
-                                      'rgba(153, 102, 255, 0.6)',
-                                      'rgba(5, 159, 64, 0.6)',
-                                      ]
-                                }]
-                            }
-                        })
-                    </script>
-
+                <div class="Totaldespesas">
+                    <label>Total Despesas</label><br />
+                    <a1>
+                        <%= valorDespesa%>
+                    </a1> <br />
                 </div>
-                
-
+                <div class="Totalreceitas">
+                    <label>Total Receitas</label><br />
+                    <a1>
+                        <%= valorReceita%>
+                    </a1> <br />
+                </div>
             </div>
+            <div class="paineldir3">
+                <a1>Graficos de Despesas</a1>
+                <div class="chart-container">
+                    <canvas id="myChart2"></canvas>
+                </div>
+                <div class="chart-container">
+                    <canvas id="myChart"></canvas>
+                </div>
+                <script>
+                    let myChart = document.getElementById('myChart').getContext('2d');
 
+                    Chart.defaults.plugins.legend.position = 'right'
+
+                    let chart = new Chart(myChart, {
+                        type: 'pie',
+                        data: {
+                            labels: JSON.parse('<%- stringCategorias %>'),
+                            datasets: [{
+                                label: 'Despesas por Categoria',
+                                data: JSON.parse('<%- stringValor %>'),
+                                backgroundColor: [
+                                    'rgba(155, 9, 2, 0.6)',
+                                    'rgba(44, 162, 235, 0.6)',
+                                    'rgba(5, 2, 192, 0.6)',
+                                    'rgba(153, 102, 255, 0.6)',
+                                    'rgba(55, 159, 204, 0.6)',
+                                    'rgba(35, 159, 64, 0.6)',
+                                    'rgba(5, 059, 164, 0.6)',
+                                    'rgba(25, 229, 64, 0.6)',
+                                    'rgba(225, 129, 164, 0.6)',
+                                ],
+                                hoverBorderWidth: 1,
+                                hoverBorderColor: '#000',
+                            }]
+                        },
+                    })
+                </script>
+                <script>
+                    let myChart2 = document.getElementById('myChart2').getContext('2d');
+
+                    let chart2 = new Chart(myChart2, {
+                        type: 'bar',
+                        data: {
+                            labels: JSON.parse('<%- stringCategorias %>'),
+                            datasets: [{
+                                label: 'Receita x Despesa',
+                                data: JSON.parse('<%- stringValor %>'),
+                                backgroundColor: [
+                                    'rgba(155, 9, 2, 0.6)',
+                                    'rgba(44, 162, 235, 0.6)',
+                                    'rgba(5, 2, 192, 0.6)',
+                                    'rgba(153, 102, 255, 0.6)',
+                                    'rgba(5, 159, 64, 0.6)',
+                                ]
+                            }]
+                        }
+                    })
+                </script>
+            </div>
         </div>
-
     </main>
-    <footer>
-        <%-include("./partials/footer.ejs")%>
-    </footer>
-</body>
-
-</html>
+    <%-include("./partials/footer")%>

@@ -22,7 +22,7 @@ footer{
     background: rgb(187, 187, 187);
     height: auto;
     width: 100%;
-    padding-top: 40px;
+    padding-top: 30px;
     color: white;
     display: flex;
     flex-direction: column;
@@ -46,6 +46,10 @@ footer div ul{
     width: 100%;
     position: absolute;
     left: 0%;
+}
+footer a{
+    text-align: center;
+    padding-bottom: 20px;
 }
 .socials{
     display: flex;

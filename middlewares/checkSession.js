@@ -10,7 +10,7 @@ module.exports = function (req, res, next) {
     */
     if (success)
     {
-      req.session.user = foundUserInfo;
+      req.session.usuario = user;
     }
     next();
   }

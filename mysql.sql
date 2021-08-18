@@ -5,6 +5,9 @@ SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
 
 -- -----------------------------------------------------
+-- Schema mydb
+-- -----------------------------------------------------
+-- -----------------------------------------------------
 -- Schema pig9
 -- -----------------------------------------------------
 
@@ -26,7 +29,7 @@ CREATE TABLE IF NOT EXISTS `pig9`.`categorias` (
   `updatedBy` VARCHAR(150) NULL DEFAULT NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB
-AUTO_INCREMENT = 7
+AUTO_INCREMENT = 8
 DEFAULT CHARACTER SET = utf8mb3;
 
 
@@ -35,8 +38,10 @@ DEFAULT CHARACTER SET = utf8mb3;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `pig9`.`dicasgerais` (
   `id` INT NOT NULL AUTO_INCREMENT,
-  `dicaPerfil` VARCHAR(150) NOT NULL,
-  `dicaUsuario` VARCHAR(150) NOT NULL,
+  `titulo` VARCHAR(45) NULL DEFAULT NULL,
+  `valorMin` DECIMAL(10,0) NULL DEFAULT NULL,
+  `texto` VARCHAR(500) NULL DEFAULT NULL,
+  `situação` ENUM('NEGATIVO', 'POSITIVO') NULL DEFAULT NULL,
   `createdAt` DATETIME NULL DEFAULT NULL,
   `updatedAt` DATETIME NULL DEFAULT NULL,
   `createdBy` VARCHAR(150) NULL DEFAULT NULL,
@@ -65,7 +70,7 @@ CREATE TABLE IF NOT EXISTS `pig9`.`usuarios` (
   UNIQUE INDEX `hash_senha_UNIQUE` (`hashSenha` ASC) VISIBLE,
   UNIQUE INDEX `perfil_UNIQUE` (`tipoPerfil` ASC) VISIBLE)
 ENGINE = InnoDB
-AUTO_INCREMENT = 4
+AUTO_INCREMENT = 6
 DEFAULT CHARACTER SET = utf8mb3;
 
 
@@ -88,32 +93,6 @@ DEFAULT CHARACTER SET = utf8mb3;
 
 
 -- -----------------------------------------------------
--- Table `pig9`.`dicasusuario`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `pig9`.`dicasusuario` (
-  `id` INT NOT NULL AUTO_INCREMENT,
-  `saldo` DECIMAL(10,0) NOT NULL,
-  `dica` VARCHAR(300) NOT NULL,
-  `idUsuarios_fk` BIGINT NOT NULL,
-  `idDicasGerais_fk` INT NOT NULL,
-  `createdAt` DATETIME NULL DEFAULT NULL,
-  `updatedAt` DATETIME NULL DEFAULT NULL,
-  `createdBy` VARCHAR(150) NULL DEFAULT NULL,
-  `updatedBy` VARCHAR(150) NULL DEFAULT NULL,
-  PRIMARY KEY (`id`, `idDicasGerais_fk`),
-  INDEX `fk_dicas_usuario_usuarios1_idx` (`idUsuarios_fk` ASC) VISIBLE,
-  INDEX `fk_dicas_usuario_dicas_gerais1_idx` (`idDicasGerais_fk` ASC) VISIBLE,
-  CONSTRAINT `fk_dicas_usuario_dicas_gerais1`
-    FOREIGN KEY (`idDicasGerais_fk`)
-    REFERENCES `pig9`.`dicasgerais` (`id`),
-  CONSTRAINT `fk_dicas_usuario_usuarios1`
-    FOREIGN KEY (`idUsuarios_fk`)
-    REFERENCES `pig9`.`usuarios` (`id`))
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8mb3;
-
-
--- -----------------------------------------------------
 -- Table `pig9`.`moedas`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `pig9`.`moedas` (
@@ -126,7 +105,7 @@ CREATE TABLE IF NOT EXISTS `pig9`.`moedas` (
   `updatedBy` VARCHAR(150) NULL DEFAULT NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB
-AUTO_INCREMENT = 4
+AUTO_INCREMENT = 6
 DEFAULT CHARACTER SET = utf8mb3;
 
 
@@ -162,7 +141,7 @@ CREATE TABLE IF NOT EXISTS `pig9`.`lancamentos` (
     FOREIGN KEY (`idUsuarios_fk`)
     REFERENCES `pig9`.`usuarios` (`id`))
 ENGINE = InnoDB
-AUTO_INCREMENT = 5
+AUTO_INCREMENT = 8
 DEFAULT CHARACTER SET = utf8mb3;
 
 

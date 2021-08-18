@@ -1,25 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/header.css">
-    <title>Document</title>
-</head>
-
+<%-include("head") %>
 <body>
     <header>
         <div id="logo-img">
             <a href="/dashboard"><img class="logo" src="/img/pi-logo.svg" /></a>
         </div>
-        <!-- quando souber como puxar do banco o nome do usuario trocamos a nome de usuário -->
-        <div id="usuario" class="border">
-            <%=user && user.nomeCompleto ? user.nomeCompleto : '' %>
-        </div>
-        <button><a href="home">Sair</a></button>
+        <% if (!user && title !== 'Cadastrar') { %>
+            <ul>
+                <li><a href="#quemsomos">Quem somos</a></li>
+                <li><a href="#comofunciona">Como funciona</a></li>
+                <li><a href="#contato">Contato</a></li>
+                <li>
+                    <form action="/cadastro/login" method="GET">
+                        <input type="submit" value="Acesse" />
+                    </form>
+                </li>
+            </ul>
+            <% } else{ %>
+                <div id="usuario" class="border">
+                    <%=user && user.nomeCompleto ? user.nomeCompleto : '' %>
+                </div>
+                <button><a href="home">Sair</a></button>
+                <% } %>
     </header>
-</body>
-
-</html>

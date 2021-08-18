@@ -70,7 +70,7 @@ module.exports.criarUsuario = async (req, res) => {
         //
         req.session.nomeCompleto = userForm.nomeCompleto
         req.session.estaAutenticado = true  
-        res.render('login', {
+        res.render('login', {title: 'Login',
           user: req.session.nomeCompleto,
           error:{}
         });
@@ -84,10 +84,11 @@ module.exports.formUsuario = (req, res) => {
 }
 
 module.exports.paginaLogin = async (req, res) => {
-    res.render('login',{title: 'login usuário',
+    res.render('login',{title: 'Login',
     error: {
-      email:''
+      email:'',
     },
+    user: req.session.usuario,
   });
     return
 }

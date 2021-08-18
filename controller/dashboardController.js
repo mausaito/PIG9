@@ -2,14 +2,6 @@ const fs = require('fs');
 const { stringify } = require('querystring');
 const models = require('../database/models');
 
-/*module.exports.paginaInicial = (req, res) => {
-  console.log(req.session);
-  res.render('dashboard', {
-    user: req.session.usuario,
-  });
-};
-*/
-
 module.exports.paginaInicial = async (req, res) => {
   const dadosDashboard = await models.Lancamento.findAll({
     include: [{
@@ -43,7 +35,7 @@ module.exports.paginaInicial = async (req, res) => {
   console.log(dadosValor, dadosCategoria, valorReceita, valorDespesa)
   console.log (stringCategorias)  
 
-  res.render('dashboard', { stringValor , stringCategorias, stringGrafico, valorReceita, valorDespesa, valorSaldo,
+  res.render('dashboard', {title: 'Dashboard', stringValor , stringCategorias, stringGrafico, valorReceita, valorDespesa, valorSaldo,
     user: req.session.usuario})
   return
 }

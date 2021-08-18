@@ -1,40 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PI - Home</title>
-    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
-    <link rel="stylesheet" href='/css/home.css' />
-</head>
-
-<body>
-    <nav>
-        <a href="home.html"><img class="logo" src="../img/pi-logo.svg" /></a>
-        <ul>
-            <li><a href="#quemsomos">Quem somos</a></li>
-            <li><a href="#comofunciona">Como funciona</a></li>
-            <li><a href="#contato">Contato</a></li>
-            <li>
-                <form action="/cadastro/login" method="GET">
-                    <input type="submit" value="Acesse" />
-                </form>
-            </li>
-        </ul>
-
-        <!--<form id="formhome" action="/cadastro/login" method="POST">
-                <label for="emailUsuario">Login</label><br/>
-                <input id="email" type="email" placeholder="Digite seu email" name="emailUsuario" required maxlength="150"/><br/>
-                <label for="senhaUsuario">Senha</label><br/>    
-                <input id="senha" type="password" name="senhaUsuario" required/> <br/>
-                <input class="logar" type="submit" value="Entrar" />
-        </form>
-        <form id="formBotaoCadastrar" action="/cadastro" method="GET">
-                <input class="cadastrar" type="submit" value="Cadastre-se" />
-        </form>-->
-    </nav>
+    <%-include("./partials/header")%>
+    <main>
     <div class="banner">
         <img class="banner-img" src="../img/banner3.jpg" />
     </div>
@@ -98,10 +63,5 @@
             </div>
         </section>
     </main>
-    <footer>
-        <a href="home">Topo</a>
-        <%-include("./partials/footer.ejs")%>
-    </footer>
-</body>
-
-</html>
+<%-include("./partials/footer")%>
+    

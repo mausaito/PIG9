@@ -1,19 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PI - Cadastro Usuario</title>
-  <link rel="stylesheet" href='/css/cadastro.css' />
-
-</head>
-
-<body>
-  <header>
-
-  </header>
+<%-include("./partials/header")%>
   <main>
     <form id='novoUsuario' method="POST" action="/cadastro">
       <label id="formNomeCompleto" for="nomeCompleto">Nome Completo</label>
@@ -43,7 +28,4 @@
         </div>
     </form>
   </main>
-  <footer>
-    <%-include("./partials/footer.ejs", { title: title })%>
-  </footer>
-</body>
+<%-include("./partials/footer")%>

@@ -1,7 +1,7 @@
 'use strict';
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('DicasUsuarios', {
+    await queryInterface.createTable('DicasGerais', {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -11,17 +11,17 @@ module.exports = {
       id: {
         type: Sequelize.NUMBER
       },
-      saldo: {
-        type: Sequelize.NUMBER
-      },
-      dica: {
+      titulo: {
         type: Sequelize.STRING
       },
-      idUsuarios_fk: {
-        type: Sequelize.INTEGER
+      valorMin: {
+        type: Sequelize.NUMBER
       },
-      idDicasGerais_fk: {
-        type: Sequelize.INTEGER
+      texto: {
+        type: Sequelize.STRING
+      },
+      situação: {
+        type: Sequelize.ENUM('Negativo', 'Positivo')
       },
       createdAt: {
         type: Sequelize.DATE
@@ -46,6 +46,6 @@ module.exports = {
     });
   },
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable('DicasUsuarios');
+    await queryInterface.dropTable('DicasGerais');
   }
 };

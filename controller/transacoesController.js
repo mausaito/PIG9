@@ -8,7 +8,7 @@ module.exports.transacoes = async function (req, res) {
   const categorias = await models.Categoria.findAll()
 
   res.render('transacoes', {
-    title: 'Cadastro transações',
+    title: 'Cadastrar transações',
     error: {},
     content: {},
     moedas: moedas,
@@ -20,26 +20,84 @@ module.exports.transacoes = async function (req, res) {
 
 module.exports.criarTransacao = async (req, res) => {
   const transacaoForm = req.body
+  if (!transacaoForm.tipoLancamento || !transacaoForm.idCategorias_fk ||
+    !transacaoForm.descricao || !transacaoForm.valor || !transacaoForm.idMoedas_fk ||
+    !transacaoForm.dataPagto || !transacaoForm.banco) {  
+    const moedas = await models.Moeda.findAll()
+    const categorias = await models.Categoria.findAll()
+
+    res.render('transacoes', {
+      title: 'Cadastrar transações',
+      error:{
+        formulario: 'É preciso preencher todos os campos'},
+        content: req.body,
+        moedas: moedas,
+        categorias: categorias,
+        user: req.session.usuario
+
+    });  
+    return
+  } else {
   transacaoForm.idUsuarios_fk = req.session.usuario.id
-  console.log(req.session)
-  console.log(transacaoForm)
   await models.Lancamento.create(transacaoForm)
   res.redirect('transacoes/lista')
   return
+}
 }
 
 module.exports.listarTransacao = async (req, res) => {
   const listaTransacao = await models.Lancamento.findAll({
     include: [{
       model: models.Moeda, as: "moeda"
-    }, {model: models.Categoria, as: "categoria"}],
+    },{
+      model: models.Categoria, as: "categoria"
+    }]
   })
-
-    res.render('lista', {listaTransacao,
-      user: req.session.usuario})
-    return
+console.log(listaTransacao)
+  res.render('lista', {
+    title: 'Listar Transacões',
+    listaTransacao,
+    user: req.session.usuario
+  })
+  return
 }
 
+// Atualiza
+
+module.exports.attTransacao = async function (req, res) {
+  let { id } = req.params
+  const lancamento = await models.Lancamento.findOne({
+    where: { id: id }
+  })
+  const moedas = await models.Moeda.findAll()
+  const categorias = await models.Categoria.findAll()
+console.log(lancamento, id)
+  res.render('attTransacoes', {
+    title: 'Atualizar Transação',
+    error: {},
+    content: {},
+    moedas: moedas,
+    categorias: categorias,
+    lancamento: lancamento,
+    user: req.session.usuario
+  });
+  return
+};
+
+module.exports.atualizarTransacao = async (req, res) => {
+  const transacaoForm = req.body
+  let { id } = req.params
+  transacaoForm.idUsuarios_fk = req.session.usuario.id
+  const atualzar = await models.Lancamento.update(
+    transacaoForm
+  ,{
+    where: {id: id}
+  }
+    )
+  console.log(atualzar)
+  res.redirect('/transacoes/lista')
+  return
+}
 
 
 

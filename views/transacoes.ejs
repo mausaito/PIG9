@@ -1,32 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PI - Transacoes</title>
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
-
-</head>
-
-<body>
-    <header>
-        <%-include("./partials/header.ejs", { title: title })%>
-    </header>
+<%-include("./partials/header")%>
     <main>
+        <%-include("./partials/sidebar")%>
         <div class="menuesq">
             <div class="paineldireita">
                 <div class="paineldireita2">
                     <form form class="box" method="POST" action="/transacoes">
+                        <span id="erro">
+                        <%= error.formulario ? error.formulario : '' %>
+                      </span>
                         <label class="label" for="tipoLancamento">Receita ou Despesa</label>
                         <select class="input" required name="tipoLancamento">
+                            <option disabled>Selecionar</option>
                             <option>Receita</option>
                             <option>Despesa</option>
                         </select>
                         <label class="label" for="categoria">Categoria</label>
                         <select class="input" required name="idCategorias_fk">
+                            <option disabled>Selecionar</option>
                             <% for( let index=0; index < categorias.length; index++ ) { %>
                                 <option value="<%= categorias[index].id %>">
                                     <%= categorias[index].nome %>
@@ -42,6 +32,7 @@
                         <input class="input" type="date" required name='dataPagto'>
                         <label class="label">Moeda</label>
                         <select class="input" required name="idMoedas_fk">
+                            <option disabled>Selecionar</option>
                             <% for( let index=0; index < moedas.length; index++ ) { %>
                                 <option value="<%= moedas[index].id %>">
                                     <%= moedas[index].nome %>
@@ -60,9 +51,4 @@
         </div>
 
     </main>
-    <footer>
-        <%-include("./partials/footer.ejs", { title: title })%>
-    </footer>
-</body>
-
-</html>
+<%-include("./partials/footer")%>

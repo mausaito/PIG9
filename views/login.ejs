@@ -1,19 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>login</title>
-    <link rel="stylesheet" href='/css/login.css'/>
-</head>
+<%-include("./partials/head") %>
 <body>
-    <img class="logo-img" src="../img/pi-logo.svg"/>
+    <a href="/dashboard"><img class="logo-img" src="/img/pi-logo.svg" /></a>
     <div class="formato"> 
         <form id="formhome" action="/cadastro/login" method="POST">
-            <label for="emailUsuario">Login</label><br/>
+            <label for="email">Login</label><br/>
             <input class="label" id="email" type="email" placeholder="Digite seu email" name="email" required maxlength="150"/><br/>
-            <label for="senhaUsuario">Senha</label><br/>    
+            <label for="hashSenha">Senha</label><br/>    
             <input class="label" id="senha" type="password" name="hashSenha" required/> <br/>
             <input class="logar" type="submit" value="Entrar" />
         </form>
@@ -22,3 +14,4 @@
         </form>
     </div>
   </body>
+</html>

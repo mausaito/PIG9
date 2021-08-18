@@ -4,21 +4,12 @@ const {
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class DicasGerais extends Model {
-    /**
-     * Helper method for defining associations.
-     * This method is not a part of Sequelize lifecycle.
-     * The `models/index` file will call this method automatically.
-     */
     static associate(models) {
-      this.hasMany(models.DicasUsuarios, {
+      this.belongsToMany(models.Usuario, {
+        through: 'dicasPerfil',
+        as: 'dicas',
         foreignKey: 'idDicasGerais_fk',
-        targetKey: 'id',
-        as: 'dicasUsuario'
-      })
-      this.hasMany(models.DicasPerfil, {
-        foreignKey: 'idDicasGerais_fk',
-        targetKey: 'id',
-        as: 'dicasPerfil'
+        othertKey: 'idUsuarios_fk'        
       })
     }
   };
@@ -30,13 +21,15 @@ module.exports = (sequelize, DataTypes) => {
       autoIcrement: true,
       allownull: false
     },
-    dicaPerfil: DataTypes.STRING(150),
-    dicaUsuario: DataTypes.STRING(150),
+    titulo: DataTypes.STRING(45),
+    valorMin: DataTypes.DECIMAL(10,0),
+    texto: DataTypes.STRING(500),
+    situação: DataTypes.ENUM('NEGATIVO', 'POSITIVO'),
     createdAt: DataTypes.DATE,
     updatedAt: DataTypes.DATE,
     createdBy: DataTypes.STRING(150),
     updatedBy: DataTypes.STRING(150)
-  }, {
+  },{
     sequelize,
     modelName: 'DicasGerais',
   });

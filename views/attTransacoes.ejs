@@ -1,0 +1,50 @@
+<%-include("./partials/header")%>
+    <main>
+        <%-include("./partials/sidebar")%>
+        <div class="menuesq">
+            <div class="paineldireita">
+                <div class="paineldireita2">
+                    <form form class="box" method="POST"
+                        action="/transacoes/atualizar/<%= lancamento.id %>?_method=PUT">
+                        <label class="label" for="tipoLancamento">Receita ou Despesa</label>
+                        <select class="input" required name="tipoLancamento">
+                            <option>Receita</option>
+                            <option>Despesa</option>
+                        </select>
+                        <label class="label" for="categoria">Categoria</label>
+                        <select class="input" required name="idCategorias_fk">
+                            <% for( let index=0; index < categorias.length; index++ ) { %>
+                                <option value="<%= categorias[index].id %>">
+                                    <%= categorias[index].nome %>
+                                </option>
+                                <% } %>
+                        </select>
+                        <label class="label" for="form-descricao">Descrição</label>
+                        <input class="input" type="text" placeholder="Descricao Resumida" name="descricao"
+                            maxlength="50" required value="<%= content.descricao ? content.descricao : '' %>" />
+                        <span>
+                            <%= error.descricao ? error.descricao : '' %>
+                        </span>
+                        <label class="label">Valor</label>
+                        <input class="input" type="number" required name="valor">
+                        <label class="label">Data Pagamento</label>
+                        <input class="input" type="date" required name='dataPagto'>
+                        <label class="label">Moeda</label>
+                        <select class="input" required name="idMoedas_fk">
+                            <% for( let index=0; index < moedas.length; index++ ) { %>
+                                <option value="<%= moedas[index].id %>">
+                                    <%= moedas[index].nome %>
+                                </option>
+                                <% } %>
+                        </select>
+                        <label class="label">Banco</label>
+                        <input class="input" type="text" required maxlength="50" name="banco">
+                        <label class="label">Observação</label>
+                        <textarea class="input" maxlength="500" name="observacao"></textarea>
+                        <button class="button is-primary" type="submit">Cadastrar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+<%-include("./partials/footer")%>

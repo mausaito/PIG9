@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <% if (user) { %>
+        <link rel="stylesheet" href="/css/sidebar.css" />
+    <% } %>
+        <% if (title === 'PIG9' ) { %>
+            <link rel="stylesheet" href='/css/home.css' />
+            <% } else if (title==='Login' ) { %>
+                <link rel="stylesheet" href='/css/login.css' />
+                <% } else if (title==='Cadastrar' ) { %>
+                    <link rel="stylesheet" href='/css/cadastro.css' />
+                    <% } else if (title==='Dashboard' ) { %>
+                        <link rel="stylesheet" href='/css/dashboard.css' />
+                        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+                        <% } else if (title==='Cadastrar transações' || title==='Listar Transacões' ) { %>
+                            <!-- <link rel="stylesheet"
+                                href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"> -->
+                            <% } else if (title==='Planejamento' ) { %>
+                                <link rel="stylesheet" href='/css/planejamento.css' />
+                                <% } else if (title==='Atualizar Transação' ) { %>
+                                    <link rel="stylesheet"
+                                        href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+                                    <% } else { %>
+                                        <% } %>
+    <title>
+        <%= title %>
+    </title>
+</head>
