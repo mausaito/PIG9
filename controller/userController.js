@@ -94,13 +94,25 @@ module.exports.paginaLogin = async (req, res) => {
     return
 }
 
+module.exports.logout = async (req, res) => {
+  req.session.estaAutenticado = false,
+  req.session.usuario = '',
+  res.render('home',{title: 'PIG9',
+  error: {
+    email:'',
+  },
+  user: req.session.usuario,
+});
+  return
+}
 
 module.exports.loginUsuario = async (req, res) => {
     const login = req.body
     const usuario = await buscarUsuario(login.email)
     console.log(usuario);
     if (!usuario) {
-        res.render('login', {title: 'Login usuário',
+        user = '',
+        res.render('login', {title: 'Login', user,
         error: {
             email: 'Email ou senha incorretos'},
             content: req.body,
@@ -114,7 +126,7 @@ module.exports.loginUsuario = async (req, res) => {
           res.redirect('/dashboard')
           return
         } else {
-          res.render('home',{
+          res.render('login', {title: 'Login', user,
             error: {
               email: 'Email ou senha incorreta',
             },

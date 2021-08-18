@@ -47,6 +47,9 @@ module.exports.criarTransacao = async (req, res) => {
 
 module.exports.listarTransacao = async (req, res) => {
   const listaTransacao = await models.Lancamento.findAll({
+    where:{
+      idUsuarios_fk:req.session.usuario.id
+    },
     include: [{
       model: models.Moeda, as: "moeda"
     },{

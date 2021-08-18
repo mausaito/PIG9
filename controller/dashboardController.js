@@ -3,10 +3,15 @@ const { stringify } = require('querystring');
 const models = require('../database/models');
 
 module.exports.paginaInicial = async (req, res) => {
+  console.log('>>>>>>>', req.session.usuario.id)
+  
   const dadosDashboard = await models.Lancamento.findAll({
+    where:{
+      idUsuarios_fk:req.session.usuario.id
+    },
     include: [{
       model: models.Categoria, as: "categoria"}]
-  }) 
+    }) 
   console.log(JSON.stringify(dadosDashboard))
   let dadosValor = []
   let dadosCategoria = []
@@ -18,9 +23,9 @@ module.exports.paginaInicial = async (req, res) => {
     dadosValor.push(dados.valor)
     dadosCategoria.push(dados.categoria.nome)
     if (dados.tipoLancamento === 'RECEITA') {
-      valorReceita += dados.valor
+      valorReceita += Number(dados.valor)
     } else {
-      valorDespesa += dados.valor
+      valorDespesa += Number(dados.valor)
     }
     valorSaldo = valorReceita - valorDespesa
   }

@@ -19,6 +19,8 @@
                 <div id="usuario" class="border">
                     <%=user && user.nomeCompleto ? user.nomeCompleto : '' %>
                 </div>
-                <button><a href="home">Sair</a></button>
+                <form action="/cadastro/logout" method="GET">
+                    <input type="submit" value="Sair" />
+                </form>
                 <% } %>
     </header>
