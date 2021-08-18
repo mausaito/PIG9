@@ -26,17 +26,17 @@ html{
 }
 .side{
     background-color: rgb(0, 131, 136);
-    height: 100vh;
+    height: 100%;
     width: 250px;
-    position: absolute;
+    position: fixed;
     transition: all .2s linear;
-    left: -190px;
+    left: -250px;
 }
 .size{
     font-size: 45px;
 }
 .size.color{
-    color: rgb(255, 255, 255);
+    color: #94d4c1;
     font-size: 40px;
 }
 ul{
@@ -77,7 +77,7 @@ a:hover, div:hover{
     background-color: rgb(204, 245, 250);
 }
 #check:checked ~ .side {
-    transform: translateX(190px);
+    transform: translateX(250px);
 }
 #check:checked ~ .side ul{
     left: 0;

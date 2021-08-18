@@ -1,120 +1,154 @@
-/* CÓDIGO DA ROSÂGELA */
-/* @charset "utf-8"
-@import "./planejamento.ejs"09:55 01/08/2021
 
-h1{
-    background:#5599DD;
-    color:#DDDDDD
-    padding-top:5px;
-    padding-left:10px;
-}
-
-.button.id:btn1{
-    background-color: aqua;
-
-}
-.button:hover{
-	color: #330000;
-	background-color: #FFFFFF;
-	border-radius: 10px 0px 10px 0px;
-} */
-
-* {
-    box-sizing: border-box;
-}
-html{
-    padding: 0;
-    margin: 0;
-    font-size: 6.25%;
-    font-family:"pidhg9";
-}
+//*
 @font-face {
-    font-family:"pidhg9";
-    src: url("fonts/BaiJamjuree-Light.ttf");
+    font-family: "pidhg9";
+    src: url("/fonts/BaiJamjuree-Light.ttf");
+    
 }
+
+body {
+    background-image: linear-gradient(95deg, rgb(22, 233, 233), rgb(119, 0, 255));
+           
+}
+
+.logo-img {
+    padding-top: 10px;
+    padding-left: 10px;
+    width: 100%;
+    max-width: 200px;
+    position: absolute;
+    margin-top: 10px;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+}
+
+.formato {
+    background-color: rgba(36, 145, 246, 0.8);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 80px;
+    border-radius: 15px;
+    color: rgb(64, 13, 131);
+    font-size: 20px;
+    font-family: "pidhg9";
+    src: url("/fonts/BaiJamjuree-Light.ttf");
+    
+}
+
+.label {
+    padding: 10px;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    margin-bottom: 10px;
+    border-radius: 15px;
+    
+}
+
+.logar {
+    margin-top: 20px;
+    background-color: rgb(102, 101, 101);
+    border: none;
+    padding: 10px;
+    width: 100%;
+    border-radius: 15px;
+    color: #fff;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.cadastrar {
+    margin-top: 30px;
+    background-color: rgb(102, 101, 101);
+    border: none;
+    padding: 10px;
+    width: 100%;
+    border-radius: 15px;
+    color: #fff;
+    font-size: 15px;
+    cursor: pointer;
+    
+}
+
+.logar:hover {
+    background-color: green;
+}
+
+.cadastrar:hover {
+    background-color: blue;
+}
+
+@media screen and (min-width: 768px) {
+    .logo-img {
+        padding-top: 10px;
+        padding-left: 10px;
+        width: 100%;
+        max-width: 200px;
+        position: absolute;
+        top: 50%;
+        left: 20%;
+        transform: translate(-50%, -50%);
+        
+    }
+    
+    .formato {
+        background-color: rgba(15, 18, 20, 0.8);
+        position: absolute;
+        top: 50%;
+        left: 70%;
+        transform: translate(-50%, -50%);
+        padding: 80px;
+        border-radius: 15px;
+        color: rgb(255, 255, 255);
+        font-size: 20px;
+        font-family: "pidhg9";
+        src: url("/fonts/BaiJamjuree-Light.ttf");
+        
+    }
+}
+*//
+@font-face {
+    font-family: "pidhg9";
+    src: url("/fonts/BaiJamjuree-Light.ttf");
+    
+}
+img{
+    width: 60px;
+   
+    
+}
+
 body{
-    display:flex;
-    flex-direction:column;
-    min-height:100vh;
-    font-size:26rem;
-    margin-top: 0;
-    margin-left: 0;
-    position: relative;
+	background-image: linear-gradient(95deg, rgb(212, 247, 132), rgb(241, 253, 231));
+	font-weight: bold;
+	color: black;
+	margin: 40px;
 }
-main{
-    display:flex;
-    flex-grow:1;
-    flex-direction:row;
-} 
-.menuesq{
-    width:20%;
-    flex-grow:1;
-    display:flex;
-    border-right:1px solid gray;
-    flex-direction:column;
+
+
+
+input {
+    padding: 10px;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    margin-bottom: 10px;
+    border-radius: 15px;
+    
 }
-.menuesq li{
-    list-style:none;
-    color:darkgray;
-}
-#botaoNovo{
-    font-size:20rem;
-    border-radius:5rem;
-    border:solid 5rem darkgray;
-    align-self:left;
-    width:200rem;
-    height:40rem;
-    text-align:center;
-    padding-top:5rem;
-    padding-bottom:5rem;
-}
-.grafico{
-    width:80%;
-    flex-grow:1;
-    display:flex;
-    flex-direction:column;
-    align-self:center;
-}
-.infos{
-    width:80%;
-    flex-grow:1;
-    display:flex;
-    flex-direction:column;
-    align-self:flex-end;
-}
-footer{
-    height:110rem;
-    background:rgb(226, 226, 226);
-    width:100vw;
-    display:flex;
-}
-.esqfooter {
-    width:40%;
-    color:darkgray;
-    align-self:flex-end;
-    font-size:22rem;
-}
-.centfooter{
-    width:40%;
-}
-.redesocial{
-    width:20%;
-    align-self:center;
-}
-.redesocial p {
-    color:darkgray;
-    margin-top:15rem;
-    margin-bottom:5rem;
-}
-#facebook{
-    width:15%;
-    margin-top:5rem;
-}
-#instagram{
-    width:14%;
-    margin-top:5rem;
-}
-#twitter{
-    width:14%;
-    margin-top:5rem;
+form{
+    background-color: rgba(207, 247, 170, 0.8);
+	background-color: rgba(36, 246, 201, 0.8);
+  position: absolute;
+    padding: 90px;
+    width: 150px;
+    border-radius: 15px;
+    color: rgb(76, 131, 13);
+    font-size: 20px;
+    font-family: "pidhg9";
+   
 }
