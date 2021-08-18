@@ -7,9 +7,10 @@ const sequelize = require('sequelize')
 const Op = sequelize.Op
 
 module.exports.showCadastro = function (req, res) {
-    res.render('cadastro', {title: 'Cadastro usuário',
+    res.render('cadastro', {title: 'Cadastrar',
       error: {},
       content: {},
+      user: req.session.usuario
     });
     return
   };
