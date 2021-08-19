@@ -11,6 +11,9 @@ module.exports = {
       id: {
         type: Sequelize.NUMBER
       },
+      dicasPerfil: {
+        type: Sequelize.STRING
+      },
       titulo: {
         type: Sequelize.STRING
       },

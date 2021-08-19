@@ -21,10 +21,11 @@ module.exports = (sequelize, DataTypes) => {
       autoIcrement: true,
       allownull: false
     },
+    dicasPerfil: DataTypes.STRING(150),
     titulo: DataTypes.STRING(45),
     valorMin: DataTypes.DECIMAL(10,0),
     texto: DataTypes.STRING(500),
-    situação: DataTypes.ENUM('NEGATIVO', 'POSITIVO'),
+    situacao: DataTypes.ENUM('NEGATIVO', 'POSITIVO'),
     createdAt: DataTypes.DATE,
     updatedAt: DataTypes.DATE,
     createdBy: DataTypes.STRING(150),

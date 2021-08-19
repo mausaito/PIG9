@@ -1,9 +1,9 @@
 const fs = require('fs');
 const { stringify } = require('querystring');
+const { Op } = require('sequelize');
 const models = require('../database/models');
 
 module.exports.paginaInicial = async (req, res) => {
-  console.log('>>>>>>>', req.session.usuario.id)
   
   const dadosDashboard = await models.Lancamento.findAll({
     where:{
@@ -29,6 +29,19 @@ module.exports.paginaInicial = async (req, res) => {
     }
     valorSaldo = valorReceita - valorDespesa
   }
+
+  const situacao = valorSaldo > 0 ? 'POSITIVO' : 'NEGATIVO'
+  const dicasDashboard = await models.DicasGerais.findAll({
+    where: { dicasPerfil: req.session.usuario.tipoPerfil, situacao: situacao,
+      valorMin: {
+        [Op.lte]: valorSaldo
+    } }
+  })
+
+  console.log(dicasDashboard)
+
+
+  
   // criando a string para o grafico de valor por categoria
   const stringCategorias = JSON.stringify(dadosCategoria)
   const stringValor = JSON.stringify(dadosValor)
@@ -41,7 +54,7 @@ module.exports.paginaInicial = async (req, res) => {
   console.log (stringCategorias)  
 
   res.render('dashboard', {title: 'Dashboard', stringValor , stringCategorias, stringGrafico, valorReceita, valorDespesa, valorSaldo,
-    user: req.session.usuario})
+    dicasDashboard, user: req.session.usuario})
   return
 }
 
