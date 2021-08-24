@@ -25,7 +25,6 @@ module.exports.criarTransacao = async (req, res) => {
     !transacaoForm.dataPagto || !transacaoForm.banco) {  
     const moedas = await models.Moeda.findAll()
     const categorias = await models.Categoria.findAll()
-
     res.render('transacoes', {
       title: 'Cadastrar transações',
       error:{

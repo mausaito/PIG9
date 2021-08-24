@@ -2,6 +2,7 @@ const fs = require('fs');
 const { stringify } = require('querystring');
 const { Op } = require('sequelize');
 const models = require('../database/models');
+const { exibeInflacao } = require('../externals/alphaVantage')
 
 module.exports.paginaInicial = async (req, res) => {
   
@@ -33,10 +34,10 @@ module.exports.paginaInicial = async (req, res) => {
   const situacao = valorSaldo > 0 ? 'POSITIVO' : 'NEGATIVO'
   const dicasDashboard = await models.DicasGerais.findAll({
     where: { dicasPerfil: req.session.usuario.tipoPerfil, situacao: situacao,
-      valorMin: {
+      ...(situacao =='POSITIVO' && {valorMin: {
         [Op.lte]: valorSaldo
-    } }
-  })
+    }})
+  }})
 
   console.log(dicasDashboard)
 
@@ -58,6 +59,10 @@ module.exports.paginaInicial = async (req, res) => {
   return
 }
 
+module.exports.getInflacao = async (req, res) => {
+  const inflacao = await exibeInflacao()
+  res.send(inflacao)
+}
 
 
 
