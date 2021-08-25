@@ -17,83 +17,15 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    font-size: 26rem;
+    font-size: 20rem;
     font-family: "pidhg9";
     margin-top: 0;
     margin-left: 0;
 }
 
-.logo{
-    padding: 0;
-    width: 100%;
-    max-width: 200px;
-    margin: -1rem;
-    display: flex;
-    flex-direction: column;
-    justify-self: center;
-    align-items: center;
-}
-
-#logo-img{
-    display: flex;
-    flex-direction: column;
-    justify-self: center;
-    align-items: center;
-}
-
-nav {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #94d4c1;
-}
-nav > a {
-    text-decoration: none;
-    color: #FFFFFF;
-    font-weight: 800;
-    font-size: 32px;
-    cursor: pointer;
-}
-
-nav ul {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    list-style: none;
-    padding: 0;
-    width: 100%;
-}
-
-nav ul li {
-    text-align: center;
-    width: 100%;
-}
-
-nav ul li a {
-    display: inline-block;
-    padding: 10px 0;
-    width: 100%;
-    text-decoration: none;
-    
-}
-
-.btn{
-    border: none;
-    background: none;
-    cursor: pointer;
-}
-
-header {
-    
-    align-items: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    
-}
-
 .banner-img {
-    width: 100vw;
+    width: 100%;
+    height: 100%;
 }
 
 .quemsomos {
@@ -101,7 +33,7 @@ header {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    margin-top: 80px;
+    margin-top: 20vh;
     margin-bottom: 30px;
 }
 
@@ -110,7 +42,7 @@ header {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    margin-top: 80px;
+    margin-top: 20vh;
     margin-bottom: 30px;
 }
 
@@ -158,21 +90,10 @@ a:link, a:visited {
     text-align: center;
 }
 
-@media screen and (min-width: 768px) {
-    nav {
-        flex-direction: row;
-        justify-content: space-around;
-    }
-    
-    nav ul {
-        flex-direction: row;
-        width: 70%;
-    }
-    
-    header {
-        height: 600px;
-        height: 60vh;
-        justify-content: center;
+@media screen and (min-width: 768px) {       
+    .banner-img {
+        width: 100%;
+        height: 100%;
     }
 
     .quemsomos {

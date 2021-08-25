@@ -2,7 +2,7 @@ const fs = require('fs');
 const { stringify } = require('querystring');
 const { Op } = require('sequelize');
 const models = require('../database/models');
-const { exibeInflacao } = require('../externals/alphaVantage')
+//const { exibeInflacao } = require('../externals/alphaVantage')
 
 module.exports.paginaInicial = async (req, res) => {
   
@@ -59,10 +59,10 @@ module.exports.paginaInicial = async (req, res) => {
   return
 }
 
-module.exports.getInflacao = async (req, res) => {
-  const inflacao = await exibeInflacao()
-  res.send(inflacao)
-}
+// module.exports.getInflacao = async (req, res) => {
+//   const inflacao = await exibeInflacao()
+//   res.send(inflacao)
+// }
 
 
 

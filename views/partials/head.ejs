@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+    <!--<link rel="stylesheet" type="text/css" href="/css/normalize.css">-->
     <link rel="stylesheet" href="/css/header.css">
     <link rel="stylesheet" href="/css/footer.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -22,12 +22,12 @@
                         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
                         <% } else if (title==='Cadastrar transações' || title==='Listar Transacões' ) { %>
                             <!-- <link rel="stylesheet"
-                                href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"> -->
-                            <% } else if (title==='Planejamento' ) { %>
+                                href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"> --><link rel="stylesheet" href='/css/transacoes.css' />
+                            <% } else if (title==='PI - Planejamento' ) { %>
                                 <link rel="stylesheet" href='/css/planejamento.css' />
-                                <% } else if (title==='Atualizar Transação' ) { %>
+                                <% } else if (title==='Atualizar Transação' ) { %><link rel="stylesheet" href='/css/planejamento.css' /><!-- preciso verificar com o Anderson sobre if para style sheet
                                     <link rel="stylesheet"
-                                        href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+                                        href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">-->
                                     <% } else { %>
                                         <% } %>
     <title>

@@ -1,73 +1,125 @@
 * {
     box-sizing: border-box;
 }
+
 @font-face {
-    font-family:"pidhg9";
+    font-family: "pidhg9";
     src: url("/fonts/BaiJamjuree-Light.ttf");
 }
-html{
+
+html {
     margin: 0;
     padding: 0;
     font-family: "pidhg9";
 }
+
 header{
-    height: 90px;
+    display: flex;
+    height: 220px;
     background:#94d4c1;
     width:100%;
-    display:flex;
-    justify-content:space-between;
+    justify-content: space-between;
     position: relative;
-    text-align: center;
-    padding: 20px;
-}
-header div a{
-    display: flex;
-    justify-self: center; 
+    text-align: center;    
+    align-items: center;  
 }
 
-#logo-img{
+.logo {
+    padding: 0;
     display: flex;
+    width: 100%;
+    max-width: 150px;
+    margin-left: 30px;
+    min-width: 120px;
+}
+
+#logo-img {
+    display: flex;
+    flex-direction: center;
     justify-self: center;
+    align-items: center;
+    margin-left: 20px;
+    margin-right: 50px;
+}
+
+.centralizar {
+    justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    width: 100%;
+}
+
+.alinhar {
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    list-style: none;
     
 }
-.logo{
-    width:30%;
-    margin:14rem;
-    display: flex;
-    justify-self: center;
+
+header ul li a {
+    font-size: 20px;
 }
-#usuario{
-   font-size: 18px;
+
+.ocultar {
+    visibility: visible;
 }
-.border{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    right: 10px;
-    top: 10px;
-    width:170px;
-    height: 30px;
-    border-radius: 20px;
-    background: ghostwhite;
+
+.btn{
+    border: none;
+    background: none;
+    cursor: pointer;
+    background: none;
+    
+    font-size: 20px;
+    font-family: "pidhg9";
 }
-button{
-    position: relative;
-    top: 50px;
-    right: 10px;
-    height: 20px;
-    display: flex;
-    background: #94d4c1;
-    border:transparent;
-    color:#ffffff;
+
+@media screen and (min-width: 768px) {
+    header {
+        height: 160px;
+    }
+    
+    .logo {
+        display: flex;
+        width: 100%;
+        max-width: 140px;
+        margin-right: 50px;
+    }
+    
+    .centralizar {
+        flex-direction: row;
+        width: 70%;
+    }
+    
+    .alinhar {
+        text-align: center;
+        width: 100%;
+        flex-direction: row;
+        width: 70%;
+        padding-right: 50px;
+    }
+    
+    ul li a {
+        font-size: 25px;
+        display: inline-block;
+        padding: 10px 0;
+        width: 100%;
+        text-decoration: none;
+    }
+    
+    .ocultar {
+        visibility: hidden;
+    }
+    
+    .btn{       
+        font-size: 25px;
+        font-family: "pidhg9";
+    }
+    
 }
-/* <header>
-<div id="logo-img">
-    <a href="home.html"><img class="logo" src="pi-logo.svg"/></a>
-</div>
-<bott id="usuario">
-    <input id="usuario"type="text" placeholder="Nome Usuario"/> <br/>
-    <!-- quando souber como puxar do banco o nome do usuario trocamos o placeholder -->
-   <button>Sair</button>
-</form>
-</header> */

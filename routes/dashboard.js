@@ -6,5 +6,5 @@ const checkSession = require('../middlewares/checkSession');
 /* GET dashboard  */
 
 router.get('/', checkSession, dashboardController.paginaInicial)
-router.get('/buscaInflacao', dashboardController.getInflacao)
+//router.get('/buscaInflacao', dashboardController.getInflacao)
 module.exports = router;
