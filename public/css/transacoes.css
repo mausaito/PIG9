@@ -12,81 +12,50 @@ html{
     font-family: "pidhg9";
 }  
 body{
-    display:flex;
-    flex-direction:column;
-    min-height:100vh;
-    font-size:20rem;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-size: 20rem;
     margin-top: 0;
     margin-left: 0;   
-}/*
-header{
-    height: 120rem;
-    background:#94d4c1;
-    width:100vw;
-    display:flex;
-    justify-content:space-between;
 }
-.logo{
-    width:30%;
-    margin:14rem;
-    display: flex;
-    justify-self: center;
-}
-header div a{
-    display: flex;
-    justify-self: center;  
-}
-#logo-img{
-    display: flex;
-    justify-self: center;
-}*//*
-#usuario{
-    border:transparent;
-    background:#d49494;
-    display:flex;
-    font-weight:bold;
-    justify-content:center;
-    flex-direction:column;
-}*/
 button{
     background:#94d4c1;
-    border:transparent;
-    color:rgb(51, 0, 117);
+    border: transparent;
+    color: rgb(51, 0, 117);
     font-size: 19px;
     margin-bottom: 10px;   
  }
  a:link {
     text-decoration: none;
-    color: #FFF;
 }
 main{
-    display:flex;
-    flex-grow:1;
-    flex-direction:row;
+    display: flex;
+    flex-grow: 1;
+    flex-direction: row;
 } 
 .menuesq{
-    width:20%;
-    flex-grow:1;
-    display:flex;
-    border-right:1px solid gray;
-    flex-direction:column;
+    width: 20%;
+    flex-grow: 1;
+    display: flex;
+    border-right: 1px solid gray;
+    flex-direction: column;
     align-items: center;
     margin-top: 30px;
 }
 .menuesq li{
-    list-style:none;
-    color:darkgray;
+    list-style: none;
+    color: darkgray;
 }
-
 #botaoNovo{
-    font-size:20rem;
-    border-radius:5rem;
-    border:solid 5rem darkgray;
-    align-self:center;
-    width:200rem;
-    height:40rem;
-    text-align:center;
-    padding-top:10rem;
+    font-size: 20rem;
+    border-radius: 5rem;
+    border: solid 5rem darkgray;
+    align-self: center;
+    width: 200rem;
+    height: 40rem;
+    text-align: center;
+    padding-top: 10rem;
 }
 .paineldireita{
     width:35%;
@@ -97,61 +66,61 @@ main{
     margin-left: 20rem;
 }
 .paineldireita2{
-    width:60%;
-    flex-grow:1;
-    display:flex;
-    flex-direction:column;
-    height:51%
+    width: 60%;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    height: 51%
 }
 .nome-campo{
     width: 40%;
-    display:flex;
-    flex-direction:column;
+    display: flex;
+    flex-direction: column;
     margin-left: 50rem;
-    margin-top:30rem;
+    margin-top: 30rem;
 }
 .campos{
-    width:60%;
-    display:flex;
-    flex-direction:column;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
     justify-content: flex-start;
-    margin-top:30rem;
+    margin-top: 30rem;
 }
 #tipo, #categoria, #nome, #valor, #data, #moeda, #banco{
-    margin-top:30rem;
-    width:350rem;
-    height:20rem;
-    justify-self:center;
-    border-radius:5rem;
+    margin-top: 30rem;
+    width: 350rem;
+    height: 20rem;
+    justify-self: center;
+    border-radius: 5rem;
 }
 #form-tipo, #form-categoria, #form-nome, #form-valor, #form-dtpgto, #form-moeda, #form-banco {
-    border-bottom:1px dashed grey;
-    margin-top:20rem;
+    border-bottom: 1px dashed grey;
+    margin-top: 20rem;
 }
 .observacao{
     width: 40%;
     margin-left: 50rem;
-    display:flex;
+    display: flex;
     align-content: flex-start;
-    flex-direction:column;
-    height:49%
+    flex-direction: column;
+    height: 49%
 }
 #observacao{
-    width:720rem;
-    height:220rem;
-    align-self:flex-start;
-    border-radius:5rem;
+    width: 720rem;
+    height: 220rem;
+    align-self: flex-start;
+    border-radius: 5rem;
 }
 .comandos{
-    display:flex;
-    justify-content:flex-end;
-    position:relative;
-    right:36.5%;
-    margin-bottom:20rem;
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+    right: 36.5%;
+    margin-bottom: 20rem;
    }
 #botaoAdicionar{
-    font-size:22rem;
-    border-radius:5rem;
+    font-size: 22rem;
+    border-radius: 5rem;
 }
 
 
