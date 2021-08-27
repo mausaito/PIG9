@@ -15,6 +15,8 @@ router.get('/:id/attTransacoes', checkSession, transacoesController.attTransacao
 
 router.put('/atualizar/:id', transacoesController.atualizarTransacao)
 
+router.get('/converteMoeda', transacoesController.conversorMoedas)
+
 // router.delete('/deletar/:id', transacoesController.deletarTransacao)
 
 

@@ -13,7 +13,7 @@
                             <option disabled>Selecionar</option>
                             <option>Receita</option>
                             <option>Despesa</option>
-                        </select>
+                        </select><p></p>
                         <label class="label" for="categoria">Categoria</label>
                         <select class="input" required name="idCategorias_fk">
                             <option disabled>Selecionar</option>
@@ -22,32 +22,105 @@
                                     <%= categorias[index].nome %>
                                 </option>
                                 <% } %>
-                        </select>
+                        </select><p></p>
                         <label class="label" for="form-descricao">Descrição</label>
                         <input class="input" type="text" placeholder="Descricao Resumida" name="descricao"
-                            maxlength="50" required />
+                            maxlength="50" required /><p></p>
                         <label class="label">Valor</label>
-                        <input class="input" type="number" step ="0.01" required name="valor">
+                        <input class="input" type="number" step ="0.01" required name="valor"><p></p>
                         <label class="label">Data Pagamento</label>
-                        <input class="input" type="date" required name='dataPagto'>
+                        <input class="input" type="date" required name='dataPagto'><p></p>
                         <label class="label">Moeda</label>
-                        <select class="input" required name="idMoedas_fk">
+                        <select class="input" required name="idMoedas_fk"><p></p>
                             <option disabled>Selecionar</option>
                             <% for( let index=0; index < moedas.length; index++ ) { %>
                                 <option value="<%= moedas[index].id %>">
                                     <%= moedas[index].nome %>
                                 </option>
                                 <% } %>
-                        </select>
+                        </select><p></p>
                         <label class="label">Banco</label>
-                        <input class="input" type="text" required maxlength="50" name="banco">
+                        <input class="input" type="text" required maxlength="50" name="banco"><p></p>
                         <label class="label">Observação</label>
-                        <textarea class="input" maxlength="500" name="observacao"></textarea>
+                        <textarea class="input" maxlength="500" name="observacao"></textarea><p></p>
                         <button class="button is-primary" type="submit">Cadastrar</button>
                         <button class="button is-family-secondary"><a href="/transacoes/lista">Voltar</a></button>
                     </form>
                 </div>
             </div>
+            <!--<script>
+                const conversao = async () =>{
+         
+         const getConversao = await fetch('http://localhost:3000/transacoes/converteMoeda')
+        
+        const resultFetch = await getConversao.json().then(function(res){
+            return res
+        })
+        return resultFetch
+        }
+        window.onload = () =>{
+           const resultadoConversao = conversao()
+           console.log(resultadoConversao)
+        }
+                const limparFormulario = (endereco) =>{
+                    documente.getElementById("endereco").value = ' ';
+                    documente.getElementById("bairro").value = ' ';
+                    documente.getElementById("cidade").value = ' ';
+                    documente.getElementById("estado").value = ' ';
+                }
+                
+                const preencherFormulario = (endereco) =>{
+                    documente.getElementById("endereco").value = endereco.logradouro;
+                    documente.getElementById("bairro").value = endereco.bairro;
+                    documente.getElementById("cidade").value = endereco.localidade;
+                    documente.getElementById("estado").value = endereco.uf;
+            }
+            
+            document.getElementById("cep")
+                .addEventListener('focusout' , pesquisaCep);
+            </script>
+            <div class="row">
+                <div class="inputbox">
+                    <input type="text" id="nome" required>
+                    <label for="nome">Nome</label>
+                </div>
+                <div class="inputbox">
+                    <input type="text" id="email"  required>
+                    <label for="email">Email</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="inputbox">
+                    <input type="text" id="cep"  required>
+                    <label for="cep">CEP</label>
+                </div>
+                <div class="inputbox">
+                    <input type="text" id="endereco"  required>
+                    <label for="endereco">Endereço</label>
+                </div>
+                <div class="inputbox">
+                    <input type="text" id="numero"  required>
+                    <label for="numero">Número</label>
+                </div>
+            <!-- </div> -->
+            <!-- <div class="row"> -->
+                <!--<div class="inputbox">
+                    <input type="text" id="bairro"  required>
+                    <label for="bairro">Bairro</label>
+                </div>
+                <div class="inputbox">
+                    <input type="text" id="cidade"  required>
+                    <label for="cidade">Cidade</label>
+                </div>
+                <div class="inputbox">
+                    <input type="text" id="estado"  required>
+                    <label for="estado">Estado</label>
+                </div>
+            </div>
+            <div class="row">
+                <button>Salvar</button>
+            </div>-->
         </div>
+        
     </main>
 <%-include("./partials/footer")%>

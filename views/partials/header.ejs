@@ -6,21 +6,37 @@
         </div>
         <% if (!user) { %>
             <ul class='centralizar'>
-                <li><a href="#quemsomos">Quem somos</a></li>
-                <li><a href="#comofunciona">Como funciona</a></li>
-                <li><a href="#contato">Contato</a></li>
-                <li>
+                <li class="posicao"><a href="#quemsomos">Quem somos</a></li>
+                <li class="posicao"><a href="#comofunciona">Como funciona</a></li>
+                <li class="posicao"><a href="#contato">Contato</a></li>
+                <li class="posicao">
                     <form action="/cadastro/login" method="GET">
-                        <input type="submit" value="Acesse" />
+                        <input class="btn"  type="submit" value="Acesse" />
                     </form>
                 </li>
             </ul>
             <% } else{ %>
-                <div id="usuario" class="border">
-                    <%=user && user.nomeCompleto ? user.nomeCompleto : '' %>
-                </div>
-                <form action="/cadastro/logout" method="GET">
-                    <input type="submit" value="Sair" />
-                </form>
+                <ul class="ocultar">
+                    <form class="posicao" action="/dashboard" method="GET">
+                        <input class="btn" type="submit" value="Dashboard" />
+                    </form>
+                    <form  class="posicao" action="/transacoes/lista" method="GET">
+                        <input class="btn" type="submit" value="Transações" />
+                    </form>
+                    <form  class="posicao" action="/planejamento" method="GET">
+                        <input class="btn" type="submit" value="Planejamento" />
+                    </form>
+                    <form action="/cadastro/listaUsuarios" method="GET">
+                        <input class="btn" type="submit" value="Relação de Usuários" />
+                    </form>
+                </ul>
+                <ol class="fixarDireita">
+                    <div id="usuario" class="border">
+                        <%=user && user.nomeCompleto ? user.nomeCompleto : '' %>
+                    </div>
+                    <form action="/cadastro/logout" method="GET">
+                        <input type="submit" value="Sair" />
+                    </form>
+                </ol>
                 <% } %>
     </header>

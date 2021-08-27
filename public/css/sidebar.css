@@ -1,6 +1,6 @@
 * {
     box-sizing: border-box;
-  }
+}
 @font-face {
     font-family:"pidhg9";
     src: url("/fonts/BaiJamjuree-Light.ttf");
@@ -12,9 +12,8 @@ html{
     font-family: "pidhg9";
 }
 .fixa{
-    position:fixed;
+    position:absolute;
 }
-
 #check{
     display: none;
 }
@@ -25,41 +24,46 @@ html{
     z-index: 1;
 }
 .side{
-    background-color: rgb(0, 131, 136);
     height: 100%;
-    width: 250px;
-    position: fixed;
+    width: 180px;
+    position: absolute;
     transition: all .2s linear;
     left: -250px;
+    margin-top: 0px;
 }
 .size{
-    font-size: 45px;
+    font-size: 40px;
 }
 .size.color{
     color: #94d4c1;
     font-size: 40px;
 }
-ul{
+.format{
+    height: 550px;
     padding: 5px;   
     list-style: none;
     width: 100%;
     position: absolute;
-    top: 60px;
+    top: -20px;
     left: -25%;
+    background-color: rgb(0, 131, 136);
 }
 li div{
     padding-left: 10px;
     display: inline-block;
     font-family: pidhg9;
-    font-size: 26rem;
-    font-weight: 600;
-  
+    font-size: 22rem;
+    font-weight: 100%;
 }
 li a{
     display:block;
     padding-left: 30px;
     text-decoration: none;
     color: rgb(255, 255, 255);
+    font-size: 20px;
+}
+a.link{
+    margin-top: 60px;
 }
 a:hover, div:hover{
     color: #000;
@@ -68,10 +72,10 @@ a:hover, div:hover{
     display: flex;
     align-items: center;
     text-decoration: none;
-    padding: 10px;
+    padding: 8px;
     transition: all .2s linear;
     border-bottom: 3px solid rgb(0, 131, 136);
-    border-radius: 50px;
+    border-radius: 30px;
 }
 .link:hover{
     background-color: rgb(204, 245, 250);
@@ -81,4 +85,13 @@ a:hover, div:hover{
 }
 #check:checked ~ .side ul{
     left: 0;
+}
+.mostrar{
+    visibility: hidden;
+}
+
+@media screen and (min-width: 768px) {       
+    .mostrar{
+        visibility: visible;
+    }
 }

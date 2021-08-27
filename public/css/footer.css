@@ -20,7 +20,7 @@ footer{
     left: 0;
     right: 0;
     background: rgb(187, 187, 187);
-    height: auto;
+    height: 100%;
     width: 100%;
     padding-top: 30px;
     color: white;
@@ -44,7 +44,7 @@ footer div ul{
     padding: 5px;
     list-style: none;
     width: 100%;
-    position: absolute;
+    position: relative;
     left: 0%;
 }
 footer a{
@@ -67,7 +67,7 @@ footer a{
     height: 35px;
 }
 .footer-bottom{
-    position: absolute;
+    position: relative;
     bottom: 0;
     display: flex;
     height: 20px;

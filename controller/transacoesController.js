@@ -2,7 +2,7 @@ const { json } = require('body-parser')
 const fs = require('fs')
 const path = require('path')
 const models = require('../database/models');
-
+const {conversorMoedas}=require('../externals/conversorMoedas')
 module.exports.transacoes = async function (req, res) {
   const moedas = await models.Moeda.findAll()
   const categorias = await models.Categoria.findAll()
@@ -99,6 +99,13 @@ module.exports.atualizarTransacao = async (req, res) => {
   console.log(atualzar)
   res.redirect('/transacoes/lista')
   return
+}
+
+module.exports.conversorMoedas = async function (req, res) {
+  const conversao = await conversorMoedas()
+  res.send(conversao)
+  
+
 }
 
 

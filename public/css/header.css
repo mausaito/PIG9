@@ -1,38 +1,33 @@
 * {
     box-sizing: border-box;
 }
-
 @font-face {
     font-family: "pidhg9";
     src: url("/fonts/BaiJamjuree-Light.ttf");
 }
-
 html {
     margin: 0;
     padding: 0;
     font-family: "pidhg9";
 }
-
 header{
     display: flex;
+    width: 100%;
     height: 220px;
     background:#94d4c1;
-    width:100%;
     justify-content: space-between;
     position: relative;
     text-align: center;    
     align-items: center;  
 }
-
 .logo {
     padding: 0;
     display: flex;
     width: 100%;
-    max-width: 150px;
+    max-width: 130px;
     margin-left: 30px;
     min-width: 120px;
 }
-
 #logo-img {
     display: flex;
     flex-direction: center;
@@ -41,85 +36,97 @@ header{
     margin-left: 20px;
     margin-right: 50px;
 }
-
 .centralizar {
     justify-content: space-between;
     display: flex;
     flex-direction: column;
     align-items: center;
     list-style: none;
-    padding: 0;
     width: 100%;
 }
-
 .alinhar {
     text-align: center;
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    list-style: none;
-    
+    list-style: none;    
 }
-
 header ul li a {
-    font-size: 20px;
+    font-size: 22px;
 }
-
 .ocultar {
     visibility: visible;
 }
-
 .btn{
     border: none;
     background: none;
     cursor: pointer;
     background: none;
-    
-    font-size: 20px;
+    font-size: 22px;
     font-family: "pidhg9";
+}
+ol{
+    text-align: center;
+    width: 100%;
+    flex-direction: row;
+    padding-right: 10px;
+    align-items: flex-end;
+}    
+.posicao {
+    margin-bottom: 10px;
+}
+.fixarDireita {
+    margin-right: 20px;
+    text-align: right;
 }
 
 @media screen and (min-width: 768px) {
     header {
         height: 160px;
-    }
-    
+        width: 100%;
+        background:#94d4c1;
+        justify-content: space-between;
+        position: relative;
+        text-align: center;    
+        align-items: center;  
+    }    
     .logo {
         display: flex;
         width: 100%;
-        max-width: 140px;
+        max-width: 130px;
         margin-right: 50px;
     }
-    
     .centralizar {
         flex-direction: row;
-        width: 70%;
-    }
-    
-    .alinhar {
-        text-align: center;
         width: 100%;
-        flex-direction: row;
-        width: 70%;
-        padding-right: 50px;
+        padding: 5px;
     }
-    
+    .alinhar {
+        text-align: center;        
+        flex-direction: row;        
+        padding-right: 50px;
+    }    
     ul li a {
         font-size: 25px;
         display: inline-block;
         padding: 10px 0;
         width: 100%;
         text-decoration: none;
-    }
-    
+    }    
     .ocultar {
         visibility: hidden;
-    }
-    
+    }    
     .btn{       
-        font-size: 25px;
+        font-size: 22px;
         font-family: "pidhg9";
+        background-color: none;
     }
-    
+    .posicao {
+        margin-right: 10px;
+    }
+    .fixarDireita {
+        margin-right: 20px;
+        text-align: right;
+    }
 }

@@ -1,28 +1,26 @@
 * {
     box-sizing: border-box;
-  }
+}
 html{
     font-size: 6.25%;
 }
- 
 @font-face {
     font-family:"pidhg9";
     src: url("/fonts/BaiJamjuree-Light.ttf");
 }    
-
 body{
     display:flex;
     flex-direction:column;
     min-height:100vh;
-    font-size:26rem;
+    font-size:20rem;
     font-family:"pidhg9";
     margin-top: 0;
     margin-left: 0;
 }
 main{
     display:flex;
+    flex-direction:column;
     flex-grow:1;
-    flex-direction:row;
 } 
 .paineldireita{
     width:80%;
@@ -30,27 +28,28 @@ main{
     display:flex;
     flex-direction:column;
     margin-left: 250rem;
+    align-items: center;
+    align-self:flex-end;
 }
 .paineldir1{
     font-size:20rem;
 }
 canvas {
     border: transparent;
-  }
-  
+}
 .chart-container {
     position: relative;
     margin-top: 50rem;
     margin-right: 30rem;
     height: 400rem;
-    width: 400rem;
-  }
-  
+    width: 300rem;
+}
 .paineldir2{
     display:flex;
-    flex-direction:row;
-    margin-bottom:10rem;
-    
+    justify-content: space-between;
+    flex-direction: column;
+    margin-bottom: 10rem;
+    align-items: center;
 }
 .Saldoatual, .Totaldespesas, .Totalreceitas{
     margin-top:10rem;
@@ -61,20 +60,56 @@ canvas {
     text-align: center;
     font-weight: 600;
 }
-
 .paineldir3{
     display:flex;
-    flex-direction:row;
-    height:500rem;
+    flex-direction:column;
+    height:400rem;
     justify-content: space-around;
     align-self: space-around;
-    }
-
+}
 .chart-container{
+    margin-top: 10rem;
     margin-bottom:10rem;
     border:transparent;
 }
 .paineldir4{
     border:1px solid gray;
     height:500rem;
+}
+.alinhar{
+    align-items: center;
+    margin-bottom: 60px;
+}/*
+footer{
+    position: absolute;
+    max-height: 185.78px;
+}*/
+
+
+@media screen and (min-width: 768px) {
+    .paineldir2{
+        display:flex;
+        justify-content: space-between;
+        flex-direction: row;
+        margin-bottom:10rem;
+        margin-top: 10px;
+        align-items: center;
+    }
+    .paineldir3{
+        display:flex;
+        flex-direction:row;
+        height:400rem;
+        justify-content: space-around;
+        align-self: space-around;
+    }
+    main{
+        display:flex;
+        flex-grow:1;
+        flex-direction:row;
+    }
+    .alinhar{
+        align-items: center;
+        margin-bottom: 20px;
+        margin-left: auto;
+    }
 }

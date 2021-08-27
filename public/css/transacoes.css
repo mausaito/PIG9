@@ -1,7 +1,6 @@
 * {
     box-sizing: border-box;
-  }
-
+ }
 @font-face {
     font-family:"pidhg9";
     src: url("/fonts/BaiJamjuree-Light.ttf");
@@ -16,11 +15,10 @@ body{
     display:flex;
     flex-direction:column;
     min-height:100vh;
-    font-size:26rem;
+    font-size:20rem;
     margin-top: 0;
-    margin-left: 0;
-   
-}
+    margin-left: 0;   
+}/*
 header{
     height: 120rem;
     background:#94d4c1;
@@ -41,21 +39,26 @@ header div a{
 #logo-img{
     display: flex;
     justify-self: center;
-}
+}*//*
 #usuario{
     border:transparent;
-    background:#94d4c1;
+    background:#d49494;
     display:flex;
     font-weight:bold;
     justify-content:center;
     flex-direction:column;
-}
+}*/
 button{
     background:#94d4c1;
     border:transparent;
-    color:white;
+    color:rgb(51, 0, 117);
+    font-size: 19px;
+    margin-bottom: 10px;   
  }
-
+ a:link {
+    text-decoration: none;
+    color: #FFF;
+}
 main{
     display:flex;
     flex-grow:1;
@@ -67,6 +70,8 @@ main{
     display:flex;
     border-right:1px solid gray;
     flex-direction:column;
+    align-items: center;
+    margin-top: 30px;
 }
 .menuesq li{
     list-style:none;
@@ -91,7 +96,6 @@ main{
     align-items: center;
     margin-left: 20rem;
 }
-
 .paineldireita2{
     width:60%;
     flex-grow:1;
@@ -105,7 +109,6 @@ main{
     flex-direction:column;
     margin-left: 50rem;
     margin-top:30rem;
-  
 }
 .campos{
     width:60%;
@@ -151,40 +154,4 @@ main{
     border-radius:5rem;
 }
 
-footer{
-    height:110rem;
-    background:rgb(226, 226, 226);
-    width:100vw;
-    display:flex;
-}
-.esqfooter {
-    width:40%;
-    color:darkgray;
-    align-self:flex-end;
-    font-size:22rem;
-}
-.centfooter{
-    width:40%;
-}
-.redesocial{
-    width:20%;
-    align-self:center;
-}
-.redesocial p {
-    color:darkgray;
-    margin-top:15rem;
-    margin-bottom:5rem;
-}
-#facebook{
-    width:15%;
-    margin-top:5rem;
-}
-#instagram{
-    width:14%;
-    margin-top:5rem;
-}
-#twitter{
-    width:14%;
-    margin-top:5rem;
-}
 
